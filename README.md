@@ -5,7 +5,7 @@ All what it needs is a Linux console, cheap STLink clone, stm8s device and your 
 
 - It builds code with SDCC toolchain. And you need to install it: `apt-get install sdcc`.
 - It integrates a well known Stm8StdPerifLib from ST. Builder will download and compile this lib automatically.
-- It flashes your precious devices with [stm8flasher](https://github.com/vdudouyt/stm8flash). Builder will download and compile it too. But you'll need to install libusb if it absent: `apt-get install libusb-1.0-0-dev`.
+- It flashes your precious devices with [stm8flash](https://github.com/vdudouyt/stm8flash). Builder will download and compile it too. But you'll need to install libusb if it absent: `apt-get install libusb-1.0-0-dev`.
 
 ### List of needed packages
 - sdcc
@@ -92,7 +92,7 @@ It flashes you hex file to stm8s device:
 ```
 you@linux:~/ledblinker$ make flash
 ```
-Cleans your project build (StdPerifLib and stm8flasher are not cleaned):
+Cleans your project build (StdPerifLib and stm8flash are not cleaned):
 ```
 you@linux:~/ledblinker$ make clean
 ```
