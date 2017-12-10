@@ -1,5 +1,10 @@
 # stm8builder
 
+> **Warning!**
+> **SDCC has issues with removal of unused code during compilation.**
+> **The result is a BIG hex file. It is a known issue for 2 years. I hope it will be resolved someday.**
+> **A single way to deal with it is a one function per file.**
+
 The goal of this project is to make building/flashing of ROMs for stm8s chips as much painless as I can handle it.
 All what it needs is a Linux console, cheap STLink clone, stm8s device and your code.
 
