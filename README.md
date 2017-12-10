@@ -56,8 +56,21 @@ Makefile has 7 options and include line to link it with a builder.
 - `FLASHER` can be ommitted and defaults to `stlinkv2`.
 Name your project in `PROJECT` option - at the end you'll receive a hex file with that name, for example `PROJECT = ledblinker` will result in `ledblinker.ihx`.
 Write list of your files to `SOURCES` option. For this case it is a single file `ledblinker.c`.
-Set `CHIP` and `CHIPMOD` options: if you have a dev board with stm8s103f3p6 chip, then you need to set `CHIP` to `STM8S103` and `CHIPMOD` to `F3`.
+Set `CHIP` and `CHIPMOD` options: if you have a dev board with `stm8s103f3p6` chip, then you need to set `CHIP` to `STM8S103` and `CHIPMOD` to `F3`.
 If you use a StdPerifLib GPIO functions, you need to add `gpio` to `MODULES` option.
+
+Result is:
+```
+you@linux:~/ledblinker$ cat Makefile
+PROJECT = ledblinker
+CHIP    = STM8S103
+CHIPMOD = F3
+SOURCES = ledblinker.c
+FLAGS   = 
+MODULES = gpio
+FLASHER = stlinkv2
+include $(CURDIR)/stm8builder/stm8builder.mk
+```
 
 Finally, compile your code:
 ```
