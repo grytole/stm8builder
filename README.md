@@ -35,7 +35,7 @@ you@linux:~/Downloads$ unzip stm8builder.zip
 you@linux:~/Downloads$ ls
 stm8builder.zip stm8builder-master
 you@linux:~/Downloads$ ls stm8builder-master
-blinker.c LICENSE Makefile.example stm8builder
+blinker.c LICENSE Makefile.example README.md stm8builder
 ```
 Then you need to copy `stm8builder` folder and Makefile.example to your project folder:
 ```
