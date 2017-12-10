@@ -3,9 +3,9 @@
 The goal of this project is to make building/flashing of ROMs for stm8s chips as much painless as I can handle it.
 All what it needs is a Linux console, cheap STLink clone, stm8s device and your code.
 
-- It builds code with SDCC toolchain. And you need to install it: `apt-get install sdcc`.
+- It builds code with SDCC toolchain. You need to install it manually.
 - It integrates a well known Stm8StdPerifLib from ST. Builder will download and compile this lib automatically.
-- It flashes your precious devices with [stm8flash](https://github.com/vdudouyt/stm8flash). Builder will download and compile it too. But you'll need to install libusb if it absent: `apt-get install libusb-1.0-0-dev`.
+- It flashes your precious devices with [stm8flash](https://github.com/vdudouyt/stm8flash). Builder will download and compile it too.
 
 ### List of needed packages
 - sdcc
@@ -13,6 +13,7 @@ All what it needs is a Linux console, cheap STLink clone, stm8s device and your 
 - unzip
 - make
 - pkg-config
+
 Install it with next:
 ```
 you@linux:~/ledblinker$ sudo apt-get install sdcc libusb-1.0-0-dev unzip make pkg-config
