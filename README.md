@@ -20,7 +20,7 @@ you@linux:~/ledblinker$ sudo apt-get install sdcc libusb-1.0-0-dev unzip make pk
 ```
 
 ### How to compile
-Lets assume you have a folder `ledblinker` with a simple peace of code in `ledblinker.c`:
+Lets assume you have a folder `ledblinker` with a simple piece of code in `ledblinker.c`:
 ```
 you@linux:~/ledblinker$ ls
 ledblinker.c
