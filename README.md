@@ -54,6 +54,7 @@ Makefile has 7 options and include line to link it with a builder.
 - `FLAGS` can be ommitted if you have noshing to add here.
 - `MODULES` must have all used StdPerifLib modules - common: `awu`, `beep`, `clk`, `exti`, `flash`, `gpio`, `i2c`, `itc`, `iwdg`, `rst`, `spi`, `tim1`, `wwdg` and chip-related: `adc1`, `adc2`, `can`, `tim2`, `tim3`, `tim4`, `tim5`, `tim6`, `uart1`, `uart2`, `uart3`).
 - `FLASHER` can be ommitted and defaults to `stlinkv2`.
+
 Name your project in `PROJECT` option - at the end you'll receive a hex file with that name, for example `PROJECT = ledblinker` will result in `ledblinker.ihx`.
 Write list of your files to `SOURCES` option. For this case it is a single file `ledblinker.c`.
 Set `CHIP` and `CHIPMOD` options: if you have a dev board with `stm8s103f3p6` chip, then you need to set `CHIP` to `STM8S103` and `CHIPMOD` to `F3`.
