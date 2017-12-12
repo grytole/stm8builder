@@ -1,10 +1,5 @@
 # stm8builder
 
-> **Warning!**
-> **SDCC has issues with removal of unused code during compilation.**
-> **The result is a BIG hex file. It is a known issue for 2 years. I hope it will be resolved someday.**
-> **A single way to deal with it is a one function per file.**
-
 The goal of this project is to make building/flashing of ROMs for stm8s chips as much painless as I can handle it.
 All what it needs is a Linux console, cheap STLink clone, stm8s device and your code.
 
@@ -56,26 +51,23 @@ you@linux:~/ledblinker$ vi Makefile
 ```
 Makefile has 7 options and include line to link it with a builder:
 - `PROJECT`, `CHIP`, `CHIPMOD` and `SOURCES` options are required;
-- `FLAGS` can be ommitted if you have noshing to add here;
-- `MODULES` must have all used Stm8_StdPeriph_Driver modules - common: `awu`, `beep`, `clk`, `exti`, `flash`, `gpio`, `i2c`, `itc`, `iwdg`, `rst`, `spi`, `tim1`, `wwdg` and chip-related: `adc1`, `adc2`, `can`, `tim2`, `tim3`, `tim4`, `tim5`, `tim6`, `uart1`, `uart2`, `uart3`;
+- `DEFINES` can be ommitted if you have nothing to add here;
 - `FLASHER` can be ommitted and defaults to `stlinkv2`.
 
 Name your project in `PROJECT` option - at the end you'll receive a hex file with that name, for example `PROJECT = ledblinker` will result in `ledblinker.ihx`.
 Write list of your files to `SOURCES` option. For this case it is a single file `ledblinker.c`.
 Set `CHIP` and `CHIPMOD` options: if you have a dev board with `stm8s103f3p6` chip, then you need to set `CHIP` to `STM8S103` and `CHIPMOD` to `F3`.
-If you use a Stm8_StdPeriph_Driver GPIO functions, you need to add `gpio` to `MODULES` option.
 
 Result is:
 ```
 you@linux:~/ledblinker$ cat Makefile
 PROJECT = ledblinker
+SOURCES = ledblinker.c
+DEFINES = 
 CHIP    = STM8S103
 CHIPMOD = F3
-SOURCES = ledblinker.c
-FLAGS   = 
-MODULES = gpio
 FLASHER = stlinkv2
-include $(CURDIR)/stm8builder/stm8builder.mk
+include stm8builder/stm8builder.mk
 ```
 
 Finally, compile your code:
@@ -120,11 +112,7 @@ Cleans everything - there no generated or downloaded files after that:
 ```
 you@linux:~/ledblinker$ make realclean
 ```
-Do this if you want to check that your makefile is OK for build system:
-```
-you@linux:~/ledblinker$ make env
-```
-If you want to build Stm8_StdPeriph_Driver, then do this (it is useful if you want to look in lib files):
+If you want to build just a driver, then do this:
 ```
 you@linux:~/ledblinker$ make lib
 ```
