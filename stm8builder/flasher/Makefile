@@ -1,25 +1,29 @@
-STM8FLASH = stm8flash
-STM8FLASH_URL = http://github.com/vdudouyt/stm8flash/archive/master.zip
-STM8FLASH_ZIP = stm8flash.zip
-BUILD_DIR = ./build
+ifeq ($(strip $(VERBOSE)),)
+QUIET = @
+endif
 
-all: $(STM8FLASH)
+MKDIR = mkdir -p
+RM    = rm -rf
+
+STM8FLASH     = stm8flash
+STM8FLASH_URL = http://github.com/vdudouyt/stm8flash/archive/master.zip
+STM8FLASH_ZIP = $(CURDIR)/stm8flash.zip
+
+BUILD_DIR = $(CURDIR)/build
+
+all: $(BUILD_DIR)/$(STM8FLASH)
 
 $(STM8FLASH_ZIP):
-	wget -O $(STM8FLASH_ZIP) $(STM8FLASH_URL)
-
-unzip: $(STM8FLASH_ZIP)
-	unzip -j -o $(STM8FLASH_ZIP) -d $(BUILD_DIR)
-
-prepare: $(BUILD_DIR)
+	$(QUIET)wget -O $@ $(STM8FLASH_URL)
+	$(QUIET)unzip -j -o $@ -d $(BUILD_DIR)
 
 $(BUILD_DIR):
-	mkdir -p $@
+	$(QUIET)$(MKDIR) $@
 
-$(STM8FLASH): prepare unzip
-	make -C $(BUILD_DIR)
+$(BUILD_DIR)/$(STM8FLASH): $(BUILD_DIR) $(STM8FLASH_ZIP)
+	$(QUIET)$(MAKE) -C $(BUILD_DIR)
 
 clean:
-	rm -rf $(BUILD_DIR) $(STM8FLASH_ZIP)
+	$(QUIET)$(RM) $(BUILD_DIR) $(STM8FLASH_ZIP)
 
-.PHONY: all unzip prepare clean
+.PHONY: all clean

@@ -1,78 +1,56 @@
-ifeq ($(strip $(PROJECT)),)
-  $(error "Project config must have PROJECT parameter (eg, 'PROJECT = blink')")
-endif
-ifeq ($(strip $(CHIP)),)
-  $(error "Project config must have CHIP parameter (eg, 'CHIP = STM8S103' for [stm8s103]f3p6)")
-endif
-ifeq ($(strip $(CHIPMOD)),)
-  $(error "Project config must have CHIPMOD parameter (eg, 'CHIPMOD = F3' for stm8s103[f3]p6)")
-endif
-ifeq ($(strip $(SOURCES)),)
-  $(error "Project config must have SOURCES parameter (eg, 'SOURCES = first.c second.c third.c ...')")
-endif
+PROJECT ?= default
+SOURCES ?= $(wildcard *.c)
+CHIP    ?= STM8S003
 FLASHER ?= stlinkv2
-ifneq ($(strip $(FLASHER)),$(filter $(FLASHER),stlink stlinkv2 espstlink))
-  $(error "Project config must have supported FLASHER parameter (eg, 'FLASHER = stlink') or it may be unset ('stlinkv2' is default)")
+
+ifeq ($(strip $(VERBOSE)),)
+QUIET = @
 endif
 
-SDCC = sdcc
-STM8BUILDER_DIR = $(CURDIR)/stm8builder
-STM8FLASH = stm8flash
-STM8FLASH_DONGLE = $(FLASHER)
-STM8FLASH_CHIP = $(shell echo $(CHIP)$(CHIPMOD) | tr '[:upper:]' '[:lower:]')
-BUILD_DIR = $(STM8BUILDER_DIR)/build
-OUTPUT_HEXFILE = $(PROJECT).ihx
-STDPERIF_DIR = $(STM8BUILDER_DIR)/stdperif
-FLASHER_DIR = $(STM8BUILDER_DIR)/flasher
-CFLAGS = -lstm8 -mstm8 -I$(CURDIR) -I$(STDPERIF_DIR)/inc -D$(CHIP) -DUSE_STDPERIPH_DRIVER $(FLAGS)
+CC    = sdcc
+MKDIR = mkdir -p
+MV    = mv
+RM    = rm -rf
+
+OUTPUT_HEXFILE       = $(PROJECT).ihx
+STDPERIPH_DRIVER_LIB = stdperiph_driver.a
+STM8FLASH            = stm8flash
+
+BUILD_DIR            = $(CURDIR)/build
+STM8BUILDER_DIR      = $(CURDIR)/stm8builder
+STDPERIPH_DRIVER_DIR = $(STM8BUILDER_DIR)/stdperiph_driver
+STM8FLASH_DIR        = $(STM8BUILDER_DIR)/flasher
+
+CFLAGS = --opt-code-size -mstm8 -I$(CURDIR) -I$(STDPERIPH_DRIVER_DIR)/inc -D$(CHIP) -DUSE_STDPERIPH_DRIVER
+LFLAGS = --out-fmt-ihx -L$(STDPERIPH_DRIVER_DIR) -l$(STDPERIPH_DRIVER_LIB)
 
 all: clean build
 
-env:
-	@echo "========================[ BUILD ]============================"
-	@echo " PROJECT : $(PROJECT)"
-	@echo " CHIP    : $(CHIP)"
-	@echo " CHIPMOD : $(CHIPMOD)"
-	@echo " SOURCES : $(SOURCES)"
-	@echo " FLAGS   : $(FLAGS)"
-	@echo " MODULES : $(MODULES)"
-	@echo "============================================================="
-
 $(BUILD_DIR):
-	mkdir -p $@
+	$(QUIET)$(MKDIR) $@
 
-lib:
-	$(MAKE) -C $(STDPERIF_DIR) CHIP=$(CHIP)
+build: $(STDPERIPH_DRIVER_DIR)/$(STDPERIPH_DRIVER_LIB) $(BUILD_DIR) $(CURDIR)/$(OUTPUT_HEXFILE)
 
-build: env $(BUILD_DIR) lib $(CURDIR)/$(OUTPUT_HEXFILE)
-
-$(CURDIR)/$(OUTPUT_HEXFILE): $(SOURCES:%.c=$(BUILD_DIR)/%.rel) $(MODULES:%=$(STDPERIF_DIR)/build/stm8s_%.rel)
-	$(SDCC) $(CFLAGS) --out-fmt-ihx -o $(BUILD_DIR)/$(OUTPUT_HEXFILE) $^
-	mv $(BUILD_DIR)/$(OUTPUT_HEXFILE) $@
+$(CURDIR)/$(OUTPUT_HEXFILE): $(STDPERIPH_DRIVER_DIR)/$(STDPERIPH_DRIVER_LIB) $(SOURCES:%.c=$(BUILD_DIR)/%.rel)
+	$(QUIET)$(CC) $(CFLAGS) $(LFLAGS) -o $(BUILD_DIR)/$(OUTPUT_HEXFILE) $(SOURCES:%.c=$(BUILD_DIR)/%.rel)
+	$(QUIET)$(MV) $(BUILD_DIR)/$(OUTPUT_HEXFILE) $@
 
 $(BUILD_DIR)/%.rel: %.c
-	$(SDCC) $(CFLAGS) -o $@ -c $<
+	$(QUIET)$(CC) $(CFLAGS) -o $@ -c $<
 
-flash: build $(STM8BUILDER_DIR)/$(STM8FLASH)
-	@echo "========================[ FLASH ]============================"
-	@echo " PROJECT : $(PROJECT)"
-	@echo " HEXFILE : $(OUTPUT_HEXFILE)"
-	@echo " CHIP    : $(CHIP)"
-	@echo " CHIPMOD : $(CHIPMOD)"
-	@echo " FLASHER : $(STM8FLASH_DONGLE)"
-	@echo "============================================================="
-	$(STM8BUILDER_DIR)/$(STM8FLASH) -c $(STM8FLASH_DONGLE) -p $(STM8FLASH_CHIP) -w $(CURDIR)/$(OUTPUT_HEXFILE)
+lib: $(STDPERIPH_DRIVER_DIR)/$(STDPERIPH_DRIVER_LIB)
 
-$(STM8BUILDER_DIR)/$(STM8FLASH):
-	$(MAKE) -C $(FLASHER_DIR)
-	mv $(FLASHER_DIR)/build/$(STM8FLASH) $(STM8BUILDER_DIR)
+$(STDPERIPH_DRIVER_DIR)/$(STDPERIPH_DRIVER_LIB):
+	$(QUIET)$(MAKE) -C $(STDPERIPH_DRIVER_DIR) CHIP=$(CHIP) VERBOSE=$(VERBOSE)
+
+flash: $(STM8FLASH_DIR)/$(STM8FLASH) $(CURDIR)/$(OUTPUT_HEXFILE)
+	$(QUIET)$(STM8FLASH_DIR)/$(STM8FLASH) -c $(FLASHER) -p $(STM8FLASH_CHIP) -w $(CURDIR)/$(OUTPUT_HEXFILE)
 
 clean:
-	rm -rf $(BUILD_DIR) $(CURDIR)/$(OUTPUT_HEXFILE)
+	$(QUIET)$(RM) $(BUILD_DIR) $(CURDIR)/$(OUTPUT_HEXFILE)
 
 realclean: clean
-	$(MAKE) -C $(STDPERIF_DIR) clean
-	$(MAKE) -C $(FLASHER_DIR) clean
-	rm -f $(STM8BUILDER_DIR)/$(STM8FLASH)
+	$(QUIET)$(MAKE) -C $(STDPERIPH_DRIVER_DIR) CHIP=$(CHIP) VERBOSE=$(VERBOSE) clean
+	$(QUIET)$(MAKE) -C $(STM8FLASH_DIR) VERBOSE=$(VERBOSE) clean
 
-.PHONY: all env build clean flash lib realclean
+.PHONY: all build lib flash clean realclean

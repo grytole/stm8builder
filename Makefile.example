@@ -1,9 +1,5 @@
-PROJECT = blink
-CHIP    = STM8S103
-CHIPMOD = F3
+PROJECT = example
 SOURCES = blink.c
-FLAGS   = -DEXAMPLE
-MODULES = gpio
-FLASHER = stlinkv2
+CHIP    = STM8S103
 
-include $(CURDIR)/stm8builder/stm8builder.mk
+include stm8builder/stm8builder.mk
