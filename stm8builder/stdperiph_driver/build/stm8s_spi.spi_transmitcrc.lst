@@ -1,0 +1,54 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:04 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_spi_spi_transmitcrc
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _SPI_TransmitCRC
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_spi.spi_transmitcrc.c: 50: void SPI_TransmitCRC(void)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function SPI_TransmitCRC
+                                     44 ;	-----------------------------------------
+      000000                         45 _SPI_TransmitCRC:
+                                     46 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_spi.spi_transmitcrc.c: 52: SPI->CR2 |= SPI_CR2_CRCNEXT; /* Enable the CRC transmission*/
+      000000 AE 52 01         [ 2]   47 	ldw	x, #0x5201
+      000003 F6               [ 1]   48 	ld	a, (x)
+      000004 AA 10            [ 1]   49 	or	a, #0x10
+      000006 F7               [ 1]   50 	ld	(x), a
+      000007 81               [ 4]   51 	ret
+                                     52 	.area CODE
+                                     53 	.area INITIALIZER
+                                     54 	.area CABS (ABS)

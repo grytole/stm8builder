@@ -1,0 +1,162 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:27:55 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_clk_clk_getflagstatus
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _CLK_GetFlagStatus
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 55: FlagStatus CLK_GetFlagStatus(CLK_Flag_TypeDef CLK_FLAG)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function CLK_GetFlagStatus
+                                     45 ;	-----------------------------------------
+      000000                         46 _CLK_GetFlagStatus:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 62: assert_param(IS_CLK_FLAG_OK(CLK_FLAG));
+      000000 1E 03            [ 2]   48 	ldw	x, (0x03, sp)
+      000002 A3 01 10         [ 2]   49 	cpw	x, #0x0110
+      000005 27 49            [ 1]   50 	jreq	00119$
+      000007 1E 03            [ 2]   51 	ldw	x, (0x03, sp)
+      000009 A3 01 02         [ 2]   52 	cpw	x, #0x0102
+      00000C 27 42            [ 1]   53 	jreq	00119$
+      00000E 1E 03            [ 2]   54 	ldw	x, (0x03, sp)
+      000010 A3 02 02         [ 2]   55 	cpw	x, #0x0202
+      000013 27 3B            [ 1]   56 	jreq	00119$
+      000015 1E 03            [ 2]   57 	ldw	x, (0x03, sp)
+      000017 A3 03 08         [ 2]   58 	cpw	x, #0x0308
+      00001A 27 34            [ 1]   59 	jreq	00119$
+      00001C 1E 03            [ 2]   60 	ldw	x, (0x03, sp)
+      00001E A3 03 01         [ 2]   61 	cpw	x, #0x0301
+      000021 27 2D            [ 1]   62 	jreq	00119$
+      000023 1E 03            [ 2]   63 	ldw	x, (0x03, sp)
+      000025 A3 04 08         [ 2]   64 	cpw	x, #0x0408
+      000028 27 26            [ 1]   65 	jreq	00119$
+      00002A 1E 03            [ 2]   66 	ldw	x, (0x03, sp)
+      00002C A3 04 02         [ 2]   67 	cpw	x, #0x0402
+      00002F 27 1F            [ 1]   68 	jreq	00119$
+      000031 1E 03            [ 2]   69 	ldw	x, (0x03, sp)
+      000033 A3 05 04         [ 2]   70 	cpw	x, #0x0504
+      000036 27 18            [ 1]   71 	jreq	00119$
+      000038 1E 03            [ 2]   72 	ldw	x, (0x03, sp)
+      00003A A3 05 02         [ 2]   73 	cpw	x, #0x0502
+      00003D 27 11            [ 1]   74 	jreq	00119$
+      00003F 90 AEr00r95      [ 2]   75 	ldw	y, #___str_0+0
+      000043 4B 3E            [ 1]   76 	push	#0x3e
+      000045 5F               [ 1]   77 	clrw	x
+      000046 89               [ 2]   78 	pushw	x
+      000047 4B 00            [ 1]   79 	push	#0x00
+      000049 90 89            [ 2]   80 	pushw	y
+      00004B CDr00r00         [ 4]   81 	call	_assert_failed
+      00004E 5B 06            [ 2]   82 	addw	sp, #6
+      000050                         83 00119$:
+                                     84 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 65: statusreg = (uint16_t)((uint16_t)CLK_FLAG & (uint16_t)0xFF00);
+      000050 4F               [ 1]   85 	clr	a
+      000051 97               [ 1]   86 	ld	xl, a
+      000052 7B 03            [ 1]   87 	ld	a, (0x03, sp)
+      000054 95               [ 1]   88 	ld	xh, a
+                                     89 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 68: if (statusreg == 0x0100) /* The flag to check is in ICKRregister */
+      000055 A3 01 00         [ 2]   90 	cpw	x, #0x0100
+      000058 26 06            [ 1]   91 	jrne	00111$
+                                     92 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 70: tmpreg = CLK->ICKR;
+      00005A AE 50 C0         [ 2]   93 	ldw	x, #0x50c0
+      00005D F6               [ 1]   94 	ld	a, (x)
+      00005E 20 25            [ 2]   95 	jra	00112$
+      000060                         96 00111$:
+                                     97 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 72: else if (statusreg == 0x0200) /* The flag to check is in ECKRregister */
+      000060 A3 02 00         [ 2]   98 	cpw	x, #0x0200
+      000063 26 06            [ 1]   99 	jrne	00108$
+                                    100 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 74: tmpreg = CLK->ECKR;
+      000065 AE 50 C1         [ 2]  101 	ldw	x, #0x50c1
+      000068 F6               [ 1]  102 	ld	a, (x)
+      000069 20 1A            [ 2]  103 	jra	00112$
+      00006B                        104 00108$:
+                                    105 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 76: else if (statusreg == 0x0300) /* The flag to check is in SWIC register */
+      00006B A3 03 00         [ 2]  106 	cpw	x, #0x0300
+      00006E 26 06            [ 1]  107 	jrne	00105$
+                                    108 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 78: tmpreg = CLK->SWCR;
+      000070 AE 50 C5         [ 2]  109 	ldw	x, #0x50c5
+      000073 F6               [ 1]  110 	ld	a, (x)
+      000074 20 0F            [ 2]  111 	jra	00112$
+      000076                        112 00105$:
+                                    113 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 80: else if (statusreg == 0x0400) /* The flag to check is in CSS register */
+      000076 A3 04 00         [ 2]  114 	cpw	x, #0x0400
+      000079 26 06            [ 1]  115 	jrne	00102$
+                                    116 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 82: tmpreg = CLK->CSSR;
+      00007B AE 50 C8         [ 2]  117 	ldw	x, #0x50c8
+      00007E F6               [ 1]  118 	ld	a, (x)
+      00007F 20 04            [ 2]  119 	jra	00112$
+      000081                        120 00102$:
+                                    121 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 86: tmpreg = CLK->CCOR;
+      000081 AE 50 C9         [ 2]  122 	ldw	x, #0x50c9
+      000084 F6               [ 1]  123 	ld	a, (x)
+      000085                        124 00112$:
+                                    125 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 89: if ((tmpreg & (uint8_t)CLK_FLAG) != (uint8_t)RESET)
+      000085 02               [ 1]  126 	rlwa	x
+      000086 7B 04            [ 1]  127 	ld	a, (0x04, sp)
+      000088 01               [ 1]  128 	rrwa	x
+      000089 89               [ 2]  129 	pushw	x
+      00008A 14 01            [ 1]  130 	and	a, (1, sp)
+      00008C 85               [ 2]  131 	popw	x
+      00008D 4D               [ 1]  132 	tnz	a
+      00008E 27 03            [ 1]  133 	jreq	00114$
+                                    134 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 91: bitstatus = SET;
+      000090 A6 01            [ 1]  135 	ld	a, #0x01
+                                    136 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 95: bitstatus = RESET;
+      000092 21                     137 	.byte 0x21
+      000093                        138 00114$:
+      000093 4F               [ 1]  139 	clr	a
+      000094                        140 00115$:
+                                    141 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_getflagstatus.c: 99: return((FlagStatus)bitstatus);
+      000094 81               [ 4]  142 	ret
+                                    143 	.area CODE
+      000095                        144 ___str_0:
+      000095 2F 68 6F 6D 65 2F 67   145 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0000D1 65 72 2F 73 72 63 2F   146 	.ascii "er/src/stm8s_clk.clk_getflagstatus.c"
+             73 74 6D 38 73 5F 63
+             6C 6B 2E 63 6C 6B 5F
+             67 65 74 66 6C 61 67
+             73 74 61 74 75 73 2E
+             63
+      0000F5 00                     147 	.db 0x00
+                                    148 	.area INITIALIZER
+                                    149 	.area CABS (ABS)

@@ -1,0 +1,220 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:18 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_uart1_uart1_getitstatus
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _UART1_GetITStatus
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 61: ITStatus UART1_GetITStatus(UART1_IT_TypeDef UART1_IT)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function UART1_GetITStatus
+                                     45 ;	-----------------------------------------
+      000000                         46 _UART1_GetITStatus:
+      000000 52 07            [ 2]   47 	sub	sp, #7
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 70: assert_param(IS_UART1_GET_IT_OK(UART1_IT));
+      000002 1E 0A            [ 2]   49 	ldw	x, (0x0a, sp)
+      000004 A3 03 46         [ 2]   50 	cpw	x, #0x0346
+      000007 26 06            [ 1]   51 	jrne	00202$
+      000009 A6 01            [ 1]   52 	ld	a, #0x01
+      00000B 6B 05            [ 1]   53 	ld	(0x05, sp), a
+      00000D 20 02            [ 2]   54 	jra	00203$
+      00000F                         55 00202$:
+      00000F 0F 05            [ 1]   56 	clr	(0x05, sp)
+      000011                         57 00203$:
+      000011 1E 0A            [ 2]   58 	ldw	x, (0x0a, sp)
+      000013 A3 01 00         [ 2]   59 	cpw	x, #0x0100
+      000016 26 06            [ 1]   60 	jrne	00205$
+      000018 A6 01            [ 1]   61 	ld	a, #0x01
+      00001A 6B 04            [ 1]   62 	ld	(0x04, sp), a
+      00001C 20 02            [ 2]   63 	jra	00206$
+      00001E                         64 00205$:
+      00001E 0F 04            [ 1]   65 	clr	(0x04, sp)
+      000020                         66 00206$:
+      000020 1E 0A            [ 2]   67 	ldw	x, (0x0a, sp)
+      000022 A3 02 77         [ 2]   68 	cpw	x, #0x0277
+      000025 27 35            [ 1]   69 	jreq	00122$
+      000027 1E 0A            [ 2]   70 	ldw	x, (0x0a, sp)
+      000029 A3 02 66         [ 2]   71 	cpw	x, #0x0266
+      00002C 27 2E            [ 1]   72 	jreq	00122$
+      00002E 1E 0A            [ 2]   73 	ldw	x, (0x0a, sp)
+      000030 A3 02 55         [ 2]   74 	cpw	x, #0x0255
+      000033 27 27            [ 1]   75 	jreq	00122$
+      000035 1E 0A            [ 2]   76 	ldw	x, (0x0a, sp)
+      000037 A3 02 44         [ 2]   77 	cpw	x, #0x0244
+      00003A 27 20            [ 1]   78 	jreq	00122$
+      00003C 1E 0A            [ 2]   79 	ldw	x, (0x0a, sp)
+      00003E A3 02 35         [ 2]   80 	cpw	x, #0x0235
+      000041 27 19            [ 1]   81 	jreq	00122$
+      000043 0D 05            [ 1]   82 	tnz	(0x05, sp)
+      000045 26 15            [ 1]   83 	jrne	00122$
+      000047 0D 04            [ 1]   84 	tnz	(0x04, sp)
+      000049 26 11            [ 1]   85 	jrne	00122$
+      00004B 90 AEr00rE1      [ 2]   86 	ldw	y, #___str_0+0
+      00004F 4B 46            [ 1]   87 	push	#0x46
+      000051 5F               [ 1]   88 	clrw	x
+      000052 89               [ 2]   89 	pushw	x
+      000053 4B 00            [ 1]   90 	push	#0x00
+      000055 90 89            [ 2]   91 	pushw	y
+      000057 CDr00r00         [ 4]   92 	call	_assert_failed
+      00005A 5B 06            [ 2]   93 	addw	sp, #6
+      00005C                         94 00122$:
+                                     95 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 73: itpos = (uint8_t)((uint8_t)1 << (uint8_t)((uint8_t)UART1_IT & (uint8_t)0x0F));
+      00005C 7B 0B            [ 1]   96 	ld	a, (0x0b, sp)
+      00005E 95               [ 1]   97 	ld	xh, a
+      00005F A4 0F            [ 1]   98 	and	a, #0x0f
+      000061 97               [ 1]   99 	ld	xl, a
+      000062 A6 01            [ 1]  100 	ld	a, #0x01
+      000064 88               [ 1]  101 	push	a
+      000065 9F               [ 1]  102 	ld	a, xl
+      000066 4D               [ 1]  103 	tnz	a
+      000067 27 05            [ 1]  104 	jreq	00225$
+      000069                        105 00224$:
+      000069 08 01            [ 1]  106 	sll	(1, sp)
+      00006B 4A               [ 1]  107 	dec	a
+      00006C 26 FB            [ 1]  108 	jrne	00224$
+      00006E                        109 00225$:
+      00006E 84               [ 1]  110 	pop	a
+      00006F 6B 03            [ 1]  111 	ld	(0x03, sp), a
+                                    112 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 75: itmask1 = (uint8_t)((uint8_t)UART1_IT >> (uint8_t)4);
+      000071 02               [ 1]  113 	rlwa	x
+      000072 4E               [ 1]  114 	swap	a
+      000073 A4 0F            [ 1]  115 	and	a, #0x0f
+      000075 01               [ 1]  116 	rrwa	x
+                                    117 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 77: itmask2 = (uint8_t)((uint8_t)1 << itmask1);
+      000076 A6 01            [ 1]  118 	ld	a, #0x01
+      000078 88               [ 1]  119 	push	a
+      000079 9E               [ 1]  120 	ld	a, xh
+      00007A 4D               [ 1]  121 	tnz	a
+      00007B 27 05            [ 1]  122 	jreq	00227$
+      00007D                        123 00226$:
+      00007D 08 01            [ 1]  124 	sll	(1, sp)
+      00007F 4A               [ 1]  125 	dec	a
+      000080 26 FB            [ 1]  126 	jrne	00226$
+      000082                        127 00227$:
+      000082 84               [ 1]  128 	pop	a
+      000083 6B 02            [ 1]  129 	ld	(0x02, sp), a
+                                    130 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 81: if (UART1_IT == UART1_IT_PE)
+      000085 0D 04            [ 1]  131 	tnz	(0x04, sp)
+      000087 27 1C            [ 1]  132 	jreq	00117$
+                                    133 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 84: enablestatus = (uint8_t)((uint8_t)UART1->CR1 & itmask2);
+      000089 AE 52 34         [ 2]  134 	ldw	x, #0x5234
+      00008C F6               [ 1]  135 	ld	a, (x)
+      00008D 14 02            [ 1]  136 	and	a, (0x02, sp)
+      00008F 6B 07            [ 1]  137 	ld	(0x07, sp), a
+                                    138 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 87: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      000091 AE 52 30         [ 2]  139 	ldw	x, #0x5230
+      000094 F6               [ 1]  140 	ld	a, (x)
+      000095 14 03            [ 1]  141 	and	a, (0x03, sp)
+      000097 4D               [ 1]  142 	tnz	a
+      000098 27 08            [ 1]  143 	jreq	00102$
+      00009A 0D 07            [ 1]  144 	tnz	(0x07, sp)
+      00009C 27 04            [ 1]  145 	jreq	00102$
+                                    146 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 90: pendingbitstatus = SET;
+      00009E A6 01            [ 1]  147 	ld	a, #0x01
+      0000A0 20 3C            [ 2]  148 	jra	00118$
+      0000A2                        149 00102$:
+                                    150 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 95: pendingbitstatus = RESET;
+      0000A2 4F               [ 1]  151 	clr	a
+      0000A3 20 39            [ 2]  152 	jra	00118$
+      0000A5                        153 00117$:
+                                    154 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 99: else if (UART1_IT == UART1_IT_LBDF)
+      0000A5 0D 05            [ 1]  155 	tnz	(0x05, sp)
+      0000A7 27 1C            [ 1]  156 	jreq	00114$
+                                    157 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 102: enablestatus = (uint8_t)((uint8_t)UART1->CR4 & itmask2);
+      0000A9 AE 52 37         [ 2]  158 	ldw	x, #0x5237
+      0000AC F6               [ 1]  159 	ld	a, (x)
+      0000AD 14 02            [ 1]  160 	and	a, (0x02, sp)
+      0000AF 6B 01            [ 1]  161 	ld	(0x01, sp), a
+                                    162 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 104: if (((UART1->CR4 & itpos) != (uint8_t)0x00) && enablestatus)
+      0000B1 AE 52 37         [ 2]  163 	ldw	x, #0x5237
+      0000B4 F6               [ 1]  164 	ld	a, (x)
+      0000B5 14 03            [ 1]  165 	and	a, (0x03, sp)
+      0000B7 4D               [ 1]  166 	tnz	a
+      0000B8 27 08            [ 1]  167 	jreq	00106$
+      0000BA 0D 01            [ 1]  168 	tnz	(0x01, sp)
+      0000BC 27 04            [ 1]  169 	jreq	00106$
+                                    170 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 107: pendingbitstatus = SET;
+      0000BE A6 01            [ 1]  171 	ld	a, #0x01
+      0000C0 20 1C            [ 2]  172 	jra	00118$
+      0000C2                        173 00106$:
+                                    174 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 112: pendingbitstatus = RESET;
+      0000C2 4F               [ 1]  175 	clr	a
+      0000C3 20 19            [ 2]  176 	jra	00118$
+      0000C5                        177 00114$:
+                                    178 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 118: enablestatus = (uint8_t)((uint8_t)UART1->CR2 & itmask2);
+      0000C5 AE 52 35         [ 2]  179 	ldw	x, #0x5235
+      0000C8 F6               [ 1]  180 	ld	a, (x)
+      0000C9 14 02            [ 1]  181 	and	a, (0x02, sp)
+      0000CB 6B 06            [ 1]  182 	ld	(0x06, sp), a
+                                    183 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 120: if (((UART1->SR & itpos) != (uint8_t)0x00) && enablestatus)
+      0000CD AE 52 30         [ 2]  184 	ldw	x, #0x5230
+      0000D0 F6               [ 1]  185 	ld	a, (x)
+      0000D1 14 03            [ 1]  186 	and	a, (0x03, sp)
+      0000D3 4D               [ 1]  187 	tnz	a
+      0000D4 27 07            [ 1]  188 	jreq	00110$
+      0000D6 0D 06            [ 1]  189 	tnz	(0x06, sp)
+      0000D8 27 03            [ 1]  190 	jreq	00110$
+                                    191 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 123: pendingbitstatus = SET;
+      0000DA A6 01            [ 1]  192 	ld	a, #0x01
+                                    193 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 128: pendingbitstatus = RESET;
+      0000DC 21                     194 	.byte 0x21
+      0000DD                        195 00110$:
+      0000DD 4F               [ 1]  196 	clr	a
+      0000DE                        197 00118$:
+                                    198 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_getitstatus.c: 133: return  pendingbitstatus;
+      0000DE 5B 07            [ 2]  199 	addw	sp, #7
+      0000E0 81               [ 4]  200 	ret
+                                    201 	.area CODE
+      0000E1                        202 ___str_0:
+      0000E1 2F 68 6F 6D 65 2F 67   203 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00011D 65 72 2F 73 72 63 2F   204 	.ascii "er/src/stm8s_uart1.uart1_getitstatus.c"
+             73 74 6D 38 73 5F 75
+             61 72 74 31 2E 75 61
+             72 74 31 5F 67 65 74
+             69 74 73 74 61 74 75
+             73 2E 63
+      000143 00                     205 	.db 0x00
+                                    206 	.area INITIALIZER
+                                    207 	.area CABS (ABS)

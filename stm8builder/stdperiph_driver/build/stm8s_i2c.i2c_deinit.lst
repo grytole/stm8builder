@@ -1,0 +1,67 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:01 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_i2c_i2c_deinit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _I2C_DeInit
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 50: void I2C_DeInit(void)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function I2C_DeInit
+                                     44 ;	-----------------------------------------
+      000000                         45 _I2C_DeInit:
+                                     46 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 52: I2C->CR1 = I2C_CR1_RESET_VALUE;
+      000000 35 00 52 10      [ 1]   47 	mov	0x5210+0, #0x00
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 53: I2C->CR2 = I2C_CR2_RESET_VALUE;
+      000004 35 00 52 11      [ 1]   49 	mov	0x5211+0, #0x00
+                                     50 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 54: I2C->FREQR = I2C_FREQR_RESET_VALUE;
+      000008 35 00 52 12      [ 1]   51 	mov	0x5212+0, #0x00
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 55: I2C->OARL = I2C_OARL_RESET_VALUE;
+      00000C 35 00 52 13      [ 1]   53 	mov	0x5213+0, #0x00
+                                     54 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 56: I2C->OARH = I2C_OARH_RESET_VALUE;
+      000010 35 00 52 14      [ 1]   55 	mov	0x5214+0, #0x00
+                                     56 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 57: I2C->ITR = I2C_ITR_RESET_VALUE;
+      000014 35 00 52 1A      [ 1]   57 	mov	0x521a+0, #0x00
+                                     58 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 58: I2C->CCRL = I2C_CCRL_RESET_VALUE;
+      000018 35 00 52 1B      [ 1]   59 	mov	0x521b+0, #0x00
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 59: I2C->CCRH = I2C_CCRH_RESET_VALUE;
+      00001C 35 00 52 1C      [ 1]   61 	mov	0x521c+0, #0x00
+                                     62 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_deinit.c: 60: I2C->TRISER = I2C_TRISER_RESET_VALUE;
+      000020 35 02 52 1D      [ 1]   63 	mov	0x521d+0, #0x02
+      000024 81               [ 4]   64 	ret
+                                     65 	.area CODE
+                                     66 	.area INITIALIZER
+                                     67 	.area CABS (ABS)

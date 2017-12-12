@@ -1,0 +1,92 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:11 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_wwdg_wwdg_init
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _WWDG_Init
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_wwdg.wwdg_init.c: 52: void WWDG_Init(uint8_t Counter, uint8_t WindowValue)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function WWDG_Init
+                                     45 ;	-----------------------------------------
+      000000                         46 _WWDG_Init:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_wwdg.wwdg_init.c: 55: assert_param(IS_WWDG_WINDOWLIMITVALUE_OK(WindowValue));
+      000000 7B 04            [ 1]   48 	ld	a, (0x04, sp)
+      000002 A1 7F            [ 1]   49 	cp	a, #0x7f
+      000004 23 11            [ 2]   50 	jrule	00104$
+      000006 90 AEr00r2E      [ 2]   51 	ldw	y, #___str_0+0
+      00000A 4B 37            [ 1]   52 	push	#0x37
+      00000C 5F               [ 1]   53 	clrw	x
+      00000D 89               [ 2]   54 	pushw	x
+      00000E 4B 00            [ 1]   55 	push	#0x00
+      000010 90 89            [ 2]   56 	pushw	y
+      000012 CDr00r00         [ 4]   57 	call	_assert_failed
+      000015 5B 06            [ 2]   58 	addw	sp, #6
+      000017                         59 00104$:
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_wwdg.wwdg_init.c: 57: WWDG->WR = WWDG_WR_RESET_VALUE;
+      000017 35 7F 50 D2      [ 1]   61 	mov	0x50d2+0, #0x7f
+                                     62 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_wwdg.wwdg_init.c: 58: WWDG->CR = (uint8_t)((uint8_t)(WWDG_CR_WDGA | WWDG_CR_T6) | (uint8_t)Counter);
+      00001B 7B 03            [ 1]   63 	ld	a, (0x03, sp)
+      00001D AA C0            [ 1]   64 	or	a, #0xc0
+      00001F AE 50 D1         [ 2]   65 	ldw	x, #0x50d1
+      000022 F7               [ 1]   66 	ld	(x), a
+                                     67 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_wwdg.wwdg_init.c: 59: WWDG->WR = (uint8_t)((uint8_t)(~WWDG_CR_WDGA) & (uint8_t)(WWDG_CR_T6 | WindowValue));
+      000023 7B 04            [ 1]   68 	ld	a, (0x04, sp)
+      000025 AA 40            [ 1]   69 	or	a, #0x40
+      000027 A4 7F            [ 1]   70 	and	a, #0x7f
+      000029 AE 50 D2         [ 2]   71 	ldw	x, #0x50d2
+      00002C F7               [ 1]   72 	ld	(x), a
+      00002D 81               [ 4]   73 	ret
+                                     74 	.area CODE
+      00002E                         75 ___str_0:
+      00002E 2F 68 6F 6D 65 2F 67    76 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00006A 65 72 2F 73 72 63 2F    77 	.ascii "er/src/stm8s_wwdg.wwdg_init.c"
+             73 74 6D 38 73 5F 77
+             77 64 67 2E 77 77 64
+             67 5F 69 6E 69 74 2E
+             63
+      000087 00                      78 	.db 0x00
+                                     79 	.area INITIALIZER
+                                     80 	.area CABS (ABS)

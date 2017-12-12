@@ -1,0 +1,235 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:12 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_adc1_adc1_schmitttriggerconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _ADC1_SchmittTriggerConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 55: void ADC1_SchmittTriggerConfig(ADC1_SchmittTrigg_TypeDef ADC1_SchmittTriggerChannel, FunctionalState NewState)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function ADC1_SchmittTriggerConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _ADC1_SchmittTriggerConfig:
+      000000 52 05            [ 2]   47 	sub	sp, #5
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 58: assert_param(IS_ADC1_SCHMITTTRIG_OK(ADC1_SchmittTriggerChannel));
+      000002 7B 08            [ 1]   49 	ld	a, (0x08, sp)
+      000004 A1 FF            [ 1]   50 	cp	a, #0xff
+      000006 26 06            [ 1]   51 	jrne	00235$
+      000008 A6 01            [ 1]   52 	ld	a, #0x01
+      00000A 6B 03            [ 1]   53 	ld	(0x03, sp), a
+      00000C 20 02            [ 2]   54 	jra	00236$
+      00000E                         55 00235$:
+      00000E 0F 03            [ 1]   56 	clr	(0x03, sp)
+      000010                         57 00236$:
+      000010 0D 08            [ 1]   58 	tnz	(0x08, sp)
+      000012 27 51            [ 1]   59 	jreq	00119$
+      000014 7B 08            [ 1]   60 	ld	a, (0x08, sp)
+      000016 A1 01            [ 1]   61 	cp	a, #0x01
+      000018 27 4B            [ 1]   62 	jreq	00119$
+      00001A 7B 08            [ 1]   63 	ld	a, (0x08, sp)
+      00001C A1 02            [ 1]   64 	cp	a, #0x02
+      00001E 27 45            [ 1]   65 	jreq	00119$
+      000020 7B 08            [ 1]   66 	ld	a, (0x08, sp)
+      000022 A1 03            [ 1]   67 	cp	a, #0x03
+      000024 27 3F            [ 1]   68 	jreq	00119$
+      000026 7B 08            [ 1]   69 	ld	a, (0x08, sp)
+      000028 A1 04            [ 1]   70 	cp	a, #0x04
+      00002A 27 39            [ 1]   71 	jreq	00119$
+      00002C 7B 08            [ 1]   72 	ld	a, (0x08, sp)
+      00002E A1 05            [ 1]   73 	cp	a, #0x05
+      000030 27 33            [ 1]   74 	jreq	00119$
+      000032 7B 08            [ 1]   75 	ld	a, (0x08, sp)
+      000034 A1 06            [ 1]   76 	cp	a, #0x06
+      000036 27 2D            [ 1]   77 	jreq	00119$
+      000038 7B 08            [ 1]   78 	ld	a, (0x08, sp)
+      00003A A1 07            [ 1]   79 	cp	a, #0x07
+      00003C 27 27            [ 1]   80 	jreq	00119$
+      00003E 7B 08            [ 1]   81 	ld	a, (0x08, sp)
+      000040 A1 08            [ 1]   82 	cp	a, #0x08
+      000042 27 21            [ 1]   83 	jreq	00119$
+      000044 7B 08            [ 1]   84 	ld	a, (0x08, sp)
+      000046 A1 0C            [ 1]   85 	cp	a, #0x0c
+      000048 27 1B            [ 1]   86 	jreq	00119$
+      00004A 0D 03            [ 1]   87 	tnz	(0x03, sp)
+      00004C 26 17            [ 1]   88 	jrne	00119$
+      00004E 7B 08            [ 1]   89 	ld	a, (0x08, sp)
+      000050 A1 09            [ 1]   90 	cp	a, #0x09
+      000052 27 11            [ 1]   91 	jreq	00119$
+      000054 90 AEr01r14      [ 2]   92 	ldw	y, #___str_0+0
+      000058 4B 3A            [ 1]   93 	push	#0x3a
+      00005A 5F               [ 1]   94 	clrw	x
+      00005B 89               [ 2]   95 	pushw	x
+      00005C 4B 00            [ 1]   96 	push	#0x00
+      00005E 90 89            [ 2]   97 	pushw	y
+      000060 CDr00r00         [ 4]   98 	call	_assert_failed
+      000063 5B 06            [ 2]   99 	addw	sp, #6
+      000065                        100 00119$:
+                                    101 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 59: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000065 0D 09            [ 1]  102 	tnz	(0x09, sp)
+      000067 27 17            [ 1]  103 	jreq	00154$
+      000069 7B 09            [ 1]  104 	ld	a, (0x09, sp)
+      00006B A1 01            [ 1]  105 	cp	a, #0x01
+      00006D 27 11            [ 1]  106 	jreq	00154$
+      00006F 90 AEr01r14      [ 2]  107 	ldw	y, #___str_0+0
+      000073 4B 3B            [ 1]  108 	push	#0x3b
+      000075 5F               [ 1]  109 	clrw	x
+      000076 89               [ 2]  110 	pushw	x
+      000077 4B 00            [ 1]  111 	push	#0x00
+      000079 90 89            [ 2]  112 	pushw	y
+      00007B CDr00r00         [ 4]  113 	call	_assert_failed
+      00007E 5B 06            [ 2]  114 	addw	sp, #6
+      000080                        115 00154$:
+                                    116 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 61: if (ADC1_SchmittTriggerChannel == ADC1_SCHMITTTRIG_ALL)
+      000080 0D 03            [ 1]  117 	tnz	(0x03, sp)
+      000082 27 28            [ 1]  118 	jreq	00114$
+                                    119 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 63: if (NewState != DISABLE)
+      000084 0D 09            [ 1]  120 	tnz	(0x09, sp)
+      000086 27 12            [ 1]  121 	jreq	00102$
+                                    122 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 65: ADC1->TDRL &= (uint8_t)0x0;
+      000088 AE 54 07         [ 2]  123 	ldw	x, #0x5407
+      00008B F6               [ 1]  124 	ld	a, (x)
+      00008C 35 00 54 07      [ 1]  125 	mov	0x5407+0, #0x00
+                                    126 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 66: ADC1->TDRH &= (uint8_t)0x0;
+      000090 AE 54 06         [ 2]  127 	ldw	x, #0x5406
+      000093 F6               [ 1]  128 	ld	a, (x)
+      000094 35 00 54 06      [ 1]  129 	mov	0x5406+0, #0x00
+      000098 20 77            [ 2]  130 	jra	00116$
+      00009A                        131 00102$:
+                                    132 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 70: ADC1->TDRL |= (uint8_t)0xFF;
+      00009A AE 54 07         [ 2]  133 	ldw	x, #0x5407
+      00009D F6               [ 1]  134 	ld	a, (x)
+      00009E 35 FF 54 07      [ 1]  135 	mov	0x5407+0, #0xff
+                                    136 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 71: ADC1->TDRH |= (uint8_t)0xFF;
+      0000A2 AE 54 06         [ 2]  137 	ldw	x, #0x5406
+      0000A5 F6               [ 1]  138 	ld	a, (x)
+      0000A6 35 FF 54 06      [ 1]  139 	mov	0x5406+0, #0xff
+      0000AA 20 65            [ 2]  140 	jra	00116$
+      0000AC                        141 00114$:
+                                    142 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 74: else if (ADC1_SchmittTriggerChannel < ADC1_SCHMITTTRIG_CHANNEL8)
+      0000AC 7B 08            [ 1]  143 	ld	a, (0x08, sp)
+      0000AE A1 08            [ 1]  144 	cp	a, #0x08
+      0000B0 24 2E            [ 1]  145 	jrnc	00111$
+                                    146 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 78: ADC1->TDRL &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel));
+      0000B2 A6 01            [ 1]  147 	ld	a, #0x01
+      0000B4 6B 05            [ 1]  148 	ld	(0x05, sp), a
+      0000B6 7B 08            [ 1]  149 	ld	a, (0x08, sp)
+      0000B8 27 05            [ 1]  150 	jreq	00277$
+      0000BA                        151 00276$:
+      0000BA 08 05            [ 1]  152 	sll	(0x05, sp)
+      0000BC 4A               [ 1]  153 	dec	a
+      0000BD 26 FB            [ 1]  154 	jrne	00276$
+      0000BF                        155 00277$:
+                                    156 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 76: if (NewState != DISABLE)
+      0000BF 0D 09            [ 1]  157 	tnz	(0x09, sp)
+      0000C1 27 11            [ 1]  158 	jreq	00105$
+                                    159 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 78: ADC1->TDRL &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel));
+      0000C3 AE 54 07         [ 2]  160 	ldw	x, #0x5407
+      0000C6 F6               [ 1]  161 	ld	a, (x)
+      0000C7 6B 04            [ 1]  162 	ld	(0x04, sp), a
+      0000C9 7B 05            [ 1]  163 	ld	a, (0x05, sp)
+      0000CB 43               [ 1]  164 	cpl	a
+      0000CC 14 04            [ 1]  165 	and	a, (0x04, sp)
+      0000CE AE 54 07         [ 2]  166 	ldw	x, #0x5407
+      0000D1 F7               [ 1]  167 	ld	(x), a
+      0000D2 20 3D            [ 2]  168 	jra	00116$
+      0000D4                        169 00105$:
+                                    170 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 82: ADC1->TDRL |= (uint8_t)((uint8_t)0x01 << (uint8_t)ADC1_SchmittTriggerChannel);
+      0000D4 AE 54 07         [ 2]  171 	ldw	x, #0x5407
+      0000D7 F6               [ 1]  172 	ld	a, (x)
+      0000D8 1A 05            [ 1]  173 	or	a, (0x05, sp)
+      0000DA AE 54 07         [ 2]  174 	ldw	x, #0x5407
+      0000DD F7               [ 1]  175 	ld	(x), a
+      0000DE 20 31            [ 2]  176 	jra	00116$
+      0000E0                        177 00111$:
+                                    178 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 89: ADC1->TDRH &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8)));
+      0000E0 7B 08            [ 1]  179 	ld	a, (0x08, sp)
+      0000E2 A0 08            [ 1]  180 	sub	a, #0x08
+      0000E4 95               [ 1]  181 	ld	xh, a
+      0000E5 A6 01            [ 1]  182 	ld	a, #0x01
+      0000E7 6B 02            [ 1]  183 	ld	(0x02, sp), a
+      0000E9 9E               [ 1]  184 	ld	a, xh
+      0000EA 4D               [ 1]  185 	tnz	a
+      0000EB 27 05            [ 1]  186 	jreq	00280$
+      0000ED                        187 00279$:
+      0000ED 08 02            [ 1]  188 	sll	(0x02, sp)
+      0000EF 4A               [ 1]  189 	dec	a
+      0000F0 26 FB            [ 1]  190 	jrne	00279$
+      0000F2                        191 00280$:
+                                    192 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 87: if (NewState != DISABLE)
+      0000F2 0D 09            [ 1]  193 	tnz	(0x09, sp)
+      0000F4 27 11            [ 1]  194 	jreq	00108$
+                                    195 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 89: ADC1->TDRH &= (uint8_t)(~(uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8)));
+      0000F6 AE 54 06         [ 2]  196 	ldw	x, #0x5406
+      0000F9 F6               [ 1]  197 	ld	a, (x)
+      0000FA 6B 01            [ 1]  198 	ld	(0x01, sp), a
+      0000FC 7B 02            [ 1]  199 	ld	a, (0x02, sp)
+      0000FE 43               [ 1]  200 	cpl	a
+      0000FF 14 01            [ 1]  201 	and	a, (0x01, sp)
+      000101 AE 54 06         [ 2]  202 	ldw	x, #0x5406
+      000104 F7               [ 1]  203 	ld	(x), a
+      000105 20 0A            [ 2]  204 	jra	00116$
+      000107                        205 00108$:
+                                    206 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_schmitttriggerconfig.c: 93: ADC1->TDRH |= (uint8_t)((uint8_t)0x01 << ((uint8_t)ADC1_SchmittTriggerChannel - (uint8_t)8));
+      000107 AE 54 06         [ 2]  207 	ldw	x, #0x5406
+      00010A F6               [ 1]  208 	ld	a, (x)
+      00010B 1A 02            [ 1]  209 	or	a, (0x02, sp)
+      00010D AE 54 06         [ 2]  210 	ldw	x, #0x5406
+      000110 F7               [ 1]  211 	ld	(x), a
+      000111                        212 00116$:
+      000111 5B 05            [ 2]  213 	addw	sp, #5
+      000113 81               [ 4]  214 	ret
+                                    215 	.area CODE
+      000114                        216 ___str_0:
+      000114 2F 68 6F 6D 65 2F 67   217 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      000150 65 72 2F 73 72 63 2F   218 	.ascii "er/src/stm8s_adc1.adc1_schmitttriggerconfig.c"
+             73 74 6D 38 73 5F 61
+             64 63 31 2E 61 64 63
+             31 5F 73 63 68 6D 69
+             74 74 74 72 69 67 67
+             65 72 63 6F 6E 66 69
+             67 2E 63
+      00017D 00                     219 	.db 0x00
+                                    220 	.area INITIALIZER
+                                    221 	.area CABS (ABS)

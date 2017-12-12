@@ -1,0 +1,106 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:17 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_uart1_uart1_clearflag
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _UART1_ClearFlag
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_clearflag.c: 74: void UART1_ClearFlag(UART1_Flag_TypeDef UART1_FLAG)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function UART1_ClearFlag
+                                     45 ;	-----------------------------------------
+      000000                         46 _UART1_ClearFlag:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_clearflag.c: 76: assert_param(IS_UART1_CLEAR_FLAG_OK(UART1_FLAG));
+      000001 1E 04            [ 2]   49 	ldw	x, (0x04, sp)
+      000003 A3 00 20         [ 2]   50 	cpw	x, #0x0020
+      000006 26 06            [ 1]   51 	jrne	00124$
+      000008 A6 01            [ 1]   52 	ld	a, #0x01
+      00000A 6B 01            [ 1]   53 	ld	(0x01, sp), a
+      00000C 20 02            [ 2]   54 	jra	00125$
+      00000E                         55 00124$:
+      00000E 0F 01            [ 1]   56 	clr	(0x01, sp)
+      000010                         57 00125$:
+      000010 0D 01            [ 1]   58 	tnz	(0x01, sp)
+      000012 26 18            [ 1]   59 	jrne	00107$
+      000014 1E 04            [ 2]   60 	ldw	x, (0x04, sp)
+      000016 A3 02 10         [ 2]   61 	cpw	x, #0x0210
+      000019 27 11            [ 1]   62 	jreq	00107$
+      00001B 90 AEr00r3F      [ 2]   63 	ldw	y, #___str_0+0
+      00001F 4B 4C            [ 1]   64 	push	#0x4c
+      000021 5F               [ 1]   65 	clrw	x
+      000022 89               [ 2]   66 	pushw	x
+      000023 4B 00            [ 1]   67 	push	#0x00
+      000025 90 89            [ 2]   68 	pushw	y
+      000027 CDr00r00         [ 4]   69 	call	_assert_failed
+      00002A 5B 06            [ 2]   70 	addw	sp, #6
+      00002C                         71 00107$:
+                                     72 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_clearflag.c: 79: if (UART1_FLAG == UART1_FLAG_RXNE)
+      00002C 0D 01            [ 1]   73 	tnz	(0x01, sp)
+      00002E 27 06            [ 1]   74 	jreq	00102$
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_clearflag.c: 81: UART1->SR = (uint8_t)~(UART1_SR_RXNE);
+      000030 35 DF 52 30      [ 1]   76 	mov	0x5230+0, #0xdf
+      000034 20 07            [ 2]   77 	jra	00104$
+      000036                         78 00102$:
+                                     79 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_clearflag.c: 86: UART1->CR4 &= (uint8_t)~(UART1_CR4_LBDF);
+      000036 AE 52 37         [ 2]   80 	ldw	x, #0x5237
+      000039 F6               [ 1]   81 	ld	a, (x)
+      00003A A4 EF            [ 1]   82 	and	a, #0xef
+      00003C F7               [ 1]   83 	ld	(x), a
+      00003D                         84 00104$:
+      00003D 84               [ 1]   85 	pop	a
+      00003E 81               [ 4]   86 	ret
+                                     87 	.area CODE
+      00003F                         88 ___str_0:
+      00003F 2F 68 6F 6D 65 2F 67    89 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00007B 65 72 2F 73 72 63 2F    90 	.ascii "er/src/stm8s_uart1.uart1_clearflag.c"
+             73 74 6D 38 73 5F 75
+             61 72 74 31 2E 75 61
+             72 74 31 5F 63 6C 65
+             61 72 66 6C 61 67 2E
+             63
+      00009F 00                      91 	.db 0x00
+                                     92 	.area INITIALIZER
+                                     93 	.area CABS (ABS)

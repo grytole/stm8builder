@@ -1,0 +1,189 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:13 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_adc1_adc1_clearitpendingbit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _ADC1_ClearITPendingBit
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 65: void ADC1_ClearITPendingBit(ADC1_IT_TypeDef ITPendingBit)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function ADC1_ClearITPendingBit
+                                     45 ;	-----------------------------------------
+      000000                         46 _ADC1_ClearITPendingBit:
+      000000 89               [ 2]   47 	pushw	x
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 70: assert_param(IS_ADC1_ITPENDINGBIT_OK(ITPendingBit));
+      000001 1E 05            [ 2]   49 	ldw	x, (0x05, sp)
+      000003 A3 00 80         [ 2]   50 	cpw	x, #0x0080
+      000006 27 65            [ 1]   51 	jreq	00110$
+      000008 1E 05            [ 2]   52 	ldw	x, (0x05, sp)
+      00000A A3 01 40         [ 2]   53 	cpw	x, #0x0140
+      00000D 27 5E            [ 1]   54 	jreq	00110$
+      00000F 1E 05            [ 2]   55 	ldw	x, (0x05, sp)
+      000011 A3 01 10         [ 2]   56 	cpw	x, #0x0110
+      000014 27 57            [ 1]   57 	jreq	00110$
+      000016 1E 05            [ 2]   58 	ldw	x, (0x05, sp)
+      000018 A3 01 11         [ 2]   59 	cpw	x, #0x0111
+      00001B 27 50            [ 1]   60 	jreq	00110$
+      00001D 1E 05            [ 2]   61 	ldw	x, (0x05, sp)
+      00001F A3 01 12         [ 2]   62 	cpw	x, #0x0112
+      000022 27 49            [ 1]   63 	jreq	00110$
+      000024 1E 05            [ 2]   64 	ldw	x, (0x05, sp)
+      000026 A3 01 13         [ 2]   65 	cpw	x, #0x0113
+      000029 27 42            [ 1]   66 	jreq	00110$
+      00002B 1E 05            [ 2]   67 	ldw	x, (0x05, sp)
+      00002D A3 01 14         [ 2]   68 	cpw	x, #0x0114
+      000030 27 3B            [ 1]   69 	jreq	00110$
+      000032 1E 05            [ 2]   70 	ldw	x, (0x05, sp)
+      000034 A3 01 15         [ 2]   71 	cpw	x, #0x0115
+      000037 27 34            [ 1]   72 	jreq	00110$
+      000039 1E 05            [ 2]   73 	ldw	x, (0x05, sp)
+      00003B A3 01 16         [ 2]   74 	cpw	x, #0x0116
+      00003E 27 2D            [ 1]   75 	jreq	00110$
+      000040 1E 05            [ 2]   76 	ldw	x, (0x05, sp)
+      000042 A3 01 17         [ 2]   77 	cpw	x, #0x0117
+      000045 27 26            [ 1]   78 	jreq	00110$
+      000047 1E 05            [ 2]   79 	ldw	x, (0x05, sp)
+      000049 A3 01 18         [ 2]   80 	cpw	x, #0x0118
+      00004C 27 1F            [ 1]   81 	jreq	00110$
+      00004E 1E 05            [ 2]   82 	ldw	x, (0x05, sp)
+      000050 A3 01 1C         [ 2]   83 	cpw	x, #0x011c
+      000053 27 18            [ 1]   84 	jreq	00110$
+      000055 1E 05            [ 2]   85 	ldw	x, (0x05, sp)
+      000057 A3 01 19         [ 2]   86 	cpw	x, #0x0119
+      00005A 27 11            [ 1]   87 	jreq	00110$
+      00005C 90 AEr00rD4      [ 2]   88 	ldw	y, #___str_0+0
+      000060 4B 46            [ 1]   89 	push	#0x46
+      000062 5F               [ 1]   90 	clrw	x
+      000063 89               [ 2]   91 	pushw	x
+      000064 4B 00            [ 1]   92 	push	#0x00
+      000066 90 89            [ 2]   93 	pushw	y
+      000068 CDr00r00         [ 4]   94 	call	_assert_failed
+      00006B 5B 06            [ 2]   95 	addw	sp, #6
+      00006D                         96 00110$:
+                                     97 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 72: if (((uint16_t)ITPendingBit & 0xF0) == 0x10)
+      00006D 7B 06            [ 1]   98 	ld	a, (0x06, sp)
+      00006F A4 F0            [ 1]   99 	and	a, #0xf0
+      000071 97               [ 1]  100 	ld	xl, a
+      000072 4F               [ 1]  101 	clr	a
+      000073 95               [ 1]  102 	ld	xh, a
+      000074 A3 00 10         [ 2]  103 	cpw	x, #0x0010
+      000077 26 4A            [ 1]  104 	jrne	00105$
+                                    105 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 75: temp = (uint8_t)((uint16_t)ITPendingBit & 0x0F);
+      000079 7B 06            [ 1]  106 	ld	a, (0x06, sp)
+      00007B A4 0F            [ 1]  107 	and	a, #0x0f
+      00007D 95               [ 1]  108 	ld	xh, a
+      00007E 4F               [ 1]  109 	clr	a
+                                    110 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 76: if (temp < 8)
+      00007F 9E               [ 1]  111 	ld	a, xh
+      000080 A1 08            [ 1]  112 	cp	a, #0x08
+      000082 24 1E            [ 1]  113 	jrnc	00102$
+                                    114 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 78: ADC1->AWSRL &= (uint8_t)~(uint8_t)((uint8_t)1 << temp);
+      000084 90 AE 54 0D      [ 2]  115 	ldw	y, #0x540d
+      000088 90 F6            [ 1]  116 	ld	a, (y)
+      00008A 6B 01            [ 1]  117 	ld	(0x01, sp), a
+      00008C A6 01            [ 1]  118 	ld	a, #0x01
+      00008E 88               [ 1]  119 	push	a
+      00008F 9E               [ 1]  120 	ld	a, xh
+      000090 4D               [ 1]  121 	tnz	a
+      000091 27 05            [ 1]  122 	jreq	00251$
+      000093                        123 00250$:
+      000093 08 01            [ 1]  124 	sll	(1, sp)
+      000095 4A               [ 1]  125 	dec	a
+      000096 26 FB            [ 1]  126 	jrne	00250$
+      000098                        127 00251$:
+      000098 84               [ 1]  128 	pop	a
+      000099 43               [ 1]  129 	cpl	a
+      00009A 14 01            [ 1]  130 	and	a, (0x01, sp)
+      00009C AE 54 0D         [ 2]  131 	ldw	x, #0x540d
+      00009F F7               [ 1]  132 	ld	(x), a
+      0000A0 20 30            [ 2]  133 	jra	00107$
+      0000A2                        134 00102$:
+                                    135 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 82: ADC1->AWSRH &= (uint8_t)~(uint8_t)((uint8_t)1 << (temp - 8));
+      0000A2 90 AE 54 0C      [ 2]  136 	ldw	y, #0x540c
+      0000A6 90 F6            [ 1]  137 	ld	a, (y)
+      0000A8 6B 02            [ 1]  138 	ld	(0x02, sp), a
+      0000AA 1D 08 00         [ 2]  139 	subw	x, #2048
+      0000AD A6 01            [ 1]  140 	ld	a, #0x01
+      0000AF 88               [ 1]  141 	push	a
+      0000B0 9E               [ 1]  142 	ld	a, xh
+      0000B1 4D               [ 1]  143 	tnz	a
+      0000B2 27 05            [ 1]  144 	jreq	00253$
+      0000B4                        145 00252$:
+      0000B4 08 01            [ 1]  146 	sll	(1, sp)
+      0000B6 4A               [ 1]  147 	dec	a
+      0000B7 26 FB            [ 1]  148 	jrne	00252$
+      0000B9                        149 00253$:
+      0000B9 84               [ 1]  150 	pop	a
+      0000BA 43               [ 1]  151 	cpl	a
+      0000BB 14 02            [ 1]  152 	and	a, (0x02, sp)
+      0000BD AE 54 0C         [ 2]  153 	ldw	x, #0x540c
+      0000C0 F7               [ 1]  154 	ld	(x), a
+      0000C1 20 0F            [ 2]  155 	jra	00107$
+      0000C3                        156 00105$:
+                                    157 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_clearitpendingbit.c: 87: ADC1->CSR &= (uint8_t)((uint16_t)~(uint16_t)ITPendingBit);
+      0000C3 AE 54 00         [ 2]  158 	ldw	x, #0x5400
+      0000C6 F6               [ 1]  159 	ld	a, (x)
+      0000C7 1E 05            [ 2]  160 	ldw	x, (0x05, sp)
+      0000C9 53               [ 2]  161 	cplw	x
+      0000CA 89               [ 2]  162 	pushw	x
+      0000CB 14 02            [ 1]  163 	and	a, (2, sp)
+      0000CD 85               [ 2]  164 	popw	x
+      0000CE AE 54 00         [ 2]  165 	ldw	x, #0x5400
+      0000D1 F7               [ 1]  166 	ld	(x), a
+      0000D2                        167 00107$:
+      0000D2 85               [ 2]  168 	popw	x
+      0000D3 81               [ 4]  169 	ret
+                                    170 	.area CODE
+      0000D4                        171 ___str_0:
+      0000D4 2F 68 6F 6D 65 2F 67   172 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      000110 65 72 2F 73 72 63 2F   173 	.ascii "er/src/stm8s_adc1.adc1_clearitpendingbit.c"
+             73 74 6D 38 73 5F 61
+             64 63 31 2E 61 64 63
+             31 5F 63 6C 65 61 72
+             69 74 70 65 6E 64 69
+             6E 67 62 69 74 2E 63
+      00013A 00                     174 	.db 0x00
+                                    175 	.area INITIALIZER
+                                    176 	.area CABS (ABS)

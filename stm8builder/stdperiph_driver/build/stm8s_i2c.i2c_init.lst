@@ -1,0 +1,364 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:02 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_i2c_i2c_init
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _I2C_AcknowledgeConfig
+                                     13 	.globl _assert_failed
+                                     14 	.globl _I2C_Init
+                                     15 ;--------------------------------------------------------
+                                     16 ; ram data
+                                     17 ;--------------------------------------------------------
+                                     18 	.area DATA
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area INITIALIZED
+                                     23 ;--------------------------------------------------------
+                                     24 ; absolute external ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area DABS (ABS)
+                                     27 ;--------------------------------------------------------
+                                     28 ; global & static initialisations
+                                     29 ;--------------------------------------------------------
+                                     30 	.area HOME
+                                     31 	.area GSINIT
+                                     32 	.area GSFINAL
+                                     33 	.area GSINIT
+                                     34 ;--------------------------------------------------------
+                                     35 ; Home
+                                     36 ;--------------------------------------------------------
+                                     37 	.area HOME
+                                     38 	.area HOME
+                                     39 ;--------------------------------------------------------
+                                     40 ; code
+                                     41 ;--------------------------------------------------------
+                                     42 	.area CODE
+                                     43 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 61: void I2C_Init(uint32_t OutputClockFrequencyHz, uint16_t OwnAddress, 
+                                     44 ;	-----------------------------------------
+                                     45 ;	 function I2C_Init
+                                     46 ;	-----------------------------------------
+      000000                         47 _I2C_Init:
+      000000 52 0A            [ 2]   48 	sub	sp, #10
+                                     49 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 67: uint8_t tmpccrh = 0;
+      000002 0F 01            [ 1]   50 	clr	(0x01, sp)
+                                     51 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 70: assert_param(IS_I2C_ACK_OK(Ack));
+      000004 0D 14            [ 1]   52 	tnz	(0x14, sp)
+      000006 27 1D            [ 1]   53 	jreq	00114$
+      000008 7B 14            [ 1]   54 	ld	a, (0x14, sp)
+      00000A A1 01            [ 1]   55 	cp	a, #0x01
+      00000C 27 17            [ 1]   56 	jreq	00114$
+      00000E 7B 14            [ 1]   57 	ld	a, (0x14, sp)
+      000010 A1 02            [ 1]   58 	cp	a, #0x02
+      000012 27 11            [ 1]   59 	jreq	00114$
+      000014 90 AEr01rE8      [ 2]   60 	ldw	y, #___str_0+0
+      000018 4B 46            [ 1]   61 	push	#0x46
+      00001A 5F               [ 1]   62 	clrw	x
+      00001B 89               [ 2]   63 	pushw	x
+      00001C 4B 00            [ 1]   64 	push	#0x00
+      00001E 90 89            [ 2]   65 	pushw	y
+      000020 CDr00r00         [ 4]   66 	call	_assert_failed
+      000023 5B 06            [ 2]   67 	addw	sp, #6
+      000025                         68 00114$:
+                                     69 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 71: assert_param(IS_I2C_ADDMODE_OK(AddMode));
+      000025 0D 15            [ 1]   70 	tnz	(0x15, sp)
+      000027 27 17            [ 1]   71 	jreq	00122$
+      000029 7B 15            [ 1]   72 	ld	a, (0x15, sp)
+      00002B A1 80            [ 1]   73 	cp	a, #0x80
+      00002D 27 11            [ 1]   74 	jreq	00122$
+      00002F 90 AEr01rE8      [ 2]   75 	ldw	y, #___str_0+0
+      000033 4B 47            [ 1]   76 	push	#0x47
+      000035 5F               [ 1]   77 	clrw	x
+      000036 89               [ 2]   78 	pushw	x
+      000037 4B 00            [ 1]   79 	push	#0x00
+      000039 90 89            [ 2]   80 	pushw	y
+      00003B CDr00r00         [ 4]   81 	call	_assert_failed
+      00003E 5B 06            [ 2]   82 	addw	sp, #6
+      000040                         83 00122$:
+                                     84 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 72: assert_param(IS_I2C_OWN_ADDRESS_OK(OwnAddress));
+      000040 1E 11            [ 2]   85 	ldw	x, (0x11, sp)
+      000042 A3 03 FF         [ 2]   86 	cpw	x, #0x03ff
+      000045 23 11            [ 2]   87 	jrule	00127$
+      000047 90 AEr01rE8      [ 2]   88 	ldw	y, #___str_0+0
+      00004B 4B 48            [ 1]   89 	push	#0x48
+      00004D 5F               [ 1]   90 	clrw	x
+      00004E 89               [ 2]   91 	pushw	x
+      00004F 4B 00            [ 1]   92 	push	#0x00
+      000051 90 89            [ 2]   93 	pushw	y
+      000053 CDr00r00         [ 4]   94 	call	_assert_failed
+      000056 5B 06            [ 2]   95 	addw	sp, #6
+      000058                         96 00127$:
+                                     97 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 73: assert_param(IS_I2C_DUTYCYCLE_OK(I2C_DutyCycle));  
+      000058 0D 13            [ 1]   98 	tnz	(0x13, sp)
+      00005A 27 17            [ 1]   99 	jreq	00129$
+      00005C 7B 13            [ 1]  100 	ld	a, (0x13, sp)
+      00005E A1 40            [ 1]  101 	cp	a, #0x40
+      000060 27 11            [ 1]  102 	jreq	00129$
+      000062 90 AEr01rE8      [ 2]  103 	ldw	y, #___str_0+0
+      000066 4B 49            [ 1]  104 	push	#0x49
+      000068 5F               [ 1]  105 	clrw	x
+      000069 89               [ 2]  106 	pushw	x
+      00006A 4B 00            [ 1]  107 	push	#0x00
+      00006C 90 89            [ 2]  108 	pushw	y
+      00006E CDr00r00         [ 4]  109 	call	_assert_failed
+      000071 5B 06            [ 2]  110 	addw	sp, #6
+      000073                        111 00129$:
+                                    112 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 74: assert_param(IS_I2C_INPUT_CLOCK_FREQ_OK(InputClockFrequencyMHz));
+      000073 7B 16            [ 1]  113 	ld	a, (0x16, sp)
+      000075 A1 01            [ 1]  114 	cp	a, #0x01
+      000077 25 06            [ 1]  115 	jrc	00133$
+      000079 7B 16            [ 1]  116 	ld	a, (0x16, sp)
+      00007B A1 10            [ 1]  117 	cp	a, #0x10
+      00007D 23 11            [ 2]  118 	jrule	00134$
+      00007F                        119 00133$:
+      00007F 90 AEr01rE8      [ 2]  120 	ldw	y, #___str_0+0
+      000083 4B 4A            [ 1]  121 	push	#0x4a
+      000085 5F               [ 1]  122 	clrw	x
+      000086 89               [ 2]  123 	pushw	x
+      000087 4B 00            [ 1]  124 	push	#0x00
+      000089 90 89            [ 2]  125 	pushw	y
+      00008B CDr00r00         [ 4]  126 	call	_assert_failed
+      00008E 5B 06            [ 2]  127 	addw	sp, #6
+      000090                        128 00134$:
+                                    129 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 75: assert_param(IS_I2C_OUTPUT_CLOCK_FREQ_OK(OutputClockFrequencyHz));
+      000090 1E 0F            [ 2]  130 	ldw	x, (0x0f, sp)
+      000092 A3 00 01         [ 2]  131 	cpw	x, #0x0001
+      000095 7B 0E            [ 1]  132 	ld	a, (0x0e, sp)
+      000097 A2 00            [ 1]  133 	sbc	a, #0x00
+      000099 7B 0D            [ 1]  134 	ld	a, (0x0d, sp)
+      00009B A2 00            [ 1]  135 	sbc	a, #0x00
+      00009D 25 0E            [ 1]  136 	jrc	00138$
+      00009F AE 1A 80         [ 2]  137 	ldw	x, #0x1a80
+      0000A2 13 0F            [ 2]  138 	cpw	x, (0x0f, sp)
+      0000A4 A6 06            [ 1]  139 	ld	a, #0x06
+      0000A6 12 0E            [ 1]  140 	sbc	a, (0x0e, sp)
+      0000A8 4F               [ 1]  141 	clr	a
+      0000A9 12 0D            [ 1]  142 	sbc	a, (0x0d, sp)
+      0000AB 24 11            [ 1]  143 	jrnc	00139$
+      0000AD                        144 00138$:
+      0000AD 90 AEr01rE8      [ 2]  145 	ldw	y, #___str_0+0
+      0000B1 4B 4B            [ 1]  146 	push	#0x4b
+      0000B3 5F               [ 1]  147 	clrw	x
+      0000B4 89               [ 2]  148 	pushw	x
+      0000B5 4B 00            [ 1]  149 	push	#0x00
+      0000B7 90 89            [ 2]  150 	pushw	y
+      0000B9 CDr00r00         [ 4]  151 	call	_assert_failed
+      0000BC 5B 06            [ 2]  152 	addw	sp, #6
+      0000BE                        153 00139$:
+                                    154 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 80: I2C->FREQR &= (uint8_t)(~I2C_FREQR_FREQ);
+      0000BE AE 52 12         [ 2]  155 	ldw	x, #0x5212
+      0000C1 F6               [ 1]  156 	ld	a, (x)
+      0000C2 A4 C0            [ 1]  157 	and	a, #0xc0
+      0000C4 F7               [ 1]  158 	ld	(x), a
+                                    159 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 82: I2C->FREQR |= InputClockFrequencyMHz;
+      0000C5 AE 52 12         [ 2]  160 	ldw	x, #0x5212
+      0000C8 F6               [ 1]  161 	ld	a, (x)
+      0000C9 1A 16            [ 1]  162 	or	a, (0x16, sp)
+      0000CB AE 52 12         [ 2]  163 	ldw	x, #0x5212
+      0000CE F7               [ 1]  164 	ld	(x), a
+                                    165 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 86: I2C->CR1 &= (uint8_t)(~I2C_CR1_PE);
+      0000CF 72 11 52 10      [ 1]  166 	bres	0x5210, #0
+                                    167 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 89: I2C->CCRH &= (uint8_t)(~(I2C_CCRH_FS | I2C_CCRH_DUTY | I2C_CCRH_CCR));
+      0000D3 AE 52 1C         [ 2]  168 	ldw	x, #0x521c
+      0000D6 F6               [ 1]  169 	ld	a, (x)
+      0000D7 A4 30            [ 1]  170 	and	a, #0x30
+      0000D9 F7               [ 1]  171 	ld	(x), a
+                                    172 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 90: I2C->CCRL &= (uint8_t)(~I2C_CCRL_CCR);
+      0000DA AE 52 1B         [ 2]  173 	ldw	x, #0x521b
+      0000DD F6               [ 1]  174 	ld	a, (x)
+      0000DE 35 00 52 1B      [ 1]  175 	mov	0x521b+0, #0x00
+                                    176 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 101: result = (uint16_t) ((InputClockFrequencyMHz * 1000000) / (OutputClockFrequencyHz * 3));
+      0000E2 5F               [ 1]  177 	clrw	x
+      0000E3 7B 16            [ 1]  178 	ld	a, (0x16, sp)
+      0000E5 97               [ 1]  179 	ld	xl, a
+      0000E6 90 5F            [ 1]  180 	clrw	y
+      0000E8 89               [ 2]  181 	pushw	x
+      0000E9 90 89            [ 2]  182 	pushw	y
+      0000EB 4B 40            [ 1]  183 	push	#0x40
+      0000ED 4B 42            [ 1]  184 	push	#0x42
+      0000EF 4B 0F            [ 1]  185 	push	#0x0f
+      0000F1 4B 00            [ 1]  186 	push	#0x00
+      0000F3 CDr00r00         [ 4]  187 	call	__mullong
+      0000F6 5B 08            [ 2]  188 	addw	sp, #8
+      0000F8 1F 06            [ 2]  189 	ldw	(0x06, sp), x
+      0000FA 17 04            [ 2]  190 	ldw	(0x04, sp), y
+                                    191 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 93: if (OutputClockFrequencyHz > I2C_MAX_STANDARD_FREQ) /* FAST MODE */
+      0000FC AE 86 A0         [ 2]  192 	ldw	x, #0x86a0
+      0000FF 13 0F            [ 2]  193 	cpw	x, (0x0f, sp)
+      000101 A6 01            [ 1]  194 	ld	a, #0x01
+      000103 12 0E            [ 1]  195 	sbc	a, (0x0e, sp)
+      000105 4F               [ 1]  196 	clr	a
+      000106 12 0D            [ 1]  197 	sbc	a, (0x0d, sp)
+      000108 24 77            [ 1]  198 	jrnc	00109$
+                                    199 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 96: tmpccrh = I2C_CCRH_FS;
+      00010A A6 80            [ 1]  200 	ld	a, #0x80
+      00010C 6B 01            [ 1]  201 	ld	(0x01, sp), a
+                                    202 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 98: if (I2C_DutyCycle == I2C_DUTYCYCLE_2)
+      00010E 0D 13            [ 1]  203 	tnz	(0x13, sp)
+      000110 26 23            [ 1]  204 	jrne	00102$
+                                    205 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 101: result = (uint16_t) ((InputClockFrequencyMHz * 1000000) / (OutputClockFrequencyHz * 3));
+      000112 1E 0F            [ 2]  206 	ldw	x, (0x0f, sp)
+      000114 89               [ 2]  207 	pushw	x
+      000115 1E 0F            [ 2]  208 	ldw	x, (0x0f, sp)
+      000117 89               [ 2]  209 	pushw	x
+      000118 4B 03            [ 1]  210 	push	#0x03
+      00011A 5F               [ 1]  211 	clrw	x
+      00011B 89               [ 2]  212 	pushw	x
+      00011C 4B 00            [ 1]  213 	push	#0x00
+      00011E CDr00r00         [ 4]  214 	call	__mullong
+      000121 5B 08            [ 2]  215 	addw	sp, #8
+      000123 89               [ 2]  216 	pushw	x
+      000124 90 89            [ 2]  217 	pushw	y
+      000126 1E 0A            [ 2]  218 	ldw	x, (0x0a, sp)
+      000128 89               [ 2]  219 	pushw	x
+      000129 1E 0A            [ 2]  220 	ldw	x, (0x0a, sp)
+      00012B 89               [ 2]  221 	pushw	x
+      00012C CDr00r00         [ 4]  222 	call	__divulong
+      00012F 5B 08            [ 2]  223 	addw	sp, #8
+      000131 1F 02            [ 2]  224 	ldw	(0x02, sp), x
+      000133 20 28            [ 2]  225 	jra	00103$
+      000135                        226 00102$:
+                                    227 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 106: result = (uint16_t) ((InputClockFrequencyMHz * 1000000) / (OutputClockFrequencyHz * 25));
+      000135 1E 0F            [ 2]  228 	ldw	x, (0x0f, sp)
+      000137 89               [ 2]  229 	pushw	x
+      000138 1E 0F            [ 2]  230 	ldw	x, (0x0f, sp)
+      00013A 89               [ 2]  231 	pushw	x
+      00013B 4B 19            [ 1]  232 	push	#0x19
+      00013D 5F               [ 1]  233 	clrw	x
+      00013E 89               [ 2]  234 	pushw	x
+      00013F 4B 00            [ 1]  235 	push	#0x00
+      000141 CDr00r00         [ 4]  236 	call	__mullong
+      000144 5B 08            [ 2]  237 	addw	sp, #8
+      000146 9F               [ 1]  238 	ld	a, xl
+      000147 88               [ 1]  239 	push	a
+      000148 9E               [ 1]  240 	ld	a, xh
+      000149 88               [ 1]  241 	push	a
+      00014A 90 89            [ 2]  242 	pushw	y
+      00014C 1E 0A            [ 2]  243 	ldw	x, (0x0a, sp)
+      00014E 89               [ 2]  244 	pushw	x
+      00014F 1E 0A            [ 2]  245 	ldw	x, (0x0a, sp)
+      000151 89               [ 2]  246 	pushw	x
+      000152 CDr00r00         [ 4]  247 	call	__divulong
+      000155 5B 08            [ 2]  248 	addw	sp, #8
+      000157 1F 02            [ 2]  249 	ldw	(0x02, sp), x
+                                    250 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 108: tmpccrh |= I2C_CCRH_DUTY;
+      000159 A6 C0            [ 1]  251 	ld	a, #0xc0
+      00015B 6B 01            [ 1]  252 	ld	(0x01, sp), a
+      00015D                        253 00103$:
+                                    254 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 112: if (result < (uint16_t)0x01)
+      00015D 1E 02            [ 2]  255 	ldw	x, (0x02, sp)
+      00015F A3 00 01         [ 2]  256 	cpw	x, #0x0001
+      000162 24 05            [ 1]  257 	jrnc	00105$
+                                    258 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 115: result = (uint16_t)0x0001;
+      000164 AE 00 01         [ 2]  259 	ldw	x, #0x0001
+      000167 1F 02            [ 2]  260 	ldw	(0x02, sp), x
+      000169                        261 00105$:
+                                    262 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 121: tmpval = ((InputClockFrequencyMHz * 3) / 10) + 1;
+      000169 7B 16            [ 1]  263 	ld	a, (0x16, sp)
+      00016B 97               [ 1]  264 	ld	xl, a
+      00016C A6 03            [ 1]  265 	ld	a, #0x03
+      00016E 42               [ 4]  266 	mul	x, a
+      00016F 4B 0A            [ 1]  267 	push	#0x0a
+      000171 4B 00            [ 1]  268 	push	#0x00
+      000173 89               [ 2]  269 	pushw	x
+      000174 CDr00r00         [ 4]  270 	call	__divsint
+      000177 5B 04            [ 2]  271 	addw	sp, #4
+      000179 5C               [ 2]  272 	incw	x
+      00017A 9F               [ 1]  273 	ld	a, xl
+                                    274 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 122: I2C->TRISER = (uint8_t)tmpval;
+      00017B AE 52 1D         [ 2]  275 	ldw	x, #0x521d
+      00017E F7               [ 1]  276 	ld	(x), a
+      00017F 20 2A            [ 2]  277 	jra	00110$
+      000181                        278 00109$:
+                                    279 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 129: result = (uint16_t)((InputClockFrequencyMHz * 1000000) / (OutputClockFrequencyHz << (uint8_t)1));
+      000181 16 0F            [ 2]  280 	ldw	y, (0x0f, sp)
+      000183 1E 0D            [ 2]  281 	ldw	x, (0x0d, sp)
+      000185 90 58            [ 2]  282 	sllw	y
+      000187 59               [ 2]  283 	rlcw	x
+      000188 90 89            [ 2]  284 	pushw	y
+      00018A 89               [ 2]  285 	pushw	x
+      00018B 1E 0A            [ 2]  286 	ldw	x, (0x0a, sp)
+      00018D 89               [ 2]  287 	pushw	x
+      00018E 1E 0A            [ 2]  288 	ldw	x, (0x0a, sp)
+      000190 89               [ 2]  289 	pushw	x
+      000191 CDr00r00         [ 4]  290 	call	__divulong
+      000194 5B 08            [ 2]  291 	addw	sp, #8
+      000196 1F 02            [ 2]  292 	ldw	(0x02, sp), x
+                                    293 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 132: if (result < (uint16_t)0x0004)
+      000198 1E 02            [ 2]  294 	ldw	x, (0x02, sp)
+      00019A A3 00 04         [ 2]  295 	cpw	x, #0x0004
+      00019D 24 05            [ 1]  296 	jrnc	00107$
+                                    297 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 135: result = (uint16_t)0x0004;
+      00019F AE 00 04         [ 2]  298 	ldw	x, #0x0004
+      0001A2 1F 02            [ 2]  299 	ldw	(0x02, sp), x
+      0001A4                        300 00107$:
+                                    301 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 141: I2C->TRISER = (uint8_t)(InputClockFrequencyMHz + (uint8_t)1);
+      0001A4 7B 16            [ 1]  302 	ld	a, (0x16, sp)
+      0001A6 4C               [ 1]  303 	inc	a
+      0001A7 AE 52 1D         [ 2]  304 	ldw	x, #0x521d
+      0001AA F7               [ 1]  305 	ld	(x), a
+      0001AB                        306 00110$:
+                                    307 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 146: I2C->CCRL = (uint8_t)result;
+      0001AB 7B 03            [ 1]  308 	ld	a, (0x03, sp)
+      0001AD AE 52 1B         [ 2]  309 	ldw	x, #0x521b
+      0001B0 F7               [ 1]  310 	ld	(x), a
+                                    311 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 147: I2C->CCRH = (uint8_t)((uint8_t)((uint8_t)(result >> 8) & I2C_CCRH_CCR) | tmpccrh);
+      0001B1 7B 02            [ 1]  312 	ld	a, (0x02, sp)
+      0001B3 0F 08            [ 1]  313 	clr	(0x08, sp)
+      0001B5 A4 0F            [ 1]  314 	and	a, #0x0f
+      0001B7 1A 01            [ 1]  315 	or	a, (0x01, sp)
+      0001B9 AE 52 1C         [ 2]  316 	ldw	x, #0x521c
+      0001BC F7               [ 1]  317 	ld	(x), a
+                                    318 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 150: I2C->CR1 |= I2C_CR1_PE;
+      0001BD 72 10 52 10      [ 1]  319 	bset	0x5210, #0
+                                    320 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 153: I2C_AcknowledgeConfig(Ack);
+      0001C1 7B 14            [ 1]  321 	ld	a, (0x14, sp)
+      0001C3 88               [ 1]  322 	push	a
+      0001C4 CDr00r00         [ 4]  323 	call	_I2C_AcknowledgeConfig
+      0001C7 84               [ 1]  324 	pop	a
+                                    325 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 156: I2C->OARL = (uint8_t)(OwnAddress);
+      0001C8 7B 12            [ 1]  326 	ld	a, (0x12, sp)
+      0001CA AE 52 13         [ 2]  327 	ldw	x, #0x5213
+      0001CD F7               [ 1]  328 	ld	(x), a
+                                    329 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 157: I2C->OARH = (uint8_t)((uint8_t)(AddMode | I2C_OARH_ADDCONF) |
+      0001CE 7B 15            [ 1]  330 	ld	a, (0x15, sp)
+      0001D0 AA 40            [ 1]  331 	or	a, #0x40
+      0001D2 6B 0A            [ 1]  332 	ld	(0x0a, sp), a
+                                    333 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_init.c: 158: (uint8_t)((OwnAddress & (uint16_t)0x0300) >> (uint8_t)7));
+      0001D4 4F               [ 1]  334 	clr	a
+      0001D5 97               [ 1]  335 	ld	xl, a
+      0001D6 7B 11            [ 1]  336 	ld	a, (0x11, sp)
+      0001D8 A4 03            [ 1]  337 	and	a, #0x03
+      0001DA 95               [ 1]  338 	ld	xh, a
+      0001DB A6 80            [ 1]  339 	ld	a, #0x80
+      0001DD 62               [ 2]  340 	div	x, a
+      0001DE 9F               [ 1]  341 	ld	a, xl
+      0001DF 1A 0A            [ 1]  342 	or	a, (0x0a, sp)
+      0001E1 AE 52 14         [ 2]  343 	ldw	x, #0x5214
+      0001E4 F7               [ 1]  344 	ld	(x), a
+      0001E5 5B 0A            [ 2]  345 	addw	sp, #10
+      0001E7 81               [ 4]  346 	ret
+                                    347 	.area CODE
+      0001E8                        348 ___str_0:
+      0001E8 2F 68 6F 6D 65 2F 67   349 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      000224 65 72 2F 73 72 63 2F   350 	.ascii "er/src/stm8s_i2c.i2c_init.c"
+             73 74 6D 38 73 5F 69
+             32 63 2E 69 32 63 5F
+             69 6E 69 74 2E 63
+      00023F 00                     351 	.db 0x00
+                                    352 	.area INITIALIZER
+                                    353 	.area CABS (ABS)

@@ -1,0 +1,109 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:27:57 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_clk_clk_clearitpendingbit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _CLK_ClearITPendingBit
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clearitpendingbit.c: 54: void CLK_ClearITPendingBit(CLK_IT_TypeDef CLK_IT)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function CLK_ClearITPendingBit
+                                     45 ;	-----------------------------------------
+      000000                         46 _CLK_ClearITPendingBit:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clearitpendingbit.c: 57: assert_param(IS_CLK_IT_OK(CLK_IT));
+      000001 7B 04            [ 1]   49 	ld	a, (0x04, sp)
+      000003 A1 0C            [ 1]   50 	cp	a, #0x0c
+      000005 26 06            [ 1]   51 	jrne	00124$
+      000007 A6 01            [ 1]   52 	ld	a, #0x01
+      000009 6B 01            [ 1]   53 	ld	(0x01, sp), a
+      00000B 20 02            [ 2]   54 	jra	00125$
+      00000D                         55 00124$:
+      00000D 0F 01            [ 1]   56 	clr	(0x01, sp)
+      00000F                         57 00125$:
+      00000F 0D 01            [ 1]   58 	tnz	(0x01, sp)
+      000011 26 17            [ 1]   59 	jrne	00107$
+      000013 7B 04            [ 1]   60 	ld	a, (0x04, sp)
+      000015 A1 1C            [ 1]   61 	cp	a, #0x1c
+      000017 27 11            [ 1]   62 	jreq	00107$
+      000019 90 AEr00r40      [ 2]   63 	ldw	y, #___str_0+0
+      00001D 4B 39            [ 1]   64 	push	#0x39
+      00001F 5F               [ 1]   65 	clrw	x
+      000020 89               [ 2]   66 	pushw	x
+      000021 4B 00            [ 1]   67 	push	#0x00
+      000023 90 89            [ 2]   68 	pushw	y
+      000025 CDr00r00         [ 4]   69 	call	_assert_failed
+      000028 5B 06            [ 2]   70 	addw	sp, #6
+      00002A                         71 00107$:
+                                     72 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clearitpendingbit.c: 59: if (CLK_IT == (uint8_t)CLK_IT_CSSD)
+      00002A 0D 01            [ 1]   73 	tnz	(0x01, sp)
+      00002C 27 09            [ 1]   74 	jreq	00102$
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clearitpendingbit.c: 62: CLK->CSSR &= (uint8_t)(~CLK_CSSR_CSSD);
+      00002E AE 50 C8         [ 2]   76 	ldw	x, #0x50c8
+      000031 F6               [ 1]   77 	ld	a, (x)
+      000032 A4 F7            [ 1]   78 	and	a, #0xf7
+      000034 F7               [ 1]   79 	ld	(x), a
+      000035 20 07            [ 2]   80 	jra	00104$
+      000037                         81 00102$:
+                                     82 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clearitpendingbit.c: 67: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIF);
+      000037 AE 50 C5         [ 2]   83 	ldw	x, #0x50c5
+      00003A F6               [ 1]   84 	ld	a, (x)
+      00003B A4 F7            [ 1]   85 	and	a, #0xf7
+      00003D F7               [ 1]   86 	ld	(x), a
+      00003E                         87 00104$:
+      00003E 84               [ 1]   88 	pop	a
+      00003F 81               [ 4]   89 	ret
+                                     90 	.area CODE
+      000040                         91 ___str_0:
+      000040 2F 68 6F 6D 65 2F 67    92 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00007C 65 72 2F 73 72 63 2F    93 	.ascii "er/src/stm8s_clk.clk_clearitpendingbit.c"
+             73 74 6D 38 73 5F 63
+             6C 6B 2E 63 6C 6B 5F
+             63 6C 65 61 72 69 74
+             70 65 6E 64 69 6E 67
+             62 69 74 2E 63
+      0000A4 00                      94 	.db 0x00
+                                     95 	.area INITIALIZER
+                                     96 	.area CABS (ABS)

@@ -1,0 +1,117 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:00 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_gpio_gpio_externalpullupconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _GPIO_ExternalPullUpConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 55: void GPIO_ExternalPullUpConfig(GPIO_TypeDef* GPIOx, GPIO_Pin_TypeDef GPIO_Pin, FunctionalState NewState)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function GPIO_ExternalPullUpConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _GPIO_ExternalPullUpConfig:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 58: assert_param(IS_GPIO_PIN_OK(GPIO_Pin));
+      000001 0D 06            [ 1]   49 	tnz	(0x06, sp)
+      000003 26 11            [ 1]   50 	jrne	00107$
+      000005 90 AEr00r4B      [ 2]   51 	ldw	y, #___str_0+0
+      000009 4B 3A            [ 1]   52 	push	#0x3a
+      00000B 5F               [ 1]   53 	clrw	x
+      00000C 89               [ 2]   54 	pushw	x
+      00000D 4B 00            [ 1]   55 	push	#0x00
+      00000F 90 89            [ 2]   56 	pushw	y
+      000011 CDr00r00         [ 4]   57 	call	_assert_failed
+      000014 5B 06            [ 2]   58 	addw	sp, #6
+      000016                         59 00107$:
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 59: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000016 0D 07            [ 1]   61 	tnz	(0x07, sp)
+      000018 27 17            [ 1]   62 	jreq	00109$
+      00001A 7B 07            [ 1]   63 	ld	a, (0x07, sp)
+      00001C A1 01            [ 1]   64 	cp	a, #0x01
+      00001E 27 11            [ 1]   65 	jreq	00109$
+      000020 90 AEr00r4B      [ 2]   66 	ldw	y, #___str_0+0
+      000024 4B 3B            [ 1]   67 	push	#0x3b
+      000026 5F               [ 1]   68 	clrw	x
+      000027 89               [ 2]   69 	pushw	x
+      000028 4B 00            [ 1]   70 	push	#0x00
+      00002A 90 89            [ 2]   71 	pushw	y
+      00002C CDr00r00         [ 4]   72 	call	_assert_failed
+      00002F 5B 06            [ 2]   73 	addw	sp, #6
+      000031                         74 00109$:
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 63: GPIOx->CR1 |= (uint8_t)GPIO_Pin;
+      000031 1E 04            [ 2]   76 	ldw	x, (0x04, sp)
+      000033 1C 00 03         [ 2]   77 	addw	x, #0x0003
+                                     78 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 61: if (NewState != DISABLE) /* External Pull-Up Set*/
+      000036 0D 07            [ 1]   79 	tnz	(0x07, sp)
+      000038 27 06            [ 1]   80 	jreq	00102$
+                                     81 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 63: GPIOx->CR1 |= (uint8_t)GPIO_Pin;
+      00003A F6               [ 1]   82 	ld	a, (x)
+      00003B 1A 06            [ 1]   83 	or	a, (0x06, sp)
+      00003D F7               [ 1]   84 	ld	(x), a
+      00003E 20 09            [ 2]   85 	jra	00104$
+      000040                         86 00102$:
+                                     87 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_externalpullupconfig.c: 66: GPIOx->CR1 &= (uint8_t)(~(GPIO_Pin));
+      000040 F6               [ 1]   88 	ld	a, (x)
+      000041 6B 01            [ 1]   89 	ld	(0x01, sp), a
+      000043 7B 06            [ 1]   90 	ld	a, (0x06, sp)
+      000045 43               [ 1]   91 	cpl	a
+      000046 14 01            [ 1]   92 	and	a, (0x01, sp)
+      000048 F7               [ 1]   93 	ld	(x), a
+      000049                         94 00104$:
+      000049 84               [ 1]   95 	pop	a
+      00004A 81               [ 4]   96 	ret
+                                     97 	.area CODE
+      00004B                         98 ___str_0:
+      00004B 2F 68 6F 6D 65 2F 67    99 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      000087 65 72 2F 73 72 63 2F   100 	.ascii "er/src/stm8s_gpio.gpio_externalpullupconfig.c"
+             73 74 6D 38 73 5F 67
+             70 69 6F 2E 67 70 69
+             6F 5F 65 78 74 65 72
+             6E 61 6C 70 75 6C 6C
+             75 70 63 6F 6E 66 69
+             67 2E 63
+      0000B4 00                     101 	.db 0x00
+                                    102 	.area INITIALIZER
+                                    103 	.area CABS (ABS)

@@ -1,0 +1,109 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:02 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_i2c_i2c_fastmodedutycycleconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _I2C_FastModeDutyCycleConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c: 51: void I2C_FastModeDutyCycleConfig(I2C_DutyCycle_TypeDef I2C_DutyCycle)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function I2C_FastModeDutyCycleConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _I2C_FastModeDutyCycleConfig:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c: 54: assert_param(IS_I2C_DUTYCYCLE_OK(I2C_DutyCycle));
+      000001 7B 04            [ 1]   49 	ld	a, (0x04, sp)
+      000003 A1 40            [ 1]   50 	cp	a, #0x40
+      000005 26 06            [ 1]   51 	jrne	00124$
+      000007 A6 01            [ 1]   52 	ld	a, #0x01
+      000009 6B 01            [ 1]   53 	ld	(0x01, sp), a
+      00000B 20 02            [ 2]   54 	jra	00125$
+      00000D                         55 00124$:
+      00000D 0F 01            [ 1]   56 	clr	(0x01, sp)
+      00000F                         57 00125$:
+      00000F 0D 04            [ 1]   58 	tnz	(0x04, sp)
+      000011 27 15            [ 1]   59 	jreq	00107$
+      000013 0D 01            [ 1]   60 	tnz	(0x01, sp)
+      000015 26 11            [ 1]   61 	jrne	00107$
+      000017 90 AEr00r3E      [ 2]   62 	ldw	y, #___str_0+0
+      00001B 4B 36            [ 1]   63 	push	#0x36
+      00001D 5F               [ 1]   64 	clrw	x
+      00001E 89               [ 2]   65 	pushw	x
+      00001F 4B 00            [ 1]   66 	push	#0x00
+      000021 90 89            [ 2]   67 	pushw	y
+      000023 CDr00r00         [ 4]   68 	call	_assert_failed
+      000026 5B 06            [ 2]   69 	addw	sp, #6
+      000028                         70 00107$:
+                                     71 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c: 56: if (I2C_DutyCycle == I2C_DUTYCYCLE_16_9)
+      000028 0D 01            [ 1]   72 	tnz	(0x01, sp)
+      00002A 27 09            [ 1]   73 	jreq	00102$
+                                     74 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c: 59: I2C->CCRH |= I2C_CCRH_DUTY;
+      00002C AE 52 1C         [ 2]   75 	ldw	x, #0x521c
+      00002F F6               [ 1]   76 	ld	a, (x)
+      000030 AA 40            [ 1]   77 	or	a, #0x40
+      000032 F7               [ 1]   78 	ld	(x), a
+      000033 20 07            [ 2]   79 	jra	00104$
+      000035                         80 00102$:
+                                     81 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c: 64: I2C->CCRH &= (uint8_t)(~I2C_CCRH_DUTY);
+      000035 AE 52 1C         [ 2]   82 	ldw	x, #0x521c
+      000038 F6               [ 1]   83 	ld	a, (x)
+      000039 A4 BF            [ 1]   84 	and	a, #0xbf
+      00003B F7               [ 1]   85 	ld	(x), a
+      00003C                         86 00104$:
+      00003C 84               [ 1]   87 	pop	a
+      00003D 81               [ 4]   88 	ret
+                                     89 	.area CODE
+      00003E                         90 ___str_0:
+      00003E 2F 68 6F 6D 65 2F 67    91 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00007A 65 72 2F 73 72 63 2F    92 	.ascii "er/src/stm8s_i2c.i2c_fastmodedutycycleconfig.c"
+             73 74 6D 38 73 5F 69
+             32 63 2E 69 32 63 5F
+             66 61 73 74 6D 6F 64
+             65 64 75 74 79 63 79
+             63 6C 65 63 6F 6E 66
+             69 67 2E 63
+      0000A8 00                      93 	.db 0x00
+                                     94 	.area INITIALIZER
+                                     95 	.area CABS (ABS)

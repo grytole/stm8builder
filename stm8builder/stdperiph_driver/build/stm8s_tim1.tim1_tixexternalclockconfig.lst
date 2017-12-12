@@ -1,0 +1,160 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:10 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_tixexternalclockconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl ___TI2_Config
+                                     13 	.globl ___TI1_Config
+                                     14 	.globl _TIM1_SelectInputTrigger
+                                     15 	.globl _assert_failed
+                                     16 	.globl _TIM1_TIxExternalClockConfig
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area DATA
+                                     21 ;--------------------------------------------------------
+                                     22 ; ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area INITIALIZED
+                                     25 ;--------------------------------------------------------
+                                     26 ; absolute external ram data
+                                     27 ;--------------------------------------------------------
+                                     28 	.area DABS (ABS)
+                                     29 ;--------------------------------------------------------
+                                     30 ; global & static initialisations
+                                     31 ;--------------------------------------------------------
+                                     32 	.area HOME
+                                     33 	.area GSINIT
+                                     34 	.area GSFINAL
+                                     35 	.area GSINIT
+                                     36 ;--------------------------------------------------------
+                                     37 ; Home
+                                     38 ;--------------------------------------------------------
+                                     39 	.area HOME
+                                     40 	.area HOME
+                                     41 ;--------------------------------------------------------
+                                     42 ; code
+                                     43 ;--------------------------------------------------------
+                                     44 	.area CODE
+                                     45 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 60: void TIM1_TIxExternalClockConfig(TIM1_TIxExternalCLK1Source_TypeDef TIM1_TIxExternalCLKSource,
+                                     46 ;	-----------------------------------------
+                                     47 ;	 function TIM1_TIxExternalClockConfig
+                                     48 ;	-----------------------------------------
+      000000                         49 _TIM1_TIxExternalClockConfig:
+      000000 88               [ 1]   50 	push	a
+                                     51 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 65: assert_param(IS_TIM1_TIXCLK_SOURCE_OK(TIM1_TIxExternalCLKSource));
+      000001 7B 04            [ 1]   52 	ld	a, (0x04, sp)
+      000003 A1 60            [ 1]   53 	cp	a, #0x60
+      000005 26 06            [ 1]   54 	jrne	00150$
+      000007 A6 01            [ 1]   55 	ld	a, #0x01
+      000009 6B 01            [ 1]   56 	ld	(0x01, sp), a
+      00000B 20 02            [ 2]   57 	jra	00151$
+      00000D                         58 00150$:
+      00000D 0F 01            [ 1]   59 	clr	(0x01, sp)
+      00000F                         60 00151$:
+      00000F 7B 04            [ 1]   61 	ld	a, (0x04, sp)
+      000011 A1 40            [ 1]   62 	cp	a, #0x40
+      000013 27 1B            [ 1]   63 	jreq	00107$
+      000015 0D 01            [ 1]   64 	tnz	(0x01, sp)
+      000017 26 17            [ 1]   65 	jrne	00107$
+      000019 7B 04            [ 1]   66 	ld	a, (0x04, sp)
+      00001B A1 50            [ 1]   67 	cp	a, #0x50
+      00001D 27 11            [ 1]   68 	jreq	00107$
+      00001F 90 AEr00r92      [ 2]   69 	ldw	y, #___str_0+0
+      000023 4B 41            [ 1]   70 	push	#0x41
+      000025 5F               [ 1]   71 	clrw	x
+      000026 89               [ 2]   72 	pushw	x
+      000027 4B 00            [ 1]   73 	push	#0x00
+      000029 90 89            [ 2]   74 	pushw	y
+      00002B CDr00r00         [ 4]   75 	call	_assert_failed
+      00002E 5B 06            [ 2]   76 	addw	sp, #6
+      000030                         77 00107$:
+                                     78 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 66: assert_param(IS_TIM1_IC_POLARITY_OK(TIM1_ICPolarity));
+      000030 0D 05            [ 1]   79 	tnz	(0x05, sp)
+      000032 27 17            [ 1]   80 	jreq	00115$
+      000034 7B 05            [ 1]   81 	ld	a, (0x05, sp)
+      000036 A1 01            [ 1]   82 	cp	a, #0x01
+      000038 27 11            [ 1]   83 	jreq	00115$
+      00003A 90 AEr00r92      [ 2]   84 	ldw	y, #___str_0+0
+      00003E 4B 42            [ 1]   85 	push	#0x42
+      000040 5F               [ 1]   86 	clrw	x
+      000041 89               [ 2]   87 	pushw	x
+      000042 4B 00            [ 1]   88 	push	#0x00
+      000044 90 89            [ 2]   89 	pushw	y
+      000046 CDr00r00         [ 4]   90 	call	_assert_failed
+      000049 5B 06            [ 2]   91 	addw	sp, #6
+      00004B                         92 00115$:
+                                     93 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 67: assert_param(IS_TIM1_IC_FILTER_OK(ICFilter));
+      00004B 7B 06            [ 1]   94 	ld	a, (0x06, sp)
+      00004D A1 0F            [ 1]   95 	cp	a, #0x0f
+      00004F 23 11            [ 2]   96 	jrule	00120$
+      000051 90 AEr00r92      [ 2]   97 	ldw	y, #___str_0+0
+      000055 4B 43            [ 1]   98 	push	#0x43
+      000057 5F               [ 1]   99 	clrw	x
+      000058 89               [ 2]  100 	pushw	x
+      000059 4B 00            [ 1]  101 	push	#0x00
+      00005B 90 89            [ 2]  102 	pushw	y
+      00005D CDr00r00         [ 4]  103 	call	_assert_failed
+      000060 5B 06            [ 2]  104 	addw	sp, #6
+      000062                        105 00120$:
+                                    106 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 70: if (TIM1_TIxExternalCLKSource == TIM1_TIXEXTERNALCLK1SOURCE_TI2)
+      000062 0D 01            [ 1]  107 	tnz	(0x01, sp)
+      000064 27 0F            [ 1]  108 	jreq	00102$
+                                    109 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 72: __TI2_Config((uint8_t)TIM1_ICPolarity, (uint8_t)TIM1_ICSELECTION_DIRECTTI, (uint8_t)ICFilter);
+      000066 7B 06            [ 1]  110 	ld	a, (0x06, sp)
+      000068 88               [ 1]  111 	push	a
+      000069 4B 01            [ 1]  112 	push	#0x01
+      00006B 7B 07            [ 1]  113 	ld	a, (0x07, sp)
+      00006D 88               [ 1]  114 	push	a
+      00006E CDr00r00         [ 4]  115 	call	___TI2_Config
+      000071 5B 03            [ 2]  116 	addw	sp, #3
+      000073 20 0D            [ 2]  117 	jra	00103$
+      000075                        118 00102$:
+                                    119 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 76: __TI1_Config((uint8_t)TIM1_ICPolarity, (uint8_t)TIM1_ICSELECTION_DIRECTTI, (uint8_t)ICFilter);
+      000075 7B 06            [ 1]  120 	ld	a, (0x06, sp)
+      000077 88               [ 1]  121 	push	a
+      000078 4B 01            [ 1]  122 	push	#0x01
+      00007A 7B 07            [ 1]  123 	ld	a, (0x07, sp)
+      00007C 88               [ 1]  124 	push	a
+      00007D CDr00r00         [ 4]  125 	call	___TI1_Config
+      000080 5B 03            [ 2]  126 	addw	sp, #3
+      000082                        127 00103$:
+                                    128 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 80: TIM1_SelectInputTrigger((TIM1_TS_TypeDef)TIM1_TIxExternalCLKSource);
+      000082 7B 04            [ 1]  129 	ld	a, (0x04, sp)
+      000084 88               [ 1]  130 	push	a
+      000085 CDr00r00         [ 4]  131 	call	_TIM1_SelectInputTrigger
+      000088 84               [ 1]  132 	pop	a
+                                    133 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_tixexternalclockconfig.c: 83: TIM1->SMCR |= (uint8_t)(TIM1_SLAVEMODE_EXTERNAL1);
+      000089 AE 52 52         [ 2]  134 	ldw	x, #0x5252
+      00008C F6               [ 1]  135 	ld	a, (x)
+      00008D AA 07            [ 1]  136 	or	a, #0x07
+      00008F F7               [ 1]  137 	ld	(x), a
+      000090 84               [ 1]  138 	pop	a
+      000091 81               [ 4]  139 	ret
+                                    140 	.area CODE
+      000092                        141 ___str_0:
+      000092 2F 68 6F 6D 65 2F 67   142 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0000CE 65 72 2F 73 72 63 2F   143 	.ascii "er/src/stm8s_tim1.tim1_tixexternalclockconfig.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 74 69 78 65 78
+             74 65 72 6E 61 6C 63
+             6C 6F 63 6B 63 6F 6E
+             66 69 67 2E 63
+      0000FD 00                     144 	.db 0x00
+                                    145 	.area INITIALIZER
+                                    146 	.area CABS (ABS)

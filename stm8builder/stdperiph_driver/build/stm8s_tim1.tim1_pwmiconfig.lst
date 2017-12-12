@@ -1,0 +1,243 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:10 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_pwmiconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl ___TI2_Config
+                                     13 	.globl ___TI1_Config
+                                     14 	.globl _TIM1_SetIC2Prescaler
+                                     15 	.globl _TIM1_SetIC1Prescaler
+                                     16 	.globl _assert_failed
+                                     17 	.globl _TIM1_PWMIConfig
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area DATA
+                                     22 ;--------------------------------------------------------
+                                     23 ; ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area INITIALIZED
+                                     26 ;--------------------------------------------------------
+                                     27 ; absolute external ram data
+                                     28 ;--------------------------------------------------------
+                                     29 	.area DABS (ABS)
+                                     30 ;--------------------------------------------------------
+                                     31 ; global & static initialisations
+                                     32 ;--------------------------------------------------------
+                                     33 	.area HOME
+                                     34 	.area GSINIT
+                                     35 	.area GSFINAL
+                                     36 	.area GSINIT
+                                     37 ;--------------------------------------------------------
+                                     38 ; Home
+                                     39 ;--------------------------------------------------------
+                                     40 	.area HOME
+                                     41 	.area HOME
+                                     42 ;--------------------------------------------------------
+                                     43 ; code
+                                     44 ;--------------------------------------------------------
+                                     45 	.area CODE
+                                     46 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 59: void TIM1_PWMIConfig(TIM1_Channel_TypeDef TIM1_Channel,
+                                     47 ;	-----------------------------------------
+                                     48 ;	 function TIM1_PWMIConfig
+                                     49 ;	-----------------------------------------
+      000000                         50 _TIM1_PWMIConfig:
+      000000 52 04            [ 2]   51 	sub	sp, #4
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 69: assert_param(IS_TIM1_PWMI_CHANNEL_OK(TIM1_Channel));
+      000002 0D 07            [ 1]   53 	tnz	(0x07, sp)
+      000004 27 17            [ 1]   54 	jreq	00113$
+      000006 7B 07            [ 1]   55 	ld	a, (0x07, sp)
+      000008 A1 01            [ 1]   56 	cp	a, #0x01
+      00000A 27 11            [ 1]   57 	jreq	00113$
+      00000C 90 AEr01r11      [ 2]   58 	ldw	y, #___str_0+0
+      000010 4B 45            [ 1]   59 	push	#0x45
+      000012 5F               [ 1]   60 	clrw	x
+      000013 89               [ 2]   61 	pushw	x
+      000014 4B 00            [ 1]   62 	push	#0x00
+      000016 90 89            [ 2]   63 	pushw	y
+      000018 CDr00r00         [ 4]   64 	call	_assert_failed
+      00001B 5B 06            [ 2]   65 	addw	sp, #6
+      00001D                         66 00113$:
+                                     67 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 70: assert_param(IS_TIM1_IC_POLARITY_OK(TIM1_ICPolarity));
+      00001D 7B 08            [ 1]   68 	ld	a, (0x08, sp)
+      00001F A1 01            [ 1]   69 	cp	a, #0x01
+      000021 26 06            [ 1]   70 	jrne	00202$
+      000023 A6 01            [ 1]   71 	ld	a, #0x01
+      000025 6B 03            [ 1]   72 	ld	(0x03, sp), a
+      000027 20 02            [ 2]   73 	jra	00203$
+      000029                         74 00202$:
+      000029 0F 03            [ 1]   75 	clr	(0x03, sp)
+      00002B                         76 00203$:
+      00002B 0D 08            [ 1]   77 	tnz	(0x08, sp)
+      00002D 27 15            [ 1]   78 	jreq	00118$
+      00002F 0D 03            [ 1]   79 	tnz	(0x03, sp)
+      000031 26 11            [ 1]   80 	jrne	00118$
+      000033 90 AEr01r11      [ 2]   81 	ldw	y, #___str_0+0
+      000037 4B 46            [ 1]   82 	push	#0x46
+      000039 5F               [ 1]   83 	clrw	x
+      00003A 89               [ 2]   84 	pushw	x
+      00003B 4B 00            [ 1]   85 	push	#0x00
+      00003D 90 89            [ 2]   86 	pushw	y
+      00003F CDr00r00         [ 4]   87 	call	_assert_failed
+      000042 5B 06            [ 2]   88 	addw	sp, #6
+      000044                         89 00118$:
+                                     90 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 71: assert_param(IS_TIM1_IC_SELECTION_OK(TIM1_ICSelection));
+      000044 7B 09            [ 1]   91 	ld	a, (0x09, sp)
+      000046 A1 01            [ 1]   92 	cp	a, #0x01
+      000048 26 06            [ 1]   93 	jrne	00207$
+      00004A A6 01            [ 1]   94 	ld	a, #0x01
+      00004C 6B 04            [ 1]   95 	ld	(0x04, sp), a
+      00004E 20 02            [ 2]   96 	jra	00208$
+      000050                         97 00207$:
+      000050 0F 04            [ 1]   98 	clr	(0x04, sp)
+      000052                         99 00208$:
+      000052 0D 04            [ 1]  100 	tnz	(0x04, sp)
+      000054 26 1D            [ 1]  101 	jrne	00123$
+      000056 7B 09            [ 1]  102 	ld	a, (0x09, sp)
+      000058 A1 02            [ 1]  103 	cp	a, #0x02
+      00005A 27 17            [ 1]  104 	jreq	00123$
+      00005C 7B 09            [ 1]  105 	ld	a, (0x09, sp)
+      00005E A1 03            [ 1]  106 	cp	a, #0x03
+      000060 27 11            [ 1]  107 	jreq	00123$
+      000062 90 AEr01r11      [ 2]  108 	ldw	y, #___str_0+0
+      000066 4B 47            [ 1]  109 	push	#0x47
+      000068 5F               [ 1]  110 	clrw	x
+      000069 89               [ 2]  111 	pushw	x
+      00006A 4B 00            [ 1]  112 	push	#0x00
+      00006C 90 89            [ 2]  113 	pushw	y
+      00006E CDr00r00         [ 4]  114 	call	_assert_failed
+      000071 5B 06            [ 2]  115 	addw	sp, #6
+      000073                        116 00123$:
+                                    117 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 72: assert_param(IS_TIM1_IC_PRESCALER_OK(TIM1_ICPrescaler));
+      000073 0D 0A            [ 1]  118 	tnz	(0x0a, sp)
+      000075 27 23            [ 1]  119 	jreq	00131$
+      000077 7B 0A            [ 1]  120 	ld	a, (0x0a, sp)
+      000079 A1 04            [ 1]  121 	cp	a, #0x04
+      00007B 27 1D            [ 1]  122 	jreq	00131$
+      00007D 7B 0A            [ 1]  123 	ld	a, (0x0a, sp)
+      00007F A1 08            [ 1]  124 	cp	a, #0x08
+      000081 27 17            [ 1]  125 	jreq	00131$
+      000083 7B 0A            [ 1]  126 	ld	a, (0x0a, sp)
+      000085 A1 0C            [ 1]  127 	cp	a, #0x0c
+      000087 27 11            [ 1]  128 	jreq	00131$
+      000089 90 AEr01r11      [ 2]  129 	ldw	y, #___str_0+0
+      00008D 4B 48            [ 1]  130 	push	#0x48
+      00008F 5F               [ 1]  131 	clrw	x
+      000090 89               [ 2]  132 	pushw	x
+      000091 4B 00            [ 1]  133 	push	#0x00
+      000093 90 89            [ 2]  134 	pushw	y
+      000095 CDr00r00         [ 4]  135 	call	_assert_failed
+      000098 5B 06            [ 2]  136 	addw	sp, #6
+      00009A                        137 00131$:
+                                    138 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 75: if (TIM1_ICPolarity != TIM1_ICPOLARITY_FALLING)
+      00009A 0D 03            [ 1]  139 	tnz	(0x03, sp)
+      00009C 26 06            [ 1]  140 	jrne	00102$
+                                    141 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 77: icpolarity = TIM1_ICPOLARITY_FALLING;
+      00009E A6 01            [ 1]  142 	ld	a, #0x01
+      0000A0 6B 02            [ 1]  143 	ld	(0x02, sp), a
+      0000A2 20 02            [ 2]  144 	jra	00103$
+      0000A4                        145 00102$:
+                                    146 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 81: icpolarity = TIM1_ICPOLARITY_RISING;
+      0000A4 0F 02            [ 1]  147 	clr	(0x02, sp)
+      0000A6                        148 00103$:
+                                    149 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 85: if (TIM1_ICSelection == TIM1_ICSELECTION_DIRECTTI)
+      0000A6 0D 04            [ 1]  150 	tnz	(0x04, sp)
+      0000A8 27 06            [ 1]  151 	jreq	00105$
+                                    152 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 87: icselection = TIM1_ICSELECTION_INDIRECTTI;
+      0000AA A6 02            [ 1]  153 	ld	a, #0x02
+      0000AC 6B 01            [ 1]  154 	ld	(0x01, sp), a
+      0000AE 20 04            [ 2]  155 	jra	00106$
+      0000B0                        156 00105$:
+                                    157 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 91: icselection = TIM1_ICSELECTION_DIRECTTI;
+      0000B0 A6 01            [ 1]  158 	ld	a, #0x01
+      0000B2 6B 01            [ 1]  159 	ld	(0x01, sp), a
+      0000B4                        160 00106$:
+                                    161 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 94: if (TIM1_Channel == TIM1_CHANNEL_1)
+      0000B4 0D 07            [ 1]  162 	tnz	(0x07, sp)
+      0000B6 26 2C            [ 1]  163 	jrne	00108$
+                                    164 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 97: __TI1_Config((uint8_t)TIM1_ICPolarity, (uint8_t)TIM1_ICSelection,
+      0000B8 7B 0B            [ 1]  165 	ld	a, (0x0b, sp)
+      0000BA 88               [ 1]  166 	push	a
+      0000BB 7B 0A            [ 1]  167 	ld	a, (0x0a, sp)
+      0000BD 88               [ 1]  168 	push	a
+      0000BE 7B 0A            [ 1]  169 	ld	a, (0x0a, sp)
+      0000C0 88               [ 1]  170 	push	a
+      0000C1 CDr00r00         [ 4]  171 	call	___TI1_Config
+      0000C4 5B 03            [ 2]  172 	addw	sp, #3
+                                    173 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 101: TIM1_SetIC1Prescaler(TIM1_ICPrescaler);
+      0000C6 7B 0A            [ 1]  174 	ld	a, (0x0a, sp)
+      0000C8 88               [ 1]  175 	push	a
+      0000C9 CDr00r00         [ 4]  176 	call	_TIM1_SetIC1Prescaler
+      0000CC 84               [ 1]  177 	pop	a
+                                    178 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 104: __TI2_Config(icpolarity, icselection, TIM1_ICFilter);
+      0000CD 7B 0B            [ 1]  179 	ld	a, (0x0b, sp)
+      0000CF 88               [ 1]  180 	push	a
+      0000D0 7B 02            [ 1]  181 	ld	a, (0x02, sp)
+      0000D2 88               [ 1]  182 	push	a
+      0000D3 7B 04            [ 1]  183 	ld	a, (0x04, sp)
+      0000D5 88               [ 1]  184 	push	a
+      0000D6 CDr00r00         [ 4]  185 	call	___TI2_Config
+      0000D9 5B 03            [ 2]  186 	addw	sp, #3
+                                    187 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 107: TIM1_SetIC2Prescaler(TIM1_ICPrescaler);
+      0000DB 7B 0A            [ 1]  188 	ld	a, (0x0a, sp)
+      0000DD 88               [ 1]  189 	push	a
+      0000DE CDr00r00         [ 4]  190 	call	_TIM1_SetIC2Prescaler
+      0000E1 84               [ 1]  191 	pop	a
+      0000E2 20 2A            [ 2]  192 	jra	00110$
+      0000E4                        193 00108$:
+                                    194 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 112: __TI2_Config((uint8_t)TIM1_ICPolarity, (uint8_t)TIM1_ICSelection,
+      0000E4 7B 0B            [ 1]  195 	ld	a, (0x0b, sp)
+      0000E6 88               [ 1]  196 	push	a
+      0000E7 7B 0A            [ 1]  197 	ld	a, (0x0a, sp)
+      0000E9 88               [ 1]  198 	push	a
+      0000EA 7B 0A            [ 1]  199 	ld	a, (0x0a, sp)
+      0000EC 88               [ 1]  200 	push	a
+      0000ED CDr00r00         [ 4]  201 	call	___TI2_Config
+      0000F0 5B 03            [ 2]  202 	addw	sp, #3
+                                    203 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 116: TIM1_SetIC2Prescaler(TIM1_ICPrescaler);
+      0000F2 7B 0A            [ 1]  204 	ld	a, (0x0a, sp)
+      0000F4 88               [ 1]  205 	push	a
+      0000F5 CDr00r00         [ 4]  206 	call	_TIM1_SetIC2Prescaler
+      0000F8 84               [ 1]  207 	pop	a
+                                    208 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 119: __TI1_Config(icpolarity, icselection, TIM1_ICFilter);
+      0000F9 7B 0B            [ 1]  209 	ld	a, (0x0b, sp)
+      0000FB 88               [ 1]  210 	push	a
+      0000FC 7B 02            [ 1]  211 	ld	a, (0x02, sp)
+      0000FE 88               [ 1]  212 	push	a
+      0000FF 7B 04            [ 1]  213 	ld	a, (0x04, sp)
+      000101 88               [ 1]  214 	push	a
+      000102 CDr00r00         [ 4]  215 	call	___TI1_Config
+      000105 5B 03            [ 2]  216 	addw	sp, #3
+                                    217 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_pwmiconfig.c: 122: TIM1_SetIC1Prescaler(TIM1_ICPrescaler);
+      000107 7B 0A            [ 1]  218 	ld	a, (0x0a, sp)
+      000109 88               [ 1]  219 	push	a
+      00010A CDr00r00         [ 4]  220 	call	_TIM1_SetIC1Prescaler
+      00010D 84               [ 1]  221 	pop	a
+      00010E                        222 00110$:
+      00010E 5B 04            [ 2]  223 	addw	sp, #4
+      000110 81               [ 4]  224 	ret
+                                    225 	.area CODE
+      000111                        226 ___str_0:
+      000111 2F 68 6F 6D 65 2F 67   227 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00014D 65 72 2F 73 72 63 2F   228 	.ascii "er/src/stm8s_tim1.tim1_pwmiconfig.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 70 77 6D 69 63
+             6F 6E 66 69 67 2E 63
+      000170 00                     229 	.db 0x00
+                                    230 	.area INITIALIZER
+                                    231 	.area CABS (ABS)

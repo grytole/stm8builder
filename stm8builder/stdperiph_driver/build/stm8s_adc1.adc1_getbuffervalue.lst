@@ -1,0 +1,152 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:12 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_adc1_adc1_getbuffervalue
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _ADC1_GetBufferValue
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 54: uint16_t ADC1_GetBufferValue(uint8_t Buffer)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function ADC1_GetBufferValue
+                                     45 ;	-----------------------------------------
+      000000                         46 _ADC1_GetBufferValue:
+      000000 52 0B            [ 2]   47 	sub	sp, #11
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 60: assert_param(IS_ADC1_BUFFER_OK(Buffer));
+      000002 7B 0E            [ 1]   49 	ld	a, (0x0e, sp)
+      000004 A1 09            [ 1]   50 	cp	a, #0x09
+      000006 23 11            [ 2]   51 	jrule	00107$
+      000008 90 AEr00r6F      [ 2]   52 	ldw	y, #___str_0+0
+      00000C 4B 3C            [ 1]   53 	push	#0x3c
+      00000E 5F               [ 1]   54 	clrw	x
+      00000F 89               [ 2]   55 	pushw	x
+      000010 4B 00            [ 1]   56 	push	#0x00
+      000012 90 89            [ 2]   57 	pushw	y
+      000014 CDr00r00         [ 4]   58 	call	_assert_failed
+      000017 5B 06            [ 2]   59 	addw	sp, #6
+      000019                         60 00107$:
+                                     61 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 62: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
+      000019 AE 54 02         [ 2]   62 	ldw	x, #0x5402
+      00001C F6               [ 1]   63 	ld	a, (x)
+      00001D 6B 05            [ 1]   64 	ld	(0x05, sp), a
+                                     65 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 65: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+      00001F 7B 0E            [ 1]   66 	ld	a, (0x0e, sp)
+      000021 48               [ 1]   67 	sll	a
+      000022 5F               [ 1]   68 	clrw	x
+      000023 97               [ 1]   69 	ld	xl, a
+      000024 1F 03            [ 2]   70 	ldw	(0x03, sp), x
+      000026 1E 03            [ 2]   71 	ldw	x, (0x03, sp)
+      000028 1C 53 E1         [ 2]   72 	addw	x, #0x53e1
+                                     73 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 67: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      00002B 16 03            [ 2]   74 	ldw	y, (0x03, sp)
+      00002D 72 A9 53 E0      [ 2]   75 	addw	y, #0x53e0
+                                     76 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 65: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+                                     77 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 67: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+                                     78 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 65: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+      000031 F6               [ 1]   79 	ld	a, (x)
+      000032 97               [ 1]   80 	ld	xl, a
+                                     81 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 67: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      000033 90 F6            [ 1]   82 	ld	a, (y)
+      000035 95               [ 1]   83 	ld	xh, a
+      000036 0F 01            [ 1]   84 	clr	(0x01, sp)
+                                     85 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 62: if ((ADC1->CR2 & ADC1_CR2_ALIGN) != 0) /* Right alignment */
+      000038 7B 05            [ 1]   86 	ld	a, (0x05, sp)
+      00003A A5 08            [ 1]   87 	bcp	a, #0x08
+      00003C 27 11            [ 1]   88 	jreq	00102$
+                                     89 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 65: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+                                     90 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 67: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      00003E 7B 01            [ 1]   91 	ld	a, (0x01, sp)
+                                     92 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 69: temph = (uint16_t)(templ | (uint16_t)(temph << (uint8_t)8));
+      000040 0F 0B            [ 1]   93 	clr	(0x0b, sp)
+      000042 4F               [ 1]   94 	clr	a
+      000043 89               [ 2]   95 	pushw	x
+      000044 1A 01            [ 1]   96 	or	a, (1, sp)
+      000046 85               [ 2]   97 	popw	x
+      000047 01               [ 1]   98 	rrwa	x
+      000048 1A 0B            [ 1]   99 	or	a, (0x0b, sp)
+      00004A 97               [ 1]  100 	ld	xl, a
+      00004B 1F 08            [ 2]  101 	ldw	(0x08, sp), x
+      00004D 20 1B            [ 2]  102 	jra	00103$
+      00004F                        103 00102$:
+                                    104 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 74: temph = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1));
+      00004F 61               [ 1]  105 	exg	a, yl
+      000050 9E               [ 1]  106 	ld	a, xh
+      000051 61               [ 1]  107 	exg	a, yl
+      000052 7B 01            [ 1]  108 	ld	a, (0x01, sp)
+                                    109 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 76: templ = *(uint8_t*)(uint16_t)((uint16_t)ADC1_BaseAddress + (uint8_t)(Buffer << 1) + 1);
+                                    110 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 78: temph = (uint16_t)((uint16_t)((uint16_t)templ << 6) | (uint16_t)(temph << 8));
+      000054 02               [ 1]  111 	rlwa	x
+      000055 4F               [ 1]  112 	clr	a
+      000056 01               [ 1]  113 	rrwa	x
+      000057 58               [ 2]  114 	sllw	x
+      000058 58               [ 2]  115 	sllw	x
+      000059 58               [ 2]  116 	sllw	x
+      00005A 58               [ 2]  117 	sllw	x
+      00005B 58               [ 2]  118 	sllw	x
+      00005C 58               [ 2]  119 	sllw	x
+      00005D 1F 06            [ 2]  120 	ldw	(0x06, sp), x
+      00005F 4F               [ 1]  121 	clr	a
+      000060 1A 07            [ 1]  122 	or	a, (0x07, sp)
+      000062 97               [ 1]  123 	ld	xl, a
+      000063 90 9F            [ 1]  124 	ld	a, yl
+      000065 1A 06            [ 1]  125 	or	a, (0x06, sp)
+      000067 95               [ 1]  126 	ld	xh, a
+      000068 1F 08            [ 2]  127 	ldw	(0x08, sp), x
+      00006A                        128 00103$:
+                                    129 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_getbuffervalue.c: 81: return ((uint16_t)temph);
+      00006A 1E 08            [ 2]  130 	ldw	x, (0x08, sp)
+      00006C 5B 0B            [ 2]  131 	addw	sp, #11
+      00006E 81               [ 4]  132 	ret
+                                    133 	.area CODE
+      00006F                        134 ___str_0:
+      00006F 2F 68 6F 6D 65 2F 67   135 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0000AB 65 72 2F 73 72 63 2F   136 	.ascii "er/src/stm8s_adc1.adc1_getbuffervalue.c"
+             73 74 6D 38 73 5F 61
+             64 63 31 2E 61 64 63
+             31 5F 67 65 74 62 75
+             66 66 65 72 76 61 6C
+             75 65 2E 63
+      0000D2 00                     137 	.db 0x00
+                                    138 	.area INITIALIZER
+                                    139 	.area CABS (ABS)

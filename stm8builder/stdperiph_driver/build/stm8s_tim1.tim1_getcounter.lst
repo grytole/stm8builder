@@ -1,0 +1,68 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:08 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_getcounter
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _TIM1_GetCounter
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getcounter.c: 50: uint16_t TIM1_GetCounter(void)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function TIM1_GetCounter
+                                     44 ;	-----------------------------------------
+      000000                         45 _TIM1_GetCounter:
+      000000 89               [ 2]   46 	pushw	x
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getcounter.c: 54: tmpcntr = ((uint16_t)TIM1->CNTRH << 8);
+      000001 AE 52 5E         [ 2]   48 	ldw	x, #0x525e
+      000004 F6               [ 1]   49 	ld	a, (x)
+      000005 95               [ 1]   50 	ld	xh, a
+      000006 4F               [ 1]   51 	clr	a
+      000007 4F               [ 1]   52 	clr	a
+      000008 97               [ 1]   53 	ld	xl, a
+      000009 1F 01            [ 2]   54 	ldw	(0x01, sp), x
+                                     55 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getcounter.c: 57: return (uint16_t)(tmpcntr | (uint16_t)(TIM1->CNTRL));
+      00000B AE 52 5F         [ 2]   56 	ldw	x, #0x525f
+      00000E F6               [ 1]   57 	ld	a, (x)
+      00000F 5F               [ 1]   58 	clrw	x
+      000010 97               [ 1]   59 	ld	xl, a
+      000011 1A 02            [ 1]   60 	or	a, (0x02, sp)
+      000013 02               [ 1]   61 	rlwa	x
+      000014 1A 01            [ 1]   62 	or	a, (0x01, sp)
+      000016 95               [ 1]   63 	ld	xh, a
+      000017 5B 02            [ 2]   64 	addw	sp, #2
+      000019 81               [ 4]   65 	ret
+                                     66 	.area CODE
+                                     67 	.area INITIALIZER
+                                     68 	.area CABS (ABS)

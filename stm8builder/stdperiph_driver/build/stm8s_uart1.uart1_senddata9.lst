@@ -1,0 +1,72 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:18 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_uart1_uart1_senddata9
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _UART1_SendData9
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_senddata9.c: 54: void UART1_SendData9(uint16_t Data)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function UART1_SendData9
+                                     44 ;	-----------------------------------------
+      000000                         45 _UART1_SendData9:
+      000000 88               [ 1]   46 	push	a
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_senddata9.c: 57: UART1->CR1 &= ((uint8_t)~UART1_CR1_T8);
+      000001 AE 52 34         [ 2]   48 	ldw	x, #0x5234
+      000004 F6               [ 1]   49 	ld	a, (x)
+      000005 A4 BF            [ 1]   50 	and	a, #0xbf
+      000007 F7               [ 1]   51 	ld	(x), a
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_senddata9.c: 59: UART1->CR1 |= (uint8_t)(((uint8_t)(Data >> 2)) & UART1_CR1_T8);
+      000008 AE 52 34         [ 2]   53 	ldw	x, #0x5234
+      00000B F6               [ 1]   54 	ld	a, (x)
+      00000C 6B 01            [ 1]   55 	ld	(0x01, sp), a
+      00000E 1E 04            [ 2]   56 	ldw	x, (0x04, sp)
+      000010 54               [ 2]   57 	srlw	x
+      000011 54               [ 2]   58 	srlw	x
+      000012 9F               [ 1]   59 	ld	a, xl
+      000013 A4 40            [ 1]   60 	and	a, #0x40
+      000015 1A 01            [ 1]   61 	or	a, (0x01, sp)
+      000017 AE 52 34         [ 2]   62 	ldw	x, #0x5234
+      00001A F7               [ 1]   63 	ld	(x), a
+                                     64 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_senddata9.c: 61: UART1->DR   = (uint8_t)(Data);
+      00001B 7B 05            [ 1]   65 	ld	a, (0x05, sp)
+      00001D AE 52 31         [ 2]   66 	ldw	x, #0x5231
+      000020 F7               [ 1]   67 	ld	(x), a
+      000021 84               [ 1]   68 	pop	a
+      000022 81               [ 4]   69 	ret
+                                     70 	.area CODE
+                                     71 	.area INITIALIZER
+                                     72 	.area CABS (ABS)

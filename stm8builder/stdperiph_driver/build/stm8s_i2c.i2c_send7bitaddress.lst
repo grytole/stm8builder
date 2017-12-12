@@ -1,0 +1,104 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:02 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_i2c_i2c_send7bitaddress
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _I2C_Send7bitAddress
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_send7bitaddress.c: 52: void I2C_Send7bitAddress(uint8_t Address, I2C_Direction_TypeDef Direction)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function I2C_Send7bitAddress
+                                     45 ;	-----------------------------------------
+      000000                         46 _I2C_Send7bitAddress:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_send7bitaddress.c: 55: assert_param(IS_I2C_ADDRESS_OK(Address));
+      000000 7B 03            [ 1]   48 	ld	a, (0x03, sp)
+      000002 44               [ 1]   49 	srl	a
+      000003 24 11            [ 1]   50 	jrnc	00104$
+      000005 90 AEr00r40      [ 2]   51 	ldw	y, #___str_0+0
+      000009 4B 37            [ 1]   52 	push	#0x37
+      00000B 5F               [ 1]   53 	clrw	x
+      00000C 89               [ 2]   54 	pushw	x
+      00000D 4B 00            [ 1]   55 	push	#0x00
+      00000F 90 89            [ 2]   56 	pushw	y
+      000011 CDr00r00         [ 4]   57 	call	_assert_failed
+      000014 5B 06            [ 2]   58 	addw	sp, #6
+      000016                         59 00104$:
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_send7bitaddress.c: 56: assert_param(IS_I2C_DIRECTION_OK(Direction));
+      000016 0D 04            [ 1]   61 	tnz	(0x04, sp)
+      000018 27 17            [ 1]   62 	jreq	00106$
+      00001A 7B 04            [ 1]   63 	ld	a, (0x04, sp)
+      00001C A1 01            [ 1]   64 	cp	a, #0x01
+      00001E 27 11            [ 1]   65 	jreq	00106$
+      000020 90 AEr00r40      [ 2]   66 	ldw	y, #___str_0+0
+      000024 4B 38            [ 1]   67 	push	#0x38
+      000026 5F               [ 1]   68 	clrw	x
+      000027 89               [ 2]   69 	pushw	x
+      000028 4B 00            [ 1]   70 	push	#0x00
+      00002A 90 89            [ 2]   71 	pushw	y
+      00002C CDr00r00         [ 4]   72 	call	_assert_failed
+      00002F 5B 06            [ 2]   73 	addw	sp, #6
+      000031                         74 00106$:
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_send7bitaddress.c: 59: Address &= (uint8_t)0xFE;
+      000031 7B 03            [ 1]   76 	ld	a, (0x03, sp)
+      000033 A4 FE            [ 1]   77 	and	a, #0xfe
+      000035 6B 03            [ 1]   78 	ld	(0x03, sp), a
+                                     79 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_send7bitaddress.c: 62: I2C->DR = (uint8_t)(Address | (uint8_t)Direction);
+      000037 7B 03            [ 1]   80 	ld	a, (0x03, sp)
+      000039 1A 04            [ 1]   81 	or	a, (0x04, sp)
+      00003B AE 52 16         [ 2]   82 	ldw	x, #0x5216
+      00003E F7               [ 1]   83 	ld	(x), a
+      00003F 81               [ 4]   84 	ret
+                                     85 	.area CODE
+      000040                         86 ___str_0:
+      000040 2F 68 6F 6D 65 2F 67    87 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00007C 65 72 2F 73 72 63 2F    88 	.ascii "er/src/stm8s_i2c.i2c_send7bitaddress.c"
+             73 74 6D 38 73 5F 69
+             32 63 2E 69 32 63 5F
+             73 65 6E 64 37 62 69
+             74 61 64 64 72 65 73
+             73 2E 63
+      0000A2 00                      89 	.db 0x00
+                                     90 	.area INITIALIZER
+                                     91 	.area CABS (ABS)

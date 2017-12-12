@@ -1,0 +1,73 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:12 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_adc1_adc1_deinit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _ADC1_DeInit
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 52: void ADC1_DeInit(void)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function ADC1_DeInit
+                                     44 ;	-----------------------------------------
+      000000                         45 _ADC1_DeInit:
+                                     46 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 54: ADC1->CSR  = ADC1_CSR_RESET_VALUE;
+      000000 35 00 54 00      [ 1]   47 	mov	0x5400+0, #0x00
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 55: ADC1->CR1  = ADC1_CR1_RESET_VALUE;
+      000004 35 00 54 01      [ 1]   49 	mov	0x5401+0, #0x00
+                                     50 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 56: ADC1->CR2  = ADC1_CR2_RESET_VALUE;
+      000008 35 00 54 02      [ 1]   51 	mov	0x5402+0, #0x00
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 57: ADC1->CR3  = ADC1_CR3_RESET_VALUE;
+      00000C 35 00 54 03      [ 1]   53 	mov	0x5403+0, #0x00
+                                     54 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 58: ADC1->TDRH = ADC1_TDRH_RESET_VALUE;
+      000010 35 00 54 06      [ 1]   55 	mov	0x5406+0, #0x00
+                                     56 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 59: ADC1->TDRL = ADC1_TDRL_RESET_VALUE;
+      000014 35 00 54 07      [ 1]   57 	mov	0x5407+0, #0x00
+                                     58 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 60: ADC1->HTRH = ADC1_HTRH_RESET_VALUE;
+      000018 35 FF 54 08      [ 1]   59 	mov	0x5408+0, #0xff
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 61: ADC1->HTRL = ADC1_HTRL_RESET_VALUE;
+      00001C 35 03 54 09      [ 1]   61 	mov	0x5409+0, #0x03
+                                     62 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 62: ADC1->LTRH = ADC1_LTRH_RESET_VALUE;
+      000020 35 00 54 0A      [ 1]   63 	mov	0x540a+0, #0x00
+                                     64 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 63: ADC1->LTRL = ADC1_LTRL_RESET_VALUE;
+      000024 35 00 54 0B      [ 1]   65 	mov	0x540b+0, #0x00
+                                     66 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 64: ADC1->AWCRH = ADC1_AWCRH_RESET_VALUE;
+      000028 35 00 54 0E      [ 1]   67 	mov	0x540e+0, #0x00
+                                     68 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_adc1.adc1_deinit.c: 65: ADC1->AWCRL = ADC1_AWCRL_RESET_VALUE;
+      00002C 35 00 54 0F      [ 1]   69 	mov	0x540f+0, #0x00
+      000030 81               [ 4]   70 	ret
+                                     71 	.area CODE
+                                     72 	.area INITIALIZER
+                                     73 	.area CABS (ABS)

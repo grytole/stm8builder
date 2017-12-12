@@ -1,0 +1,69 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:00 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_gpio_gpio_deinit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _GPIO_DeInit
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_deinit.c: 53: void GPIO_DeInit(GPIO_TypeDef* GPIOx)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function GPIO_DeInit
+                                     44 ;	-----------------------------------------
+      000000                         45 _GPIO_DeInit:
+      000000 89               [ 2]   46 	pushw	x
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_deinit.c: 55: GPIOx->ODR = GPIO_ODR_RESET_VALUE; /* Reset Output Data Register */
+      000001 16 05            [ 2]   48 	ldw	y, (0x05, sp)
+      000003 17 01            [ 2]   49 	ldw	(0x01, sp), y
+      000005 1E 01            [ 2]   50 	ldw	x, (0x01, sp)
+      000007 7F               [ 1]   51 	clr	(x)
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_deinit.c: 56: GPIOx->DDR = GPIO_DDR_RESET_VALUE; /* Reset Data Direction Register */
+      000008 1E 01            [ 2]   53 	ldw	x, (0x01, sp)
+      00000A 5C               [ 2]   54 	incw	x
+      00000B 5C               [ 2]   55 	incw	x
+      00000C 7F               [ 1]   56 	clr	(x)
+                                     57 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_deinit.c: 57: GPIOx->CR1 = GPIO_CR1_RESET_VALUE; /* Reset Control Register 1 */
+      00000D 1E 01            [ 2]   58 	ldw	x, (0x01, sp)
+      00000F 1C 00 03         [ 2]   59 	addw	x, #0x0003
+      000012 7F               [ 1]   60 	clr	(x)
+                                     61 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_gpio.gpio_deinit.c: 58: GPIOx->CR2 = GPIO_CR2_RESET_VALUE; /* Reset Control Register 2 */
+      000013 1E 01            [ 2]   62 	ldw	x, (0x01, sp)
+      000015 1C 00 04         [ 2]   63 	addw	x, #0x0004
+      000018 7F               [ 1]   64 	clr	(x)
+      000019 85               [ 2]   65 	popw	x
+      00001A 81               [ 4]   66 	ret
+                                     67 	.area CODE
+                                     68 	.area INITIALIZER
+                                     69 	.area CABS (ABS)

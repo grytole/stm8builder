@@ -1,0 +1,338 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:03 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_itc_itc_setsoftwarepriority
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _ITC_GetSoftIntStatus
+                                     13 	.globl _assert_failed
+                                     14 	.globl _ITC_SetSoftwarePriority
+                                     15 ;--------------------------------------------------------
+                                     16 ; ram data
+                                     17 ;--------------------------------------------------------
+                                     18 	.area DATA
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area INITIALIZED
+                                     23 ;--------------------------------------------------------
+                                     24 ; absolute external ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area DABS (ABS)
+                                     27 ;--------------------------------------------------------
+                                     28 ; global & static initialisations
+                                     29 ;--------------------------------------------------------
+                                     30 	.area HOME
+                                     31 	.area GSINIT
+                                     32 	.area GSFINAL
+                                     33 	.area GSINIT
+                                     34 ;--------------------------------------------------------
+                                     35 ; Home
+                                     36 ;--------------------------------------------------------
+                                     37 	.area HOME
+                                     38 	.area HOME
+                                     39 ;--------------------------------------------------------
+                                     40 ; code
+                                     41 ;--------------------------------------------------------
+                                     42 	.area CODE
+                                     43 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 60: void ITC_SetSoftwarePriority(ITC_Irq_TypeDef IrqNum, ITC_PriorityLevel_TypeDef PriorityValue)
+                                     44 ;	-----------------------------------------
+                                     45 ;	 function ITC_SetSoftwarePriority
+                                     46 ;	-----------------------------------------
+      000000                         47 _ITC_SetSoftwarePriority:
+      000000 52 05            [ 2]   48 	sub	sp, #5
+                                     49 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 66: assert_param(IS_ITC_IRQ_OK((uint8_t)IrqNum));
+      000002 7B 08            [ 1]   50 	ld	a, (0x08, sp)
+      000004 A1 18            [ 1]   51 	cp	a, #0x18
+      000006 22 04            [ 1]   52 	jrugt	00169$
+      000008 0F 03            [ 1]   53 	clr	(0x03, sp)
+      00000A 20 04            [ 2]   54 	jra	00170$
+      00000C                         55 00169$:
+      00000C A6 01            [ 1]   56 	ld	a, #0x01
+      00000E 6B 03            [ 1]   57 	ld	(0x03, sp), a
+      000010                         58 00170$:
+      000010 0D 03            [ 1]   59 	tnz	(0x03, sp)
+      000012 27 11            [ 1]   60 	jreq	00127$
+      000014 90 AEr01r6A      [ 2]   61 	ldw	y, #___str_0+0
+      000018 4B 42            [ 1]   62 	push	#0x42
+      00001A 5F               [ 1]   63 	clrw	x
+      00001B 89               [ 2]   64 	pushw	x
+      00001C 4B 00            [ 1]   65 	push	#0x00
+      00001E 90 89            [ 2]   66 	pushw	y
+      000020 CDr00r00         [ 4]   67 	call	_assert_failed
+      000023 5B 06            [ 2]   68 	addw	sp, #6
+      000025                         69 00127$:
+                                     70 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 67: assert_param(IS_ITC_PRIORITY_OK(PriorityValue));
+      000025 7B 09            [ 1]   71 	ld	a, (0x09, sp)
+      000027 A1 02            [ 1]   72 	cp	a, #0x02
+      000029 27 21            [ 1]   73 	jreq	00129$
+      00002B 7B 09            [ 1]   74 	ld	a, (0x09, sp)
+      00002D A1 01            [ 1]   75 	cp	a, #0x01
+      00002F 27 1B            [ 1]   76 	jreq	00129$
+      000031 0D 09            [ 1]   77 	tnz	(0x09, sp)
+      000033 27 17            [ 1]   78 	jreq	00129$
+      000035 7B 09            [ 1]   79 	ld	a, (0x09, sp)
+      000037 A1 03            [ 1]   80 	cp	a, #0x03
+      000039 27 11            [ 1]   81 	jreq	00129$
+      00003B 90 AEr01r6A      [ 2]   82 	ldw	y, #___str_0+0
+      00003F 4B 43            [ 1]   83 	push	#0x43
+      000041 5F               [ 1]   84 	clrw	x
+      000042 89               [ 2]   85 	pushw	x
+      000043 4B 00            [ 1]   86 	push	#0x00
+      000045 90 89            [ 2]   87 	pushw	y
+      000047 CDr00r00         [ 4]   88 	call	_assert_failed
+      00004A 5B 06            [ 2]   89 	addw	sp, #6
+      00004C                         90 00129$:
+                                     91 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 70: assert_param(IS_ITC_INTERRUPTS_DISABLED);
+      00004C CDr00r00         [ 4]   92 	call	_ITC_GetSoftIntStatus
+      00004F A1 28            [ 1]   93 	cp	a, #0x28
+      000051 27 11            [ 1]   94 	jreq	00140$
+      000053 90 AEr01r6A      [ 2]   95 	ldw	y, #___str_0+0
+      000057 4B 46            [ 1]   96 	push	#0x46
+      000059 5F               [ 1]   97 	clrw	x
+      00005A 89               [ 2]   98 	pushw	x
+      00005B 4B 00            [ 1]   99 	push	#0x00
+      00005D 90 89            [ 2]  100 	pushw	y
+      00005F CDr00r00         [ 4]  101 	call	_assert_failed
+      000062 5B 06            [ 2]  102 	addw	sp, #6
+      000064                        103 00140$:
+                                    104 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 74: Mask = (uint8_t)(~(uint8_t)(0x03U << (((uint8_t)IrqNum % 4U) * 2U)));
+      000064 7B 08            [ 1]  105 	ld	a, (0x08, sp)
+      000066 0F 04            [ 1]  106 	clr	(0x04, sp)
+      000068 A4 03            [ 1]  107 	and	a, #0x03
+      00006A 97               [ 1]  108 	ld	xl, a
+      00006B 4F               [ 1]  109 	clr	a
+      00006C 58               [ 2]  110 	sllw	x
+      00006D A6 03            [ 1]  111 	ld	a, #0x03
+      00006F 88               [ 1]  112 	push	a
+      000070 9F               [ 1]  113 	ld	a, xl
+      000071 4D               [ 1]  114 	tnz	a
+      000072 27 05            [ 1]  115 	jreq	00186$
+      000074                        116 00185$:
+      000074 08 01            [ 1]  117 	sll	(1, sp)
+      000076 4A               [ 1]  118 	dec	a
+      000077 26 FB            [ 1]  119 	jrne	00185$
+      000079                        120 00186$:
+      000079 84               [ 1]  121 	pop	a
+      00007A 43               [ 1]  122 	cpl	a
+      00007B 6B 02            [ 1]  123 	ld	(0x02, sp), a
+                                    124 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 77: NewPriority = (uint8_t)((uint8_t)(PriorityValue) << (((uint8_t)IrqNum % 4U) * 2U));
+      00007D 7B 09            [ 1]  125 	ld	a, (0x09, sp)
+      00007F 88               [ 1]  126 	push	a
+      000080 9F               [ 1]  127 	ld	a, xl
+      000081 4D               [ 1]  128 	tnz	a
+      000082 27 05            [ 1]  129 	jreq	00188$
+      000084                        130 00187$:
+      000084 08 01            [ 1]  131 	sll	(1, sp)
+      000086 4A               [ 1]  132 	dec	a
+      000087 26 FB            [ 1]  133 	jrne	00187$
+      000089                        134 00188$:
+      000089 84               [ 1]  135 	pop	a
+      00008A 6B 01            [ 1]  136 	ld	(0x01, sp), a
+                                    137 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 79: switch (IrqNum)
+      00008C 0D 03            [ 1]  138 	tnz	(0x03, sp)
+      00008E 27 03            [ 1]  139 	jreq	00189$
+      000090 CCr01r67         [ 2]  140 	jp	00124$
+      000093                        141 00189$:
+      000093 5F               [ 1]  142 	clrw	x
+      000094 7B 08            [ 1]  143 	ld	a, (0x08, sp)
+      000096 97               [ 1]  144 	ld	xl, a
+      000097 58               [ 2]  145 	sllw	x
+      000098 DEu00u9C         [ 2]  146 	ldw	x, (#00190$, x)
+      00009B FC               [ 2]  147 	jp	(x)
+      00009C                        148 00190$:
+      00009Cr00rCE                  149 	.dw	#00101$
+      00009Er00rCE                  150 	.dw	#00102$
+      0000A0r00rCE                  151 	.dw	#00103$
+      0000A2r00rCE                  152 	.dw	#00104$
+      0000A4r00rE5                  153 	.dw	#00105$
+      0000A6r00rE5                  154 	.dw	#00106$
+      0000A8r00rE5                  155 	.dw	#00107$
+      0000AAr00rE5                  156 	.dw	#00108$
+      0000ACr01r67                  157 	.dw	#00122$
+      0000AEr01r67                  158 	.dw	#00122$
+      0000B0r00rFB                  159 	.dw	#00109$
+      0000B2r00rFB                  160 	.dw	#00110$
+      0000B4r01r11                  161 	.dw	#00111$
+      0000B6r01r11                  162 	.dw	#00112$
+      0000B8r01r11                  163 	.dw	#00113$
+      0000BAr01r11                  164 	.dw	#00114$
+      0000BCr01r27                  165 	.dw	#00115$
+      0000BEr01r27                  166 	.dw	#00116$
+      0000C0r01r27                  167 	.dw	#00117$
+      0000C2r01r27                  168 	.dw	#00118$
+      0000C4r01r67                  169 	.dw	#00122$
+      0000C6r01r67                  170 	.dw	#00122$
+      0000C8r01r3D                  171 	.dw	#00119$
+      0000CAr01r3D                  172 	.dw	#00120$
+      0000CCr01r53                  173 	.dw	#00121$
+                                    174 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 81: case ITC_IRQ_TLI: /* TLI software priority can be written but has no meaning */
+      0000CE                        175 00101$:
+                                    176 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 82: case ITC_IRQ_AWU:
+      0000CE                        177 00102$:
+                                    178 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 83: case ITC_IRQ_CLK:
+      0000CE                        179 00103$:
+                                    180 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 84: case ITC_IRQ_PORTA:
+      0000CE                        181 00104$:
+                                    182 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 85: ITC->ISPR1 &= Mask;
+      0000CE AE 7F 70         [ 2]  183 	ldw	x, #0x7f70
+      0000D1 F6               [ 1]  184 	ld	a, (x)
+      0000D2 14 02            [ 1]  185 	and	a, (0x02, sp)
+      0000D4 AE 7F 70         [ 2]  186 	ldw	x, #0x7f70
+      0000D7 F7               [ 1]  187 	ld	(x), a
+                                    188 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 86: ITC->ISPR1 |= NewPriority;
+      0000D8 AE 7F 70         [ 2]  189 	ldw	x, #0x7f70
+      0000DB F6               [ 1]  190 	ld	a, (x)
+      0000DC 1A 01            [ 1]  191 	or	a, (0x01, sp)
+      0000DE AE 7F 70         [ 2]  192 	ldw	x, #0x7f70
+      0000E1 F7               [ 1]  193 	ld	(x), a
+                                    194 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 87: break;
+      0000E2 CCr01r67         [ 2]  195 	jp	00124$
+                                    196 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 89: case ITC_IRQ_PORTB:
+      0000E5                        197 00105$:
+                                    198 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 90: case ITC_IRQ_PORTC:
+      0000E5                        199 00106$:
+                                    200 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 91: case ITC_IRQ_PORTD:
+      0000E5                        201 00107$:
+                                    202 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 92: case ITC_IRQ_PORTE:
+      0000E5                        203 00108$:
+                                    204 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 93: ITC->ISPR2 &= Mask;
+      0000E5 AE 7F 71         [ 2]  205 	ldw	x, #0x7f71
+      0000E8 F6               [ 1]  206 	ld	a, (x)
+      0000E9 14 02            [ 1]  207 	and	a, (0x02, sp)
+      0000EB AE 7F 71         [ 2]  208 	ldw	x, #0x7f71
+      0000EE F7               [ 1]  209 	ld	(x), a
+                                    210 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 94: ITC->ISPR2 |= NewPriority;
+      0000EF AE 7F 71         [ 2]  211 	ldw	x, #0x7f71
+      0000F2 F6               [ 1]  212 	ld	a, (x)
+      0000F3 1A 01            [ 1]  213 	or	a, (0x01, sp)
+      0000F5 AE 7F 71         [ 2]  214 	ldw	x, #0x7f71
+      0000F8 F7               [ 1]  215 	ld	(x), a
+                                    216 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 95: break;
+      0000F9 20 6C            [ 2]  217 	jra	00124$
+                                    218 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 104: case ITC_IRQ_SPI:
+      0000FB                        219 00109$:
+                                    220 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 105: case ITC_IRQ_TIM1_OVF:
+      0000FB                        221 00110$:
+                                    222 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 106: ITC->ISPR3 &= Mask;
+      0000FB AE 7F 72         [ 2]  223 	ldw	x, #0x7f72
+      0000FE F6               [ 1]  224 	ld	a, (x)
+      0000FF 14 02            [ 1]  225 	and	a, (0x02, sp)
+      000101 AE 7F 72         [ 2]  226 	ldw	x, #0x7f72
+      000104 F7               [ 1]  227 	ld	(x), a
+                                    228 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 107: ITC->ISPR3 |= NewPriority;
+      000105 AE 7F 72         [ 2]  229 	ldw	x, #0x7f72
+      000108 F6               [ 1]  230 	ld	a, (x)
+      000109 1A 01            [ 1]  231 	or	a, (0x01, sp)
+      00010B AE 7F 72         [ 2]  232 	ldw	x, #0x7f72
+      00010E F7               [ 1]  233 	ld	(x), a
+                                    234 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 108: break;
+      00010F 20 56            [ 2]  235 	jra	00124$
+                                    236 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 110: case ITC_IRQ_TIM1_CAPCOM:
+      000111                        237 00111$:
+                                    238 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 115: case ITC_IRQ_TIM2_OVF:
+      000111                        239 00112$:
+                                    240 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 116: case ITC_IRQ_TIM2_CAPCOM:
+      000111                        241 00113$:
+                                    242 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 118: case ITC_IRQ_TIM3_OVF:
+      000111                        243 00114$:
+                                    244 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 119: ITC->ISPR4 &= Mask;
+      000111 AE 7F 73         [ 2]  245 	ldw	x, #0x7f73
+      000114 F6               [ 1]  246 	ld	a, (x)
+      000115 14 02            [ 1]  247 	and	a, (0x02, sp)
+      000117 AE 7F 73         [ 2]  248 	ldw	x, #0x7f73
+      00011A F7               [ 1]  249 	ld	(x), a
+                                    250 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 120: ITC->ISPR4 |= NewPriority;
+      00011B AE 7F 73         [ 2]  251 	ldw	x, #0x7f73
+      00011E F6               [ 1]  252 	ld	a, (x)
+      00011F 1A 01            [ 1]  253 	or	a, (0x01, sp)
+      000121 AE 7F 73         [ 2]  254 	ldw	x, #0x7f73
+      000124 F7               [ 1]  255 	ld	(x), a
+                                    256 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 121: break;
+      000125 20 40            [ 2]  257 	jra	00124$
+                                    258 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 123: case ITC_IRQ_TIM3_CAPCOM:
+      000127                        259 00115$:
+                                    260 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 126: case ITC_IRQ_UART1_TX:
+      000127                        261 00116$:
+                                    262 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 127: case ITC_IRQ_UART1_RX:
+      000127                        263 00117$:
+                                    264 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 133: case ITC_IRQ_I2C:
+      000127                        265 00118$:
+                                    266 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 134: ITC->ISPR5 &= Mask;
+      000127 AE 7F 74         [ 2]  267 	ldw	x, #0x7f74
+      00012A F6               [ 1]  268 	ld	a, (x)
+      00012B 14 02            [ 1]  269 	and	a, (0x02, sp)
+      00012D AE 7F 74         [ 2]  270 	ldw	x, #0x7f74
+      000130 F7               [ 1]  271 	ld	(x), a
+                                    272 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 135: ITC->ISPR5 |= NewPriority;
+      000131 AE 7F 74         [ 2]  273 	ldw	x, #0x7f74
+      000134 F6               [ 1]  274 	ld	a, (x)
+      000135 1A 01            [ 1]  275 	or	a, (0x01, sp)
+      000137 AE 7F 74         [ 2]  276 	ldw	x, #0x7f74
+      00013A F7               [ 1]  277 	ld	(x), a
+                                    278 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 136: break;
+      00013B 20 2A            [ 2]  279 	jra	00124$
+                                    280 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 152: case ITC_IRQ_ADC1:
+      00013D                        281 00119$:
+                                    282 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 158: case ITC_IRQ_TIM4_OVF:
+      00013D                        283 00120$:
+                                    284 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 160: ITC->ISPR6 &= Mask;
+      00013D AE 7F 75         [ 2]  285 	ldw	x, #0x7f75
+      000140 F6               [ 1]  286 	ld	a, (x)
+      000141 14 02            [ 1]  287 	and	a, (0x02, sp)
+      000143 AE 7F 75         [ 2]  288 	ldw	x, #0x7f75
+      000146 F7               [ 1]  289 	ld	(x), a
+                                    290 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 161: ITC->ISPR6 |= NewPriority;
+      000147 AE 7F 75         [ 2]  291 	ldw	x, #0x7f75
+      00014A F6               [ 1]  292 	ld	a, (x)
+      00014B 1A 01            [ 1]  293 	or	a, (0x01, sp)
+      00014D AE 7F 75         [ 2]  294 	ldw	x, #0x7f75
+      000150 F7               [ 1]  295 	ld	(x), a
+                                    296 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 162: break;
+      000151 20 14            [ 2]  297 	jra	00124$
+                                    298 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 164: case ITC_IRQ_EEPROM_EEC:
+      000153                        299 00121$:
+                                    300 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 165: ITC->ISPR7 &= Mask;
+      000153 AE 7F 76         [ 2]  301 	ldw	x, #0x7f76
+      000156 F6               [ 1]  302 	ld	a, (x)
+      000157 14 02            [ 1]  303 	and	a, (0x02, sp)
+      000159 AE 7F 76         [ 2]  304 	ldw	x, #0x7f76
+      00015C F7               [ 1]  305 	ld	(x), a
+                                    306 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 166: ITC->ISPR7 |= NewPriority;
+      00015D AE 7F 76         [ 2]  307 	ldw	x, #0x7f76
+      000160 F6               [ 1]  308 	ld	a, (x)
+      000161 1A 01            [ 1]  309 	or	a, (0x01, sp)
+      000163 AE 7F 76         [ 2]  310 	ldw	x, #0x7f76
+      000166 F7               [ 1]  311 	ld	(x), a
+                                    312 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 167: break;
+                                    313 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 169: default:
+                                    314 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_itc.itc_setsoftwarepriority.c: 171: }
+      000167                        315 00122$:
+      000167                        316 00124$:
+      000167 5B 05            [ 2]  317 	addw	sp, #5
+      000169 81               [ 4]  318 	ret
+                                    319 	.area CODE
+      00016A                        320 ___str_0:
+      00016A 2F 68 6F 6D 65 2F 67   321 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0001A6 65 72 2F 73 72 63 2F   322 	.ascii "er/src/stm8s_itc.itc_setsoftwarepriority.c"
+             73 74 6D 38 73 5F 69
+             74 63 2E 69 74 63 5F
+             73 65 74 73 6F 66 74
+             77 61 72 65 70 72 69
+             6F 72 69 74 79 2E 63
+      0001D0 00                     323 	.db 0x00
+                                    324 	.area INITIALIZER
+                                    325 	.area CABS (ABS)

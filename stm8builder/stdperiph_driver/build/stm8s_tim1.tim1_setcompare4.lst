@@ -1,0 +1,60 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:07 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_setcompare4
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _TIM1_SetCompare4
+                                     13 ;--------------------------------------------------------
+                                     14 ; ram data
+                                     15 ;--------------------------------------------------------
+                                     16 	.area DATA
+                                     17 ;--------------------------------------------------------
+                                     18 ; ram data
+                                     19 ;--------------------------------------------------------
+                                     20 	.area INITIALIZED
+                                     21 ;--------------------------------------------------------
+                                     22 ; absolute external ram data
+                                     23 ;--------------------------------------------------------
+                                     24 	.area DABS (ABS)
+                                     25 ;--------------------------------------------------------
+                                     26 ; global & static initialisations
+                                     27 ;--------------------------------------------------------
+                                     28 	.area HOME
+                                     29 	.area GSINIT
+                                     30 	.area GSFINAL
+                                     31 	.area GSINIT
+                                     32 ;--------------------------------------------------------
+                                     33 ; Home
+                                     34 ;--------------------------------------------------------
+                                     35 	.area HOME
+                                     36 	.area HOME
+                                     37 ;--------------------------------------------------------
+                                     38 ; code
+                                     39 ;--------------------------------------------------------
+                                     40 	.area CODE
+                                     41 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_setcompare4.c: 51: void TIM1_SetCompare4(uint16_t Compare4)
+                                     42 ;	-----------------------------------------
+                                     43 ;	 function TIM1_SetCompare4
+                                     44 ;	-----------------------------------------
+      000000                         45 _TIM1_SetCompare4:
+      000000 89               [ 2]   46 	pushw	x
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_setcompare4.c: 54: TIM1->CCR4H = (uint8_t)(Compare4 >> 8);
+      000001 7B 05            [ 1]   48 	ld	a, (0x05, sp)
+      000003 0F 01            [ 1]   49 	clr	(0x01, sp)
+      000005 AE 52 6B         [ 2]   50 	ldw	x, #0x526b
+      000008 F7               [ 1]   51 	ld	(x), a
+                                     52 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_setcompare4.c: 55: TIM1->CCR4L = (uint8_t)(Compare4);
+      000009 7B 06            [ 1]   53 	ld	a, (0x06, sp)
+      00000B AE 52 6C         [ 2]   54 	ldw	x, #0x526c
+      00000E F7               [ 1]   55 	ld	(x), a
+      00000F 85               [ 2]   56 	popw	x
+      000010 81               [ 4]   57 	ret
+                                     58 	.area CODE
+                                     59 	.area INITIALIZER
+                                     60 	.area CABS (ABS)

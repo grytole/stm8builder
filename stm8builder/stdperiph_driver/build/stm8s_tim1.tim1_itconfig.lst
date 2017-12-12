@@ -1,0 +1,116 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:08 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_itconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM1_ITConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 62: void TIM1_ITConfig(TIM1_IT_TypeDef  TIM1_IT, FunctionalState NewState)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM1_ITConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM1_ITConfig:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 65: assert_param(IS_TIM1_IT_OK(TIM1_IT));
+      000001 0D 04            [ 1]   49 	tnz	(0x04, sp)
+      000003 26 11            [ 1]   50 	jrne	00107$
+      000005 90 AEr00r52      [ 2]   51 	ldw	y, #___str_0+0
+      000009 4B 41            [ 1]   52 	push	#0x41
+      00000B 5F               [ 1]   53 	clrw	x
+      00000C 89               [ 2]   54 	pushw	x
+      00000D 4B 00            [ 1]   55 	push	#0x00
+      00000F 90 89            [ 2]   56 	pushw	y
+      000011 CDr00r00         [ 4]   57 	call	_assert_failed
+      000014 5B 06            [ 2]   58 	addw	sp, #6
+      000016                         59 00107$:
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 66: assert_param(IS_FUNCTIONALSTATE_OK(NewState));
+      000016 0D 05            [ 1]   61 	tnz	(0x05, sp)
+      000018 27 17            [ 1]   62 	jreq	00109$
+      00001A 7B 05            [ 1]   63 	ld	a, (0x05, sp)
+      00001C A1 01            [ 1]   64 	cp	a, #0x01
+      00001E 27 11            [ 1]   65 	jreq	00109$
+      000020 90 AEr00r52      [ 2]   66 	ldw	y, #___str_0+0
+      000024 4B 42            [ 1]   67 	push	#0x42
+      000026 5F               [ 1]   68 	clrw	x
+      000027 89               [ 2]   69 	pushw	x
+      000028 4B 00            [ 1]   70 	push	#0x00
+      00002A 90 89            [ 2]   71 	pushw	y
+      00002C CDr00r00         [ 4]   72 	call	_assert_failed
+      00002F 5B 06            [ 2]   73 	addw	sp, #6
+      000031                         74 00109$:
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 68: if (NewState != DISABLE)
+      000031 0D 05            [ 1]   76 	tnz	(0x05, sp)
+      000033 27 0C            [ 1]   77 	jreq	00102$
+                                     78 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 71: TIM1->IER |= (uint8_t)TIM1_IT;
+      000035 AE 52 54         [ 2]   79 	ldw	x, #0x5254
+      000038 F6               [ 1]   80 	ld	a, (x)
+      000039 1A 04            [ 1]   81 	or	a, (0x04, sp)
+      00003B AE 52 54         [ 2]   82 	ldw	x, #0x5254
+      00003E F7               [ 1]   83 	ld	(x), a
+      00003F 20 0F            [ 2]   84 	jra	00104$
+      000041                         85 00102$:
+                                     86 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_itconfig.c: 76: TIM1->IER &= (uint8_t)(~(uint8_t)TIM1_IT);
+      000041 AE 52 54         [ 2]   87 	ldw	x, #0x5254
+      000044 F6               [ 1]   88 	ld	a, (x)
+      000045 6B 01            [ 1]   89 	ld	(0x01, sp), a
+      000047 7B 04            [ 1]   90 	ld	a, (0x04, sp)
+      000049 43               [ 1]   91 	cpl	a
+      00004A 14 01            [ 1]   92 	and	a, (0x01, sp)
+      00004C AE 52 54         [ 2]   93 	ldw	x, #0x5254
+      00004F F7               [ 1]   94 	ld	(x), a
+      000050                         95 00104$:
+      000050 84               [ 1]   96 	pop	a
+      000051 81               [ 4]   97 	ret
+                                     98 	.area CODE
+      000052                         99 ___str_0:
+      000052 2F 68 6F 6D 65 2F 67   100 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00008E 65 72 2F 73 72 63 2F   101 	.ascii "er/src/stm8s_tim1.tim1_itconfig.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 69 74 63 6F 6E
+             66 69 67 2E 63
+      0000AF 00                     102 	.db 0x00
+                                    103 	.area INITIALIZER
+                                    104 	.area CABS (ABS)

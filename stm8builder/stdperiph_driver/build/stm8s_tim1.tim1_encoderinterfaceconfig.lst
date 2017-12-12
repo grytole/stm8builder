@@ -1,0 +1,171 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:06 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_encoderinterfaceconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM1_EncoderInterfaceConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 65: void TIM1_EncoderInterfaceConfig(TIM1_EncoderMode_TypeDef TIM1_EncoderMode,
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM1_EncoderInterfaceConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM1_EncoderInterfaceConfig:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 70: assert_param(IS_TIM1_ENCODER_MODE_OK(TIM1_EncoderMode));
+      000000 7B 03            [ 1]   48 	ld	a, (0x03, sp)
+      000002 A1 01            [ 1]   49 	cp	a, #0x01
+      000004 27 1D            [ 1]   50 	jreq	00110$
+      000006 7B 03            [ 1]   51 	ld	a, (0x03, sp)
+      000008 A1 02            [ 1]   52 	cp	a, #0x02
+      00000A 27 17            [ 1]   53 	jreq	00110$
+      00000C 7B 03            [ 1]   54 	ld	a, (0x03, sp)
+      00000E A1 03            [ 1]   55 	cp	a, #0x03
+      000010 27 11            [ 1]   56 	jreq	00110$
+      000012 90 AEr00rA6      [ 2]   57 	ldw	y, #___str_0+0
+      000016 4B 46            [ 1]   58 	push	#0x46
+      000018 5F               [ 1]   59 	clrw	x
+      000019 89               [ 2]   60 	pushw	x
+      00001A 4B 00            [ 1]   61 	push	#0x00
+      00001C 90 89            [ 2]   62 	pushw	y
+      00001E CDr00r00         [ 4]   63 	call	_assert_failed
+      000021 5B 06            [ 2]   64 	addw	sp, #6
+      000023                         65 00110$:
+                                     66 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 71: assert_param(IS_TIM1_IC_POLARITY_OK(TIM1_IC1Polarity));
+      000023 0D 04            [ 1]   67 	tnz	(0x04, sp)
+      000025 27 17            [ 1]   68 	jreq	00118$
+      000027 7B 04            [ 1]   69 	ld	a, (0x04, sp)
+      000029 A1 01            [ 1]   70 	cp	a, #0x01
+      00002B 27 11            [ 1]   71 	jreq	00118$
+      00002D 90 AEr00rA6      [ 2]   72 	ldw	y, #___str_0+0
+      000031 4B 47            [ 1]   73 	push	#0x47
+      000033 5F               [ 1]   74 	clrw	x
+      000034 89               [ 2]   75 	pushw	x
+      000035 4B 00            [ 1]   76 	push	#0x00
+      000037 90 89            [ 2]   77 	pushw	y
+      000039 CDr00r00         [ 4]   78 	call	_assert_failed
+      00003C 5B 06            [ 2]   79 	addw	sp, #6
+      00003E                         80 00118$:
+                                     81 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 72: assert_param(IS_TIM1_IC_POLARITY_OK(TIM1_IC2Polarity));
+      00003E 0D 05            [ 1]   82 	tnz	(0x05, sp)
+      000040 27 17            [ 1]   83 	jreq	00123$
+      000042 7B 05            [ 1]   84 	ld	a, (0x05, sp)
+      000044 A1 01            [ 1]   85 	cp	a, #0x01
+      000046 27 11            [ 1]   86 	jreq	00123$
+      000048 90 AEr00rA6      [ 2]   87 	ldw	y, #___str_0+0
+      00004C 4B 48            [ 1]   88 	push	#0x48
+      00004E 5F               [ 1]   89 	clrw	x
+      00004F 89               [ 2]   90 	pushw	x
+      000050 4B 00            [ 1]   91 	push	#0x00
+      000052 90 89            [ 2]   92 	pushw	y
+      000054 CDr00r00         [ 4]   93 	call	_assert_failed
+      000057 5B 06            [ 2]   94 	addw	sp, #6
+      000059                         95 00123$:
+                                     96 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 75: if (TIM1_IC1Polarity != TIM1_ICPOLARITY_RISING)
+      000059 0D 04            [ 1]   97 	tnz	(0x04, sp)
+      00005B 27 09            [ 1]   98 	jreq	00102$
+                                     99 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 77: TIM1->CCER1 |= TIM1_CCER1_CC1P;
+      00005D AE 52 5C         [ 2]  100 	ldw	x, #0x525c
+      000060 F6               [ 1]  101 	ld	a, (x)
+      000061 AA 02            [ 1]  102 	or	a, #0x02
+      000063 F7               [ 1]  103 	ld	(x), a
+      000064 20 07            [ 2]  104 	jra	00103$
+      000066                        105 00102$:
+                                    106 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 81: TIM1->CCER1 &= (uint8_t)(~TIM1_CCER1_CC1P);
+      000066 AE 52 5C         [ 2]  107 	ldw	x, #0x525c
+      000069 F6               [ 1]  108 	ld	a, (x)
+      00006A A4 FD            [ 1]  109 	and	a, #0xfd
+      00006C F7               [ 1]  110 	ld	(x), a
+      00006D                        111 00103$:
+                                    112 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 84: if (TIM1_IC2Polarity != TIM1_ICPOLARITY_RISING)
+      00006D 0D 05            [ 1]  113 	tnz	(0x05, sp)
+      00006F 27 09            [ 1]  114 	jreq	00105$
+                                    115 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 86: TIM1->CCER1 |= TIM1_CCER1_CC2P;
+      000071 AE 52 5C         [ 2]  116 	ldw	x, #0x525c
+      000074 F6               [ 1]  117 	ld	a, (x)
+      000075 AA 20            [ 1]  118 	or	a, #0x20
+      000077 F7               [ 1]  119 	ld	(x), a
+      000078 20 07            [ 2]  120 	jra	00106$
+      00007A                        121 00105$:
+                                    122 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 90: TIM1->CCER1 &= (uint8_t)(~TIM1_CCER1_CC2P);
+      00007A AE 52 5C         [ 2]  123 	ldw	x, #0x525c
+      00007D F6               [ 1]  124 	ld	a, (x)
+      00007E A4 DF            [ 1]  125 	and	a, #0xdf
+      000080 F7               [ 1]  126 	ld	(x), a
+      000081                        127 00106$:
+                                    128 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 93: TIM1->SMCR = (uint8_t)((uint8_t)(TIM1->SMCR & (uint8_t)(TIM1_SMCR_MSM | TIM1_SMCR_TS))
+      000081 AE 52 52         [ 2]  129 	ldw	x, #0x5252
+      000084 F6               [ 1]  130 	ld	a, (x)
+      000085 A4 F0            [ 1]  131 	and	a, #0xf0
+                                    132 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 94: | (uint8_t) TIM1_EncoderMode);
+      000087 1A 03            [ 1]  133 	or	a, (0x03, sp)
+      000089 AE 52 52         [ 2]  134 	ldw	x, #0x5252
+      00008C F7               [ 1]  135 	ld	(x), a
+                                    136 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 97: TIM1->CCMR1 = (uint8_t)((uint8_t)(TIM1->CCMR1 & (uint8_t)(~TIM1_CCMR_CCxS)) 
+      00008D AE 52 58         [ 2]  137 	ldw	x, #0x5258
+      000090 F6               [ 1]  138 	ld	a, (x)
+      000091 A4 FC            [ 1]  139 	and	a, #0xfc
+      000093 AA 01            [ 1]  140 	or	a, #0x01
+      000095 AE 52 58         [ 2]  141 	ldw	x, #0x5258
+      000098 F7               [ 1]  142 	ld	(x), a
+                                    143 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_encoderinterfaceconfig.c: 99: TIM1->CCMR2 = (uint8_t)((uint8_t)(TIM1->CCMR2 & (uint8_t)(~TIM1_CCMR_CCxS))
+      000099 AE 52 59         [ 2]  144 	ldw	x, #0x5259
+      00009C F6               [ 1]  145 	ld	a, (x)
+      00009D A4 FC            [ 1]  146 	and	a, #0xfc
+      00009F AA 01            [ 1]  147 	or	a, #0x01
+      0000A1 AE 52 59         [ 2]  148 	ldw	x, #0x5259
+      0000A4 F7               [ 1]  149 	ld	(x), a
+      0000A5 81               [ 4]  150 	ret
+                                    151 	.area CODE
+      0000A6                        152 ___str_0:
+      0000A6 2F 68 6F 6D 65 2F 67   153 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0000E2 65 72 2F 73 72 63 2F   154 	.ascii "er/src/stm8s_tim1.tim1_encoderinterfaceconfig.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 65 6E 63 6F 64
+             65 72 69 6E 74 65 72
+             66 61 63 65 63 6F 6E
+             66 69 67 2E 63
+      000111 00                     155 	.db 0x00
+                                    156 	.area INITIALIZER
+                                    157 	.area CABS (ABS)

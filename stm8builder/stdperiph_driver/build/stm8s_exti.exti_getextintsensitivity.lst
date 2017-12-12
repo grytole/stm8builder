@@ -1,0 +1,167 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:27:57 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_exti_exti_getextintsensitivity
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _EXTI_GetExtIntSensitivity
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 53: EXTI_Sensitivity_TypeDef EXTI_GetExtIntSensitivity(EXTI_Port_TypeDef Port)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function EXTI_GetExtIntSensitivity
+                                     45 ;	-----------------------------------------
+      000000                         46 _EXTI_GetExtIntSensitivity:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 55: uint8_t value = 0;
+      000001 0F 01            [ 1]   49 	clr	(0x01, sp)
+                                     50 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 58: assert_param(IS_EXTI_PORT_OK(Port));
+      000003 0D 04            [ 1]   51 	tnz	(0x04, sp)
+      000005 27 29            [ 1]   52 	jreq	00111$
+      000007 7B 04            [ 1]   53 	ld	a, (0x04, sp)
+      000009 A1 01            [ 1]   54 	cp	a, #0x01
+      00000B 27 23            [ 1]   55 	jreq	00111$
+      00000D 7B 04            [ 1]   56 	ld	a, (0x04, sp)
+      00000F A1 02            [ 1]   57 	cp	a, #0x02
+      000011 27 1D            [ 1]   58 	jreq	00111$
+      000013 7B 04            [ 1]   59 	ld	a, (0x04, sp)
+      000015 A1 03            [ 1]   60 	cp	a, #0x03
+      000017 27 17            [ 1]   61 	jreq	00111$
+      000019 7B 04            [ 1]   62 	ld	a, (0x04, sp)
+      00001B A1 04            [ 1]   63 	cp	a, #0x04
+      00001D 27 11            [ 1]   64 	jreq	00111$
+      00001F 90 AEr00r88      [ 2]   65 	ldw	y, #___str_0+0
+      000023 4B 3A            [ 1]   66 	push	#0x3a
+      000025 5F               [ 1]   67 	clrw	x
+      000026 89               [ 2]   68 	pushw	x
+      000027 4B 00            [ 1]   69 	push	#0x00
+      000029 90 89            [ 2]   70 	pushw	y
+      00002B CDr00r00         [ 4]   71 	call	_assert_failed
+      00002E 5B 06            [ 2]   72 	addw	sp, #6
+      000030                         73 00111$:
+                                     74 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 60: switch (Port)
+      000030 7B 04            [ 1]   75 	ld	a, (0x04, sp)
+      000032 A1 04            [ 1]   76 	cp	a, #0x04
+      000034 22 4D            [ 1]   77 	jrugt	00107$
+      000036 5F               [ 1]   78 	clrw	x
+      000037 7B 04            [ 1]   79 	ld	a, (0x04, sp)
+      000039 97               [ 1]   80 	ld	xl, a
+      00003A 58               [ 2]   81 	sllw	x
+      00003B DEu00u3F         [ 2]   82 	ldw	x, (#00162$, x)
+      00003E FC               [ 2]   83 	jp	(x)
+      00003F                         84 00162$:
+      00003Fr00r49                   85 	.dw	#00101$
+      000041r00r53                   86 	.dw	#00102$
+      000043r00r5F                   87 	.dw	#00103$
+      000045r00r6C                   88 	.dw	#00104$
+      000047r00r7B                   89 	.dw	#00105$
+                                     90 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 62: case EXTI_PORT_GPIOA:
+      000049                         91 00101$:
+                                     92 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 63: value = (uint8_t)(EXTI->CR1 & EXTI_CR1_PAIS);
+      000049 AE 50 A0         [ 2]   93 	ldw	x, #0x50a0
+      00004C F6               [ 1]   94 	ld	a, (x)
+      00004D A4 03            [ 1]   95 	and	a, #0x03
+      00004F 6B 01            [ 1]   96 	ld	(0x01, sp), a
+                                     97 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 64: break;
+      000051 20 30            [ 2]   98 	jra	00107$
+                                     99 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 65: case EXTI_PORT_GPIOB:
+      000053                        100 00102$:
+                                    101 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 66: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PBIS) >> 2);
+      000053 AE 50 A0         [ 2]  102 	ldw	x, #0x50a0
+      000056 F6               [ 1]  103 	ld	a, (x)
+      000057 A4 0C            [ 1]  104 	and	a, #0x0c
+      000059 44               [ 1]  105 	srl	a
+      00005A 44               [ 1]  106 	srl	a
+      00005B 6B 01            [ 1]  107 	ld	(0x01, sp), a
+                                    108 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 67: break;
+      00005D 20 24            [ 2]  109 	jra	00107$
+                                    110 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 68: case EXTI_PORT_GPIOC:
+      00005F                        111 00103$:
+                                    112 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 69: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PCIS) >> 4);
+      00005F AE 50 A0         [ 2]  113 	ldw	x, #0x50a0
+      000062 F6               [ 1]  114 	ld	a, (x)
+      000063 A4 30            [ 1]  115 	and	a, #0x30
+      000065 4E               [ 1]  116 	swap	a
+      000066 A4 0F            [ 1]  117 	and	a, #0x0f
+      000068 6B 01            [ 1]  118 	ld	(0x01, sp), a
+                                    119 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 70: break;
+      00006A 20 17            [ 2]  120 	jra	00107$
+                                    121 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 71: case EXTI_PORT_GPIOD:
+      00006C                        122 00104$:
+                                    123 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 72: value = (uint8_t)((uint8_t)(EXTI->CR1 & EXTI_CR1_PDIS) >> 6);
+      00006C AE 50 A0         [ 2]  124 	ldw	x, #0x50a0
+      00006F F6               [ 1]  125 	ld	a, (x)
+      000070 A4 C0            [ 1]  126 	and	a, #0xc0
+      000072 4E               [ 1]  127 	swap	a
+      000073 A4 0F            [ 1]  128 	and	a, #0x0f
+      000075 44               [ 1]  129 	srl	a
+      000076 44               [ 1]  130 	srl	a
+      000077 6B 01            [ 1]  131 	ld	(0x01, sp), a
+                                    132 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 73: break;
+      000079 20 08            [ 2]  133 	jra	00107$
+                                    134 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 74: case EXTI_PORT_GPIOE:
+      00007B                        135 00105$:
+                                    136 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 75: value = (uint8_t)(EXTI->CR2 & EXTI_CR2_PEIS);
+      00007B AE 50 A1         [ 2]  137 	ldw	x, #0x50a1
+      00007E F6               [ 1]  138 	ld	a, (x)
+      00007F A4 03            [ 1]  139 	and	a, #0x03
+      000081 6B 01            [ 1]  140 	ld	(0x01, sp), a
+                                    141 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 79: }
+      000083                        142 00107$:
+                                    143 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_exti.exti_getextintsensitivity.c: 81: return((EXTI_Sensitivity_TypeDef)value);
+      000083 7B 01            [ 1]  144 	ld	a, (0x01, sp)
+      000085 5B 01            [ 2]  145 	addw	sp, #1
+      000087 81               [ 4]  146 	ret
+                                    147 	.area CODE
+      000088                        148 ___str_0:
+      000088 2F 68 6F 6D 65 2F 67   149 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0000C4 65 72 2F 73 72 63 2F   150 	.ascii "er/src/stm8s_exti.exti_getextintsensitivity.c"
+             73 74 6D 38 73 5F 65
+             78 74 69 2E 65 78 74
+             69 5F 67 65 74 65 78
+             74 69 6E 74 73 65 6E
+             73 69 74 69 76 69 74
+             79 2E 63
+      0000F1 00                     151 	.db 0x00
+                                    152 	.area INITIALIZER
+                                    153 	.area CABS (ABS)

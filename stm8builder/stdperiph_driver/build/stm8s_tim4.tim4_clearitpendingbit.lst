@@ -1,0 +1,85 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:16 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim4_tim4_clearitpendingbit
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM4_ClearITPendingBit
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim4.tim4_clearitpendingbit.c: 51: void TIM4_ClearITPendingBit(TIM4_IT_TypeDef TIM4_IT)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM4_ClearITPendingBit
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM4_ClearITPendingBit:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim4.tim4_clearitpendingbit.c: 54: assert_param(IS_TIM4_IT_OK(TIM4_IT));
+      000000 7B 03            [ 1]   48 	ld	a, (0x03, sp)
+      000002 A1 01            [ 1]   49 	cp	a, #0x01
+      000004 27 11            [ 1]   50 	jreq	00104$
+      000006 90 AEr00r1F      [ 2]   51 	ldw	y, #___str_0+0
+      00000A 4B 36            [ 1]   52 	push	#0x36
+      00000C 5F               [ 1]   53 	clrw	x
+      00000D 89               [ 2]   54 	pushw	x
+      00000E 4B 00            [ 1]   55 	push	#0x00
+      000010 90 89            [ 2]   56 	pushw	y
+      000012 CDr00r00         [ 4]   57 	call	_assert_failed
+      000015 5B 06            [ 2]   58 	addw	sp, #6
+      000017                         59 00104$:
+                                     60 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim4.tim4_clearitpendingbit.c: 57: TIM4->SR1 = (uint8_t)(~TIM4_IT);
+      000017 7B 03            [ 1]   61 	ld	a, (0x03, sp)
+      000019 43               [ 1]   62 	cpl	a
+      00001A AE 53 44         [ 2]   63 	ldw	x, #0x5344
+      00001D F7               [ 1]   64 	ld	(x), a
+      00001E 81               [ 4]   65 	ret
+                                     66 	.area CODE
+      00001F                         67 ___str_0:
+      00001F 2F 68 6F 6D 65 2F 67    68 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00005B 65 72 2F 73 72 63 2F    69 	.ascii "er/src/stm8s_tim4.tim4_clearitpendingbit.c"
+             73 74 6D 38 73 5F 74
+             69 6D 34 2E 74 69 6D
+             34 5F 63 6C 65 61 72
+             69 74 70 65 6E 64 69
+             6E 67 62 69 74 2E 63
+      000085 00                      70 	.db 0x00
+                                     71 	.area INITIALIZER
+                                     72 	.area CABS (ABS)

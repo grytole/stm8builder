@@ -1,0 +1,26 @@
+XH3
+H A areas 2 global symbols
+M stm8s_uart1_uart1_deinit
+O -mstm8
+S .__.ABS. Def000000
+A _CODE size 0 flags 0 addr 0
+A DATA size 0 flags 0 addr 0
+A INITIALIZED size 0 flags 0 addr 0
+A DABS size 0 flags 8 addr 0
+A HOME size 0 flags 0 addr 0
+A GSINIT size 0 flags 0 addr 0
+A GSFINAL size 0 flags 0 addr 0
+A CODE size 2D flags 0 addr 0
+S _UART1_DeInit Def000000
+A INITIALIZER size 0 flags 0 addr 0
+A CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 07
+T 00 00 00 AE 52 30 F6 AE 52 31 F6 35 00 52 33 35
+R 00 00 00 07
+T 00 00 0D 00 52 32 35 00 52 34 35 00 52 35 35 00
+R 00 00 00 07
+T 00 00 1A 52 36 35 00 52 37 35 00 52 38 35 00
+R 00 00 00 07
+T 00 00 26 52 39 35 00 52 3A 81
+R 00 00 00 07

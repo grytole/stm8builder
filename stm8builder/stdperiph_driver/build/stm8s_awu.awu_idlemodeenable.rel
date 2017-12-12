@@ -1,0 +1,20 @@
+XH3
+H A areas 2 global symbols
+M stm8s_awu_awu_idlemodeenable
+O -mstm8
+S .__.ABS. Def000000
+A _CODE size 0 flags 0 addr 0
+A DATA size 0 flags 0 addr 0
+A INITIALIZED size 0 flags 0 addr 0
+A DABS size 0 flags 8 addr 0
+A HOME size 0 flags 0 addr 0
+A GSINIT size 0 flags 0 addr 0
+A GSFINAL size 0 flags 0 addr 0
+A CODE size C flags 0 addr 0
+S _AWU_IdleModeEnable Def000000
+A INITIALIZER size 0 flags 0 addr 0
+A CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 07
+T 00 00 00 AE 50 F0 F6 A4 EF F7 35 F0 50 F2 81
+R 00 00 00 07

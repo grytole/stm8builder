@@ -1,0 +1,98 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:10 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_oc3polarityconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM1_OC3PolarityConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3polarityconfig.c: 53: void TIM1_OC3PolarityConfig(TIM1_OCPolarity_TypeDef TIM1_OCPolarity)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM1_OC3PolarityConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM1_OC3PolarityConfig:
+                                     47 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3polarityconfig.c: 56: assert_param(IS_TIM1_OC_POLARITY_OK(TIM1_OCPolarity));
+      000000 0D 03            [ 1]   48 	tnz	(0x03, sp)
+      000002 27 17            [ 1]   49 	jreq	00107$
+      000004 7B 03            [ 1]   50 	ld	a, (0x03, sp)
+      000006 A1 22            [ 1]   51 	cp	a, #0x22
+      000008 27 11            [ 1]   52 	jreq	00107$
+      00000A 90 AEr00r30      [ 2]   53 	ldw	y, #___str_0+0
+      00000E 4B 38            [ 1]   54 	push	#0x38
+      000010 5F               [ 1]   55 	clrw	x
+      000011 89               [ 2]   56 	pushw	x
+      000012 4B 00            [ 1]   57 	push	#0x00
+      000014 90 89            [ 2]   58 	pushw	y
+      000016 CDr00r00         [ 4]   59 	call	_assert_failed
+      000019 5B 06            [ 2]   60 	addw	sp, #6
+      00001B                         61 00107$:
+                                     62 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3polarityconfig.c: 59: if (TIM1_OCPolarity != TIM1_OCPOLARITY_HIGH)
+      00001B 0D 03            [ 1]   63 	tnz	(0x03, sp)
+      00001D 27 09            [ 1]   64 	jreq	00102$
+                                     65 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3polarityconfig.c: 61: TIM1->CCER2 |= TIM1_CCER2_CC3P;
+      00001F AE 52 5D         [ 2]   66 	ldw	x, #0x525d
+      000022 F6               [ 1]   67 	ld	a, (x)
+      000023 AA 02            [ 1]   68 	or	a, #0x02
+      000025 F7               [ 1]   69 	ld	(x), a
+      000026 20 07            [ 2]   70 	jra	00104$
+      000028                         71 00102$:
+                                     72 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3polarityconfig.c: 65: TIM1->CCER2 &= (uint8_t)(~TIM1_CCER2_CC3P);
+      000028 AE 52 5D         [ 2]   73 	ldw	x, #0x525d
+      00002B F6               [ 1]   74 	ld	a, (x)
+      00002C A4 FD            [ 1]   75 	and	a, #0xfd
+      00002E F7               [ 1]   76 	ld	(x), a
+      00002F                         77 00104$:
+      00002F 81               [ 4]   78 	ret
+                                     79 	.area CODE
+      000030                         80 ___str_0:
+      000030 2F 68 6F 6D 65 2F 67    81 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00006C 65 72 2F 73 72 63 2F    82 	.ascii "er/src/stm8s_tim1.tim1_oc3polarityconfig.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 6F 63 33 70 6F
+             6C 61 72 69 74 79 63
+             6F 6E 66 69 67 2E 63
+      000096 00                      83 	.db 0x00
+                                     84 	.area INITIALIZER
+                                     85 	.area CABS (ABS)

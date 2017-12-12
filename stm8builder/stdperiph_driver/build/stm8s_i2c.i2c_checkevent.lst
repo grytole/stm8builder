@@ -1,0 +1,186 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:02 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_i2c_i2c_checkevent
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _I2C_CheckEvent
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 159: ErrorStatus I2C_CheckEvent(I2C_Event_TypeDef I2C_Event)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function I2C_CheckEvent
+                                     45 ;	-----------------------------------------
+      000000                         46 _I2C_CheckEvent:
+      000000 52 05            [ 2]   47 	sub	sp, #5
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 161: __IO uint16_t lastevent = 0x00;
+      000002 5F               [ 1]   49 	clrw	x
+      000003 1F 01            [ 2]   50 	ldw	(0x01, sp), x
+                                     51 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 167: assert_param(IS_I2C_EVENT_OK(I2C_Event));
+      000005 1E 08            [ 2]   52 	ldw	x, (0x08, sp)
+      000007 A3 00 04         [ 2]   53 	cpw	x, #0x0004
+      00000A 26 06            [ 1]   54 	jrne	00229$
+      00000C A6 01            [ 1]   55 	ld	a, #0x01
+      00000E 6B 03            [ 1]   56 	ld	(0x03, sp), a
+      000010 20 02            [ 2]   57 	jra	00230$
+      000012                         58 00229$:
+      000012 0F 03            [ 1]   59 	clr	(0x03, sp)
+      000014                         60 00230$:
+      000014 1E 08            [ 2]   61 	ldw	x, (0x08, sp)
+      000016 A3 06 82         [ 2]   62 	cpw	x, #0x0682
+      000019 27 77            [ 1]   63 	jreq	00110$
+      00001B 1E 08            [ 2]   64 	ldw	x, (0x08, sp)
+      00001D A3 02 02         [ 2]   65 	cpw	x, #0x0202
+      000020 27 70            [ 1]   66 	jreq	00110$
+      000022 1E 08            [ 2]   67 	ldw	x, (0x08, sp)
+      000024 A3 12 00         [ 2]   68 	cpw	x, #0x1200
+      000027 27 69            [ 1]   69 	jreq	00110$
+      000029 1E 08            [ 2]   70 	ldw	x, (0x08, sp)
+      00002B A3 02 40         [ 2]   71 	cpw	x, #0x0240
+      00002E 27 62            [ 1]   72 	jreq	00110$
+      000030 1E 08            [ 2]   73 	ldw	x, (0x08, sp)
+      000032 A3 03 50         [ 2]   74 	cpw	x, #0x0350
+      000035 27 5B            [ 1]   75 	jreq	00110$
+      000037 1E 08            [ 2]   76 	ldw	x, (0x08, sp)
+      000039 A3 06 84         [ 2]   77 	cpw	x, #0x0684
+      00003C 27 54            [ 1]   78 	jreq	00110$
+      00003E 1E 08            [ 2]   79 	ldw	x, (0x08, sp)
+      000040 A3 07 94         [ 2]   80 	cpw	x, #0x0794
+      000043 27 4D            [ 1]   81 	jreq	00110$
+      000045 0D 03            [ 1]   82 	tnz	(0x03, sp)
+      000047 26 49            [ 1]   83 	jrne	00110$
+      000049 1E 08            [ 2]   84 	ldw	x, (0x08, sp)
+      00004B A3 00 10         [ 2]   85 	cpw	x, #0x0010
+      00004E 27 42            [ 1]   86 	jreq	00110$
+      000050 1E 08            [ 2]   87 	ldw	x, (0x08, sp)
+      000052 A3 03 01         [ 2]   88 	cpw	x, #0x0301
+      000055 27 3B            [ 1]   89 	jreq	00110$
+      000057 1E 08            [ 2]   90 	ldw	x, (0x08, sp)
+      000059 A3 07 82         [ 2]   91 	cpw	x, #0x0782
+      00005C 27 34            [ 1]   92 	jreq	00110$
+      00005E 1E 08            [ 2]   93 	ldw	x, (0x08, sp)
+      000060 A3 03 02         [ 2]   94 	cpw	x, #0x0302
+      000063 27 2D            [ 1]   95 	jreq	00110$
+      000065 1E 08            [ 2]   96 	ldw	x, (0x08, sp)
+      000067 A3 03 40         [ 2]   97 	cpw	x, #0x0340
+      00006A 27 26            [ 1]   98 	jreq	00110$
+      00006C 1E 08            [ 2]   99 	ldw	x, (0x08, sp)
+      00006E A3 07 84         [ 2]  100 	cpw	x, #0x0784
+      000071 27 1F            [ 1]  101 	jreq	00110$
+      000073 1E 08            [ 2]  102 	ldw	x, (0x08, sp)
+      000075 A3 07 80         [ 2]  103 	cpw	x, #0x0780
+      000078 27 18            [ 1]  104 	jreq	00110$
+      00007A 1E 08            [ 2]  105 	ldw	x, (0x08, sp)
+      00007C A3 03 08         [ 2]  106 	cpw	x, #0x0308
+      00007F 27 11            [ 1]  107 	jreq	00110$
+      000081 90 AEr00rD2      [ 2]  108 	ldw	y, #___str_0+0
+      000085 4B A7            [ 1]  109 	push	#0xa7
+      000087 5F               [ 1]  110 	clrw	x
+      000088 89               [ 2]  111 	pushw	x
+      000089 4B 00            [ 1]  112 	push	#0x00
+      00008B 90 89            [ 2]  113 	pushw	y
+      00008D CDr00r00         [ 4]  114 	call	_assert_failed
+      000090 5B 06            [ 2]  115 	addw	sp, #6
+      000092                        116 00110$:
+                                    117 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 169: if (I2C_Event == I2C_EVENT_SLAVE_ACK_FAILURE)
+      000092 0D 03            [ 1]  118 	tnz	(0x03, sp)
+      000094 27 0C            [ 1]  119 	jreq	00102$
+                                    120 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 171: lastevent = I2C->SR2 & I2C_SR2_AF;
+      000096 AE 52 18         [ 2]  121 	ldw	x, #0x5218
+      000099 F6               [ 1]  122 	ld	a, (x)
+      00009A A4 04            [ 1]  123 	and	a, #0x04
+      00009C 5F               [ 1]  124 	clrw	x
+      00009D 97               [ 1]  125 	ld	xl, a
+      00009E 1F 01            [ 2]  126 	ldw	(0x01, sp), x
+      0000A0 20 1B            [ 2]  127 	jra	00103$
+      0000A2                        128 00102$:
+                                    129 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 175: flag1 = I2C->SR1;
+      0000A2 AE 52 17         [ 2]  130 	ldw	x, #0x5217
+      0000A5 F6               [ 1]  131 	ld	a, (x)
+      0000A6 90 95            [ 1]  132 	ld	yh, a
+                                    133 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 176: flag2 = I2C->SR3;
+      0000A8 AE 52 19         [ 2]  134 	ldw	x, #0x5219
+      0000AB F6               [ 1]  135 	ld	a, (x)
+      0000AC 95               [ 1]  136 	ld	xh, a
+                                    137 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 177: lastevent = ((uint16_t)((uint16_t)flag2 << (uint16_t)8) | (uint16_t)flag1);
+      0000AD 4F               [ 1]  138 	clr	a
+      0000AE 4F               [ 1]  139 	clr	a
+      0000AF 0F 04            [ 1]  140 	clr	(0x04, sp)
+      0000B1 90 89            [ 2]  141 	pushw	y
+      0000B3 1A 01            [ 1]  142 	or	a, (1, sp)
+      0000B5 90 85            [ 2]  143 	popw	y
+      0000B7 02               [ 1]  144 	rlwa	x
+      0000B8 1A 04            [ 1]  145 	or	a, (0x04, sp)
+      0000BA 95               [ 1]  146 	ld	xh, a
+      0000BB 1F 01            [ 2]  147 	ldw	(0x01, sp), x
+      0000BD                        148 00103$:
+                                    149 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 180: if (((uint16_t)lastevent & (uint16_t)I2C_Event) == (uint16_t)I2C_Event)
+      0000BD 7B 02            [ 1]  150 	ld	a, (0x02, sp)
+      0000BF 14 09            [ 1]  151 	and	a, (0x09, sp)
+      0000C1 97               [ 1]  152 	ld	xl, a
+      0000C2 7B 01            [ 1]  153 	ld	a, (0x01, sp)
+      0000C4 14 08            [ 1]  154 	and	a, (0x08, sp)
+      0000C6 95               [ 1]  155 	ld	xh, a
+      0000C7 13 08            [ 2]  156 	cpw	x, (0x08, sp)
+      0000C9 26 03            [ 1]  157 	jrne	00105$
+                                    158 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 183: status = SUCCESS;
+      0000CB A6 01            [ 1]  159 	ld	a, #0x01
+                                    160 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 188: status = ERROR;
+      0000CD 21                     161 	.byte 0x21
+      0000CE                        162 00105$:
+      0000CE 4F               [ 1]  163 	clr	a
+      0000CF                        164 00106$:
+                                    165 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_i2c.i2c_checkevent.c: 192: return status;
+      0000CF 5B 05            [ 2]  166 	addw	sp, #5
+      0000D1 81               [ 4]  167 	ret
+                                    168 	.area CODE
+      0000D2                        169 ___str_0:
+      0000D2 2F 68 6F 6D 65 2F 67   170 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00010E 65 72 2F 73 72 63 2F   171 	.ascii "er/src/stm8s_i2c.i2c_checkevent.c"
+             73 74 6D 38 73 5F 69
+             32 63 2E 69 32 63 5F
+             63 68 65 63 6B 65 76
+             65 6E 74 2E 63
+      00012F 00                     172 	.db 0x00
+                                    173 	.area INITIALIZER
+                                    174 	.area CABS (ABS)

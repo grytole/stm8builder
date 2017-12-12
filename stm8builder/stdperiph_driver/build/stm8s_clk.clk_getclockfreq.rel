@@ -1,0 +1,48 @@
+XH3
+H A areas 4 global symbols
+M stm8s_clk_clk_getclockfreq
+O -mstm8
+S .__.ABS. Def000000
+S __divulong Ref000000
+A _CODE size 0 flags 0 addr 0
+A DATA size 0 flags 0 addr 0
+A INITIALIZED size 0 flags 0 addr 0
+A DABS size 0 flags 8 addr 0
+A HOME size 0 flags 0 addr 0
+A GSINIT size 0 flags 0 addr 0
+A GSFINAL size 0 flags 0 addr 0
+A CODE size 5D flags 0 addr 0
+S _HSIDivFactor Def000059
+S _CLK_GetClockFreq Def000000
+A INITIALIZER size 0 flags 0 addr 0
+A CABS size 0 flags 8 addr 0
+T 00 00 00
+R 00 00 00 07
+T 00 00 00 52 07 AE 50 C3 F6 6B 01 7B 01 A1 E1 26
+R 00 00 00 07
+T 00 00 0D 2C AE 50 C6 F6 A4 18 44 44 44 AE 00 59
+R 00 00 00 07 00 0E 00 07
+T 00 00 1A 1F 06 5F 97 72 FB 06 F6 5F 97 90 5F 89
+R 00 00 00 07
+T 00 00 27 90 89 4B 00 4B 24 4B F4 4B 00 CD 00 00
+R 00 00 00 07 02 0E 00 01
+T 00 00 34 5B 08 1F 04 20 1A
+R 00 00 00 07
+T 00 00 3A
+R 00 00 00 07
+T 00 00 3A 7B 01 A1 D2 26 0B AE F4 00 1F 04 90 AE
+R 00 00 00 07
+T 00 00 47 00 01 20 09
+R 00 00 00 07
+T 00 00 4B
+R 00 00 00 07
+T 00 00 4B AE 24 00 1F 04 90 AE 00 F4
+R 00 00 00 07
+T 00 00 54
+R 00 00 00 07
+T 00 00 54 1E 04 5B 07 81
+R 00 00 00 07
+T 00 00 59
+R 00 00 00 07
+T 00 00 59 01 02 04 08
+R 00 00 00 07

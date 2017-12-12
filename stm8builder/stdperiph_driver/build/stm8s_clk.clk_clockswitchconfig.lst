@@ -1,0 +1,290 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:27:55 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_clk_clk_clockswitchconfig
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _CLK_ClockSwitchConfig
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 60: ErrorStatus CLK_ClockSwitchConfig(CLK_SwitchMode_TypeDef CLK_SwitchMode, CLK_Source_TypeDef CLK_NewClock, FunctionalState ITState, CLK_CurrentClockState_TypeDef CLK_CurrentClockState)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function CLK_ClockSwitchConfig
+                                     45 ;	-----------------------------------------
+      000000                         46 _CLK_ClockSwitchConfig:
+      000000 52 03            [ 2]   47 	sub	sp, #3
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 67: assert_param(IS_CLK_SOURCE_OK(CLK_NewClock));
+      000002 7B 07            [ 1]   49 	ld	a, (0x07, sp)
+      000004 A1 E1            [ 1]   50 	cp	a, #0xe1
+      000006 27 1D            [ 1]   51 	jreq	00140$
+      000008 7B 07            [ 1]   52 	ld	a, (0x07, sp)
+      00000A A1 D2            [ 1]   53 	cp	a, #0xd2
+      00000C 27 17            [ 1]   54 	jreq	00140$
+      00000E 7B 07            [ 1]   55 	ld	a, (0x07, sp)
+      000010 A1 B4            [ 1]   56 	cp	a, #0xb4
+      000012 27 11            [ 1]   57 	jreq	00140$
+      000014 90 AEr01r4B      [ 2]   58 	ldw	y, #___str_0+0
+      000018 4B 43            [ 1]   59 	push	#0x43
+      00001A 5F               [ 1]   60 	clrw	x
+      00001B 89               [ 2]   61 	pushw	x
+      00001C 4B 00            [ 1]   62 	push	#0x00
+      00001E 90 89            [ 2]   63 	pushw	y
+      000020 CDr00r00         [ 4]   64 	call	_assert_failed
+      000023 5B 06            [ 2]   65 	addw	sp, #6
+      000025                         66 00140$:
+                                     67 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 68: assert_param(IS_CLK_SWITCHMODE_OK(CLK_SwitchMode));
+      000025 7B 06            [ 1]   68 	ld	a, (0x06, sp)
+      000027 A1 01            [ 1]   69 	cp	a, #0x01
+      000029 26 06            [ 1]   70 	jrne	00282$
+      00002B A6 01            [ 1]   71 	ld	a, #0x01
+      00002D 6B 03            [ 1]   72 	ld	(0x03, sp), a
+      00002F 20 02            [ 2]   73 	jra	00283$
+      000031                         74 00282$:
+      000031 0F 03            [ 1]   75 	clr	(0x03, sp)
+      000033                         76 00283$:
+      000033 0D 06            [ 1]   77 	tnz	(0x06, sp)
+      000035 27 15            [ 1]   78 	jreq	00148$
+      000037 0D 03            [ 1]   79 	tnz	(0x03, sp)
+      000039 26 11            [ 1]   80 	jrne	00148$
+      00003B 90 AEr01r4B      [ 2]   81 	ldw	y, #___str_0+0
+      00003F 4B 44            [ 1]   82 	push	#0x44
+      000041 5F               [ 1]   83 	clrw	x
+      000042 89               [ 2]   84 	pushw	x
+      000043 4B 00            [ 1]   85 	push	#0x00
+      000045 90 89            [ 2]   86 	pushw	y
+      000047 CDr00r00         [ 4]   87 	call	_assert_failed
+      00004A 5B 06            [ 2]   88 	addw	sp, #6
+      00004C                         89 00148$:
+                                     90 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 69: assert_param(IS_FUNCTIONALSTATE_OK(ITState));
+      00004C 0D 08            [ 1]   91 	tnz	(0x08, sp)
+      00004E 27 17            [ 1]   92 	jreq	00153$
+      000050 7B 08            [ 1]   93 	ld	a, (0x08, sp)
+      000052 A1 01            [ 1]   94 	cp	a, #0x01
+      000054 27 11            [ 1]   95 	jreq	00153$
+      000056 90 AEr01r4B      [ 2]   96 	ldw	y, #___str_0+0
+      00005A 4B 45            [ 1]   97 	push	#0x45
+      00005C 5F               [ 1]   98 	clrw	x
+      00005D 89               [ 2]   99 	pushw	x
+      00005E 4B 00            [ 1]  100 	push	#0x00
+      000060 90 89            [ 2]  101 	pushw	y
+      000062 CDr00r00         [ 4]  102 	call	_assert_failed
+      000065 5B 06            [ 2]  103 	addw	sp, #6
+      000067                        104 00153$:
+                                    105 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 70: assert_param(IS_CLK_CURRENTCLOCKSTATE_OK(CLK_CurrentClockState));
+      000067 0D 09            [ 1]  106 	tnz	(0x09, sp)
+      000069 27 17            [ 1]  107 	jreq	00158$
+      00006B 7B 09            [ 1]  108 	ld	a, (0x09, sp)
+      00006D A1 01            [ 1]  109 	cp	a, #0x01
+      00006F 27 11            [ 1]  110 	jreq	00158$
+      000071 90 AEr01r4B      [ 2]  111 	ldw	y, #___str_0+0
+      000075 4B 46            [ 1]  112 	push	#0x46
+      000077 5F               [ 1]  113 	clrw	x
+      000078 89               [ 2]  114 	pushw	x
+      000079 4B 00            [ 1]  115 	push	#0x00
+      00007B 90 89            [ 2]  116 	pushw	y
+      00007D CDr00r00         [ 4]  117 	call	_assert_failed
+      000080 5B 06            [ 2]  118 	addw	sp, #6
+      000082                        119 00158$:
+                                    120 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 73: clock_master = (CLK_Source_TypeDef)CLK->CMSR;
+      000082 AE 50 C3         [ 2]  121 	ldw	x, #0x50c3
+      000085 F6               [ 1]  122 	ld	a, (x)
+      000086 6B 02            [ 1]  123 	ld	(0x02, sp), a
+                                    124 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 76: if (CLK_SwitchMode == CLK_SWITCHMODE_AUTO)
+      000088 0D 03            [ 1]  125 	tnz	(0x03, sp)
+      00008A 27 40            [ 1]  126 	jreq	00122$
+                                    127 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 79: CLK->SWCR |= CLK_SWCR_SWEN;
+      00008C AE 50 C5         [ 2]  128 	ldw	x, #0x50c5
+      00008F F6               [ 1]  129 	ld	a, (x)
+      000090 AA 02            [ 1]  130 	or	a, #0x02
+      000092 F7               [ 1]  131 	ld	(x), a
+                                    132 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 82: if (ITState != DISABLE)
+      000093 0D 08            [ 1]  133 	tnz	(0x08, sp)
+      000095 27 09            [ 1]  134 	jreq	00102$
+                                    135 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 84: CLK->SWCR |= CLK_SWCR_SWIEN;
+      000097 AE 50 C5         [ 2]  136 	ldw	x, #0x50c5
+      00009A F6               [ 1]  137 	ld	a, (x)
+      00009B AA 04            [ 1]  138 	or	a, #0x04
+      00009D F7               [ 1]  139 	ld	(x), a
+      00009E 20 07            [ 2]  140 	jra	00103$
+      0000A0                        141 00102$:
+                                    142 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 88: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIEN);
+      0000A0 AE 50 C5         [ 2]  143 	ldw	x, #0x50c5
+      0000A3 F6               [ 1]  144 	ld	a, (x)
+      0000A4 A4 FB            [ 1]  145 	and	a, #0xfb
+      0000A6 F7               [ 1]  146 	ld	(x), a
+      0000A7                        147 00103$:
+                                    148 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 92: CLK->SWR = (uint8_t)CLK_NewClock;
+      0000A7 AE 50 C4         [ 2]  149 	ldw	x, #0x50c4
+      0000AA 7B 07            [ 1]  150 	ld	a, (0x07, sp)
+      0000AC F7               [ 1]  151 	ld	(x), a
+                                    152 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 95: while((((CLK->SWCR & CLK_SWCR_SWBSY) != 0 )&& (DownCounter != 0)))
+      0000AD AE FF FF         [ 2]  153 	ldw	x, #0xffff
+      0000B0                        154 00105$:
+      0000B0 90 AE 50 C5      [ 2]  155 	ldw	y, #0x50c5
+      0000B4 90 F6            [ 1]  156 	ld	a, (y)
+      0000B6 44               [ 1]  157 	srl	a
+      0000B7 24 06            [ 1]  158 	jrnc	00107$
+      0000B9 5D               [ 2]  159 	tnzw	x
+      0000BA 27 03            [ 1]  160 	jreq	00107$
+                                    161 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 97: DownCounter--;
+      0000BC 5A               [ 2]  162 	decw	x
+      0000BD 20 F1            [ 2]  163 	jra	00105$
+      0000BF                        164 00107$:
+                                    165 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 100: if(DownCounter != 0)
+      0000BF 5D               [ 2]  166 	tnzw	x
+      0000C0 27 06            [ 1]  167 	jreq	00109$
+                                    168 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 102: Swif = SUCCESS;
+      0000C2 A6 01            [ 1]  169 	ld	a, #0x01
+      0000C4 6B 01            [ 1]  170 	ld	(0x01, sp), a
+      0000C6 20 43            [ 2]  171 	jra	00123$
+      0000C8                        172 00109$:
+                                    173 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 106: Swif = ERROR;
+      0000C8 0F 01            [ 1]  174 	clr	(0x01, sp)
+      0000CA 20 3F            [ 2]  175 	jra	00123$
+      0000CC                        176 00122$:
+                                    177 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 112: if (ITState != DISABLE)
+      0000CC 0D 08            [ 1]  178 	tnz	(0x08, sp)
+      0000CE 27 09            [ 1]  179 	jreq	00112$
+                                    180 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 114: CLK->SWCR |= CLK_SWCR_SWIEN;
+      0000D0 AE 50 C5         [ 2]  181 	ldw	x, #0x50c5
+      0000D3 F6               [ 1]  182 	ld	a, (x)
+      0000D4 AA 04            [ 1]  183 	or	a, #0x04
+      0000D6 F7               [ 1]  184 	ld	(x), a
+      0000D7 20 07            [ 2]  185 	jra	00113$
+      0000D9                        186 00112$:
+                                    187 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 118: CLK->SWCR &= (uint8_t)(~CLK_SWCR_SWIEN);
+      0000D9 AE 50 C5         [ 2]  188 	ldw	x, #0x50c5
+      0000DC F6               [ 1]  189 	ld	a, (x)
+      0000DD A4 FB            [ 1]  190 	and	a, #0xfb
+      0000DF F7               [ 1]  191 	ld	(x), a
+      0000E0                        192 00113$:
+                                    193 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 122: CLK->SWR = (uint8_t)CLK_NewClock;
+      0000E0 AE 50 C4         [ 2]  194 	ldw	x, #0x50c4
+      0000E3 7B 07            [ 1]  195 	ld	a, (0x07, sp)
+      0000E5 F7               [ 1]  196 	ld	(x), a
+                                    197 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 125: while((((CLK->SWCR & CLK_SWCR_SWIF) != 0 ) && (DownCounter != 0)))
+      0000E6 AE FF FF         [ 2]  198 	ldw	x, #0xffff
+      0000E9                        199 00115$:
+      0000E9 90 AE 50 C5      [ 2]  200 	ldw	y, #0x50c5
+      0000ED 90 F6            [ 1]  201 	ld	a, (y)
+      0000EF A5 08            [ 1]  202 	bcp	a, #0x08
+      0000F1 27 06            [ 1]  203 	jreq	00117$
+      0000F3 5D               [ 2]  204 	tnzw	x
+      0000F4 27 03            [ 1]  205 	jreq	00117$
+                                    206 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 127: DownCounter--;
+      0000F6 5A               [ 2]  207 	decw	x
+      0000F7 20 F0            [ 2]  208 	jra	00115$
+      0000F9                        209 00117$:
+                                    210 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 130: if(DownCounter != 0)
+      0000F9 5D               [ 2]  211 	tnzw	x
+      0000FA 27 0D            [ 1]  212 	jreq	00119$
+                                    213 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 133: CLK->SWCR |= CLK_SWCR_SWEN;
+      0000FC AE 50 C5         [ 2]  214 	ldw	x, #0x50c5
+      0000FF F6               [ 1]  215 	ld	a, (x)
+      000100 AA 02            [ 1]  216 	or	a, #0x02
+      000102 F7               [ 1]  217 	ld	(x), a
+                                    218 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 134: Swif = SUCCESS;
+      000103 A6 01            [ 1]  219 	ld	a, #0x01
+      000105 6B 01            [ 1]  220 	ld	(0x01, sp), a
+      000107 20 02            [ 2]  221 	jra	00123$
+      000109                        222 00119$:
+                                    223 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 138: Swif = ERROR;
+      000109 0F 01            [ 1]  224 	clr	(0x01, sp)
+      00010B                        225 00123$:
+                                    226 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 141: if(Swif != ERROR)
+      00010B 0D 01            [ 1]  227 	tnz	(0x01, sp)
+      00010D 27 37            [ 1]  228 	jreq	00136$
+                                    229 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 144: if((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_HSI))
+      00010F 0D 09            [ 1]  230 	tnz	(0x09, sp)
+      000111 26 0F            [ 1]  231 	jrne	00132$
+      000113 7B 02            [ 1]  232 	ld	a, (0x02, sp)
+      000115 A1 E1            [ 1]  233 	cp	a, #0xe1
+      000117 26 09            [ 1]  234 	jrne	00132$
+                                    235 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 146: CLK->ICKR &= (uint8_t)(~CLK_ICKR_HSIEN);
+      000119 AE 50 C0         [ 2]  236 	ldw	x, #0x50c0
+      00011C F6               [ 1]  237 	ld	a, (x)
+      00011D A4 FE            [ 1]  238 	and	a, #0xfe
+      00011F F7               [ 1]  239 	ld	(x), a
+      000120 20 24            [ 2]  240 	jra	00136$
+      000122                        241 00132$:
+                                    242 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 148: else if((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_LSI))
+      000122 0D 09            [ 1]  243 	tnz	(0x09, sp)
+      000124 26 0F            [ 1]  244 	jrne	00128$
+      000126 7B 02            [ 1]  245 	ld	a, (0x02, sp)
+      000128 A1 D2            [ 1]  246 	cp	a, #0xd2
+      00012A 26 09            [ 1]  247 	jrne	00128$
+                                    248 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 150: CLK->ICKR &= (uint8_t)(~CLK_ICKR_LSIEN);
+      00012C AE 50 C0         [ 2]  249 	ldw	x, #0x50c0
+      00012F F6               [ 1]  250 	ld	a, (x)
+      000130 A4 F7            [ 1]  251 	and	a, #0xf7
+      000132 F7               [ 1]  252 	ld	(x), a
+      000133 20 11            [ 2]  253 	jra	00136$
+      000135                        254 00128$:
+                                    255 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 152: else if ((CLK_CurrentClockState == CLK_CURRENTCLOCKSTATE_DISABLE) && ( clock_master == CLK_SOURCE_HSE))
+      000135 0D 09            [ 1]  256 	tnz	(0x09, sp)
+      000137 26 0D            [ 1]  257 	jrne	00136$
+      000139 7B 02            [ 1]  258 	ld	a, (0x02, sp)
+      00013B A1 B4            [ 1]  259 	cp	a, #0xb4
+      00013D 26 07            [ 1]  260 	jrne	00136$
+                                    261 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 154: CLK->ECKR &= (uint8_t)(~CLK_ECKR_HSEEN);
+      00013F AE 50 C1         [ 2]  262 	ldw	x, #0x50c1
+      000142 F6               [ 1]  263 	ld	a, (x)
+      000143 A4 FE            [ 1]  264 	and	a, #0xfe
+      000145 F7               [ 1]  265 	ld	(x), a
+      000146                        266 00136$:
+                                    267 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_clk.clk_clockswitchconfig.c: 157: return(Swif);
+      000146 7B 01            [ 1]  268 	ld	a, (0x01, sp)
+      000148 5B 03            [ 2]  269 	addw	sp, #3
+      00014A 81               [ 4]  270 	ret
+                                    271 	.area CODE
+      00014B                        272 ___str_0:
+      00014B 2F 68 6F 6D 65 2F 67   273 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      000187 65 72 2F 73 72 63 2F   274 	.ascii "er/src/stm8s_clk.clk_clockswitchconfig.c"
+             73 74 6D 38 73 5F 63
+             6C 6B 2E 63 6C 6B 5F
+             63 6C 6F 63 6B 73 77
+             69 74 63 68 63 6F 6E
+             66 69 67 2E 63
+      0001AF 00                     275 	.db 0x00
+                                    276 	.area INITIALIZER
+                                    277 	.area CABS (ABS)

@@ -1,0 +1,250 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:06 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_oc3init
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM1_OC3Init
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 64: void TIM1_OC3Init(TIM1_OCMode_TypeDef TIM1_OCMode,
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM1_OC3Init
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM1_OC3Init:
+      000000 52 08            [ 2]   47 	sub	sp, #8
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 74: assert_param(IS_TIM1_OC_MODE_OK(TIM1_OCMode));
+      000002 0D 0B            [ 1]   49 	tnz	(0x0b, sp)
+      000004 27 2F            [ 1]   50 	jreq	00104$
+      000006 7B 0B            [ 1]   51 	ld	a, (0x0b, sp)
+      000008 A1 10            [ 1]   52 	cp	a, #0x10
+      00000A 27 29            [ 1]   53 	jreq	00104$
+      00000C 7B 0B            [ 1]   54 	ld	a, (0x0b, sp)
+      00000E A1 20            [ 1]   55 	cp	a, #0x20
+      000010 27 23            [ 1]   56 	jreq	00104$
+      000012 7B 0B            [ 1]   57 	ld	a, (0x0b, sp)
+      000014 A1 30            [ 1]   58 	cp	a, #0x30
+      000016 27 1D            [ 1]   59 	jreq	00104$
+      000018 7B 0B            [ 1]   60 	ld	a, (0x0b, sp)
+      00001A A1 60            [ 1]   61 	cp	a, #0x60
+      00001C 27 17            [ 1]   62 	jreq	00104$
+      00001E 7B 0B            [ 1]   63 	ld	a, (0x0b, sp)
+      000020 A1 70            [ 1]   64 	cp	a, #0x70
+      000022 27 11            [ 1]   65 	jreq	00104$
+      000024 90 AEr01r42      [ 2]   66 	ldw	y, #___str_0+0
+      000028 4B 4A            [ 1]   67 	push	#0x4a
+      00002A 5F               [ 1]   68 	clrw	x
+      00002B 89               [ 2]   69 	pushw	x
+      00002C 4B 00            [ 1]   70 	push	#0x00
+      00002E 90 89            [ 2]   71 	pushw	y
+      000030 CDr00r00         [ 4]   72 	call	_assert_failed
+      000033 5B 06            [ 2]   73 	addw	sp, #6
+      000035                         74 00104$:
+                                     75 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 75: assert_param(IS_TIM1_OUTPUT_STATE_OK(TIM1_OutputState));
+      000035 0D 0C            [ 1]   76 	tnz	(0x0c, sp)
+      000037 27 17            [ 1]   77 	jreq	00121$
+      000039 7B 0C            [ 1]   78 	ld	a, (0x0c, sp)
+      00003B A1 11            [ 1]   79 	cp	a, #0x11
+      00003D 27 11            [ 1]   80 	jreq	00121$
+      00003F 90 AEr01r42      [ 2]   81 	ldw	y, #___str_0+0
+      000043 4B 4B            [ 1]   82 	push	#0x4b
+      000045 5F               [ 1]   83 	clrw	x
+      000046 89               [ 2]   84 	pushw	x
+      000047 4B 00            [ 1]   85 	push	#0x00
+      000049 90 89            [ 2]   86 	pushw	y
+      00004B CDr00r00         [ 4]   87 	call	_assert_failed
+      00004E 5B 06            [ 2]   88 	addw	sp, #6
+      000050                         89 00121$:
+                                     90 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 76: assert_param(IS_TIM1_OUTPUTN_STATE_OK(TIM1_OutputNState));
+      000050 0D 0D            [ 1]   91 	tnz	(0x0d, sp)
+      000052 27 17            [ 1]   92 	jreq	00126$
+      000054 7B 0D            [ 1]   93 	ld	a, (0x0d, sp)
+      000056 A1 44            [ 1]   94 	cp	a, #0x44
+      000058 27 11            [ 1]   95 	jreq	00126$
+      00005A 90 AEr01r42      [ 2]   96 	ldw	y, #___str_0+0
+      00005E 4B 4C            [ 1]   97 	push	#0x4c
+      000060 5F               [ 1]   98 	clrw	x
+      000061 89               [ 2]   99 	pushw	x
+      000062 4B 00            [ 1]  100 	push	#0x00
+      000064 90 89            [ 2]  101 	pushw	y
+      000066 CDr00r00         [ 4]  102 	call	_assert_failed
+      000069 5B 06            [ 2]  103 	addw	sp, #6
+      00006B                        104 00126$:
+                                    105 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 77: assert_param(IS_TIM1_OC_POLARITY_OK(TIM1_OCPolarity));
+      00006B 0D 10            [ 1]  106 	tnz	(0x10, sp)
+      00006D 27 17            [ 1]  107 	jreq	00131$
+      00006F 7B 10            [ 1]  108 	ld	a, (0x10, sp)
+      000071 A1 22            [ 1]  109 	cp	a, #0x22
+      000073 27 11            [ 1]  110 	jreq	00131$
+      000075 90 AEr01r42      [ 2]  111 	ldw	y, #___str_0+0
+      000079 4B 4D            [ 1]  112 	push	#0x4d
+      00007B 5F               [ 1]  113 	clrw	x
+      00007C 89               [ 2]  114 	pushw	x
+      00007D 4B 00            [ 1]  115 	push	#0x00
+      00007F 90 89            [ 2]  116 	pushw	y
+      000081 CDr00r00         [ 4]  117 	call	_assert_failed
+      000084 5B 06            [ 2]  118 	addw	sp, #6
+      000086                        119 00131$:
+                                    120 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 78: assert_param(IS_TIM1_OCN_POLARITY_OK(TIM1_OCNPolarity));
+      000086 0D 11            [ 1]  121 	tnz	(0x11, sp)
+      000088 27 17            [ 1]  122 	jreq	00136$
+      00008A 7B 11            [ 1]  123 	ld	a, (0x11, sp)
+      00008C A1 88            [ 1]  124 	cp	a, #0x88
+      00008E 27 11            [ 1]  125 	jreq	00136$
+      000090 90 AEr01r42      [ 2]  126 	ldw	y, #___str_0+0
+      000094 4B 4E            [ 1]  127 	push	#0x4e
+      000096 5F               [ 1]  128 	clrw	x
+      000097 89               [ 2]  129 	pushw	x
+      000098 4B 00            [ 1]  130 	push	#0x00
+      00009A 90 89            [ 2]  131 	pushw	y
+      00009C CDr00r00         [ 4]  132 	call	_assert_failed
+      00009F 5B 06            [ 2]  133 	addw	sp, #6
+      0000A1                        134 00136$:
+                                    135 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 79: assert_param(IS_TIM1_OCIDLE_STATE_OK(TIM1_OCIdleState));
+      0000A1 7B 12            [ 1]  136 	ld	a, (0x12, sp)
+      0000A3 A1 55            [ 1]  137 	cp	a, #0x55
+      0000A5 27 15            [ 1]  138 	jreq	00141$
+      0000A7 0D 12            [ 1]  139 	tnz	(0x12, sp)
+      0000A9 27 11            [ 1]  140 	jreq	00141$
+      0000AB 90 AEr01r42      [ 2]  141 	ldw	y, #___str_0+0
+      0000AF 4B 4F            [ 1]  142 	push	#0x4f
+      0000B1 5F               [ 1]  143 	clrw	x
+      0000B2 89               [ 2]  144 	pushw	x
+      0000B3 4B 00            [ 1]  145 	push	#0x00
+      0000B5 90 89            [ 2]  146 	pushw	y
+      0000B7 CDr00r00         [ 4]  147 	call	_assert_failed
+      0000BA 5B 06            [ 2]  148 	addw	sp, #6
+      0000BC                        149 00141$:
+                                    150 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 80: assert_param(IS_TIM1_OCNIDLE_STATE_OK(TIM1_OCNIdleState));
+      0000BC 7B 13            [ 1]  151 	ld	a, (0x13, sp)
+      0000BE A1 2A            [ 1]  152 	cp	a, #0x2a
+      0000C0 27 15            [ 1]  153 	jreq	00146$
+      0000C2 0D 13            [ 1]  154 	tnz	(0x13, sp)
+      0000C4 27 11            [ 1]  155 	jreq	00146$
+      0000C6 90 AEr01r42      [ 2]  156 	ldw	y, #___str_0+0
+      0000CA 4B 50            [ 1]  157 	push	#0x50
+      0000CC 5F               [ 1]  158 	clrw	x
+      0000CD 89               [ 2]  159 	pushw	x
+      0000CE 4B 00            [ 1]  160 	push	#0x00
+      0000D0 90 89            [ 2]  161 	pushw	y
+      0000D2 CDr00r00         [ 4]  162 	call	_assert_failed
+      0000D5 5B 06            [ 2]  163 	addw	sp, #6
+      0000D7                        164 00146$:
+                                    165 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 84: TIM1->CCER2 &= (uint8_t)(~( TIM1_CCER2_CC3E | TIM1_CCER2_CC3NE | 
+      0000D7 AE 52 5D         [ 2]  166 	ldw	x, #0x525d
+      0000DA F6               [ 1]  167 	ld	a, (x)
+      0000DB A4 F0            [ 1]  168 	and	a, #0xf0
+      0000DD F7               [ 1]  169 	ld	(x), a
+                                    170 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 88: TIM1->CCER2 |= (uint8_t)((uint8_t)((uint8_t)(TIM1_OutputState  & TIM1_CCER2_CC3E   ) |
+      0000DE AE 52 5D         [ 2]  171 	ldw	x, #0x525d
+      0000E1 F6               [ 1]  172 	ld	a, (x)
+      0000E2 6B 08            [ 1]  173 	ld	(0x08, sp), a
+      0000E4 7B 0C            [ 1]  174 	ld	a, (0x0c, sp)
+      0000E6 A4 01            [ 1]  175 	and	a, #0x01
+      0000E8 6B 07            [ 1]  176 	ld	(0x07, sp), a
+                                    177 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 89: (uint8_t)(TIM1_OutputNState & TIM1_CCER2_CC3NE  )) | 
+      0000EA 7B 0D            [ 1]  178 	ld	a, (0x0d, sp)
+      0000EC A4 04            [ 1]  179 	and	a, #0x04
+      0000EE 1A 07            [ 1]  180 	or	a, (0x07, sp)
+      0000F0 6B 06            [ 1]  181 	ld	(0x06, sp), a
+                                    182 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 90: (uint8_t)((uint8_t)(TIM1_OCPolarity   & TIM1_CCER2_CC3P   ) | 
+      0000F2 7B 10            [ 1]  183 	ld	a, (0x10, sp)
+      0000F4 A4 02            [ 1]  184 	and	a, #0x02
+      0000F6 6B 05            [ 1]  185 	ld	(0x05, sp), a
+                                    186 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 91: (uint8_t)(TIM1_OCNPolarity  & TIM1_CCER2_CC3NP  )));
+      0000F8 7B 11            [ 1]  187 	ld	a, (0x11, sp)
+      0000FA A4 08            [ 1]  188 	and	a, #0x08
+      0000FC 1A 05            [ 1]  189 	or	a, (0x05, sp)
+      0000FE 1A 06            [ 1]  190 	or	a, (0x06, sp)
+      000100 1A 08            [ 1]  191 	or	a, (0x08, sp)
+      000102 AE 52 5D         [ 2]  192 	ldw	x, #0x525d
+      000105 F7               [ 1]  193 	ld	(x), a
+                                    194 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 94: TIM1->CCMR3 = (uint8_t)((uint8_t)(TIM1->CCMR3 & (uint8_t)(~TIM1_CCMR_OCM)) | 
+      000106 AE 52 5A         [ 2]  195 	ldw	x, #0x525a
+      000109 F6               [ 1]  196 	ld	a, (x)
+      00010A A4 8F            [ 1]  197 	and	a, #0x8f
+                                    198 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 95: (uint8_t)TIM1_OCMode);
+      00010C 1A 0B            [ 1]  199 	or	a, (0x0b, sp)
+      00010E AE 52 5A         [ 2]  200 	ldw	x, #0x525a
+      000111 F7               [ 1]  201 	ld	(x), a
+                                    202 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 98: TIM1->OISR &= (uint8_t)(~(TIM1_OISR_OIS3 | TIM1_OISR_OIS3N));
+      000112 AE 52 6F         [ 2]  203 	ldw	x, #0x526f
+      000115 F6               [ 1]  204 	ld	a, (x)
+      000116 A4 CF            [ 1]  205 	and	a, #0xcf
+      000118 F7               [ 1]  206 	ld	(x), a
+                                    207 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 100: TIM1->OISR |= (uint8_t)((uint8_t)(TIM1_OISR_OIS3 & TIM1_OCIdleState) | 
+      000119 AE 52 6F         [ 2]  208 	ldw	x, #0x526f
+      00011C F6               [ 1]  209 	ld	a, (x)
+      00011D 6B 04            [ 1]  210 	ld	(0x04, sp), a
+      00011F 7B 12            [ 1]  211 	ld	a, (0x12, sp)
+      000121 A4 10            [ 1]  212 	and	a, #0x10
+      000123 6B 03            [ 1]  213 	ld	(0x03, sp), a
+                                    214 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 101: (uint8_t)(TIM1_OISR_OIS3N & TIM1_OCNIdleState));
+      000125 7B 13            [ 1]  215 	ld	a, (0x13, sp)
+      000127 A4 20            [ 1]  216 	and	a, #0x20
+      000129 1A 03            [ 1]  217 	or	a, (0x03, sp)
+      00012B 1A 04            [ 1]  218 	or	a, (0x04, sp)
+      00012D AE 52 6F         [ 2]  219 	ldw	x, #0x526f
+      000130 F7               [ 1]  220 	ld	(x), a
+                                    221 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 104: TIM1->CCR3H = (uint8_t)(TIM1_Pulse >> 8);
+      000131 7B 0E            [ 1]  222 	ld	a, (0x0e, sp)
+      000133 0F 01            [ 1]  223 	clr	(0x01, sp)
+      000135 AE 52 69         [ 2]  224 	ldw	x, #0x5269
+      000138 F7               [ 1]  225 	ld	(x), a
+                                    226 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_oc3init.c: 105: TIM1->CCR3L = (uint8_t)(TIM1_Pulse);
+      000139 7B 0F            [ 1]  227 	ld	a, (0x0f, sp)
+      00013B AE 52 6A         [ 2]  228 	ldw	x, #0x526a
+      00013E F7               [ 1]  229 	ld	(x), a
+      00013F 5B 08            [ 2]  230 	addw	sp, #8
+      000141 81               [ 4]  231 	ret
+                                    232 	.area CODE
+      000142                        233 ___str_0:
+      000142 2F 68 6F 6D 65 2F 67   234 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00017E 65 72 2F 73 72 63 2F   235 	.ascii "er/src/stm8s_tim1.tim1_oc3init.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 6F 63 33 69 6E
+             69 74 2E 63
+      00019E 00                     236 	.db 0x00
+                                    237 	.area INITIALIZER
+                                    238 	.area CABS (ABS)

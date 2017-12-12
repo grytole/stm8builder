@@ -1,0 +1,458 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:18 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_uart1_uart1_init
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _CLK_GetClockFreq
+                                     14 	.globl _UART1_Init
+                                     15 ;--------------------------------------------------------
+                                     16 ; ram data
+                                     17 ;--------------------------------------------------------
+                                     18 	.area DATA
+                                     19 ;--------------------------------------------------------
+                                     20 ; ram data
+                                     21 ;--------------------------------------------------------
+                                     22 	.area INITIALIZED
+                                     23 ;--------------------------------------------------------
+                                     24 ; absolute external ram data
+                                     25 ;--------------------------------------------------------
+                                     26 	.area DABS (ABS)
+                                     27 ;--------------------------------------------------------
+                                     28 ; global & static initialisations
+                                     29 ;--------------------------------------------------------
+                                     30 	.area HOME
+                                     31 	.area GSINIT
+                                     32 	.area GSFINAL
+                                     33 	.area GSINIT
+                                     34 ;--------------------------------------------------------
+                                     35 ; Home
+                                     36 ;--------------------------------------------------------
+                                     37 	.area HOME
+                                     38 	.area HOME
+                                     39 ;--------------------------------------------------------
+                                     40 ; code
+                                     41 ;--------------------------------------------------------
+                                     42 	.area CODE
+                                     43 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 65: void UART1_Init(uint32_t BaudRate, UART1_WordLength_TypeDef WordLength, 
+                                     44 ;	-----------------------------------------
+                                     45 ;	 function UART1_Init
+                                     46 ;	-----------------------------------------
+      000000                         47 _UART1_Init:
+      000000 52 21            [ 2]   48 	sub	sp, #33
+                                     49 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 72: assert_param(IS_UART1_BAUDRATE_OK(BaudRate));
+      000002 AE 89 68         [ 2]   50 	ldw	x, #0x8968
+      000005 13 26            [ 2]   51 	cpw	x, (0x26, sp)
+      000007 A6 09            [ 1]   52 	ld	a, #0x09
+      000009 12 25            [ 1]   53 	sbc	a, (0x25, sp)
+      00000B 4F               [ 1]   54 	clr	a
+      00000C 12 24            [ 1]   55 	sbc	a, (0x24, sp)
+      00000E 24 11            [ 1]   56 	jrnc	00113$
+      000010 90 AEr02r88      [ 2]   57 	ldw	y, #___str_0+0
+      000014 4B 48            [ 1]   58 	push	#0x48
+      000016 5F               [ 1]   59 	clrw	x
+      000017 89               [ 2]   60 	pushw	x
+      000018 4B 00            [ 1]   61 	push	#0x00
+      00001A 90 89            [ 2]   62 	pushw	y
+      00001C CDr00r00         [ 4]   63 	call	_assert_failed
+      00001F 5B 06            [ 2]   64 	addw	sp, #6
+      000021                         65 00113$:
+                                     66 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 73: assert_param(IS_UART1_WORDLENGTH_OK(WordLength));
+      000021 0D 28            [ 1]   67 	tnz	(0x28, sp)
+      000023 27 17            [ 1]   68 	jreq	00115$
+      000025 7B 28            [ 1]   69 	ld	a, (0x28, sp)
+      000027 A1 10            [ 1]   70 	cp	a, #0x10
+      000029 27 11            [ 1]   71 	jreq	00115$
+      00002B 90 AEr02r88      [ 2]   72 	ldw	y, #___str_0+0
+      00002F 4B 49            [ 1]   73 	push	#0x49
+      000031 5F               [ 1]   74 	clrw	x
+      000032 89               [ 2]   75 	pushw	x
+      000033 4B 00            [ 1]   76 	push	#0x00
+      000035 90 89            [ 2]   77 	pushw	y
+      000037 CDr00r00         [ 4]   78 	call	_assert_failed
+      00003A 5B 06            [ 2]   79 	addw	sp, #6
+      00003C                         80 00115$:
+                                     81 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 74: assert_param(IS_UART1_STOPBITS_OK(StopBits));
+      00003C 0D 29            [ 1]   82 	tnz	(0x29, sp)
+      00003E 27 23            [ 1]   83 	jreq	00120$
+      000040 7B 29            [ 1]   84 	ld	a, (0x29, sp)
+      000042 A1 10            [ 1]   85 	cp	a, #0x10
+      000044 27 1D            [ 1]   86 	jreq	00120$
+      000046 7B 29            [ 1]   87 	ld	a, (0x29, sp)
+      000048 A1 20            [ 1]   88 	cp	a, #0x20
+      00004A 27 17            [ 1]   89 	jreq	00120$
+      00004C 7B 29            [ 1]   90 	ld	a, (0x29, sp)
+      00004E A1 30            [ 1]   91 	cp	a, #0x30
+      000050 27 11            [ 1]   92 	jreq	00120$
+      000052 90 AEr02r88      [ 2]   93 	ldw	y, #___str_0+0
+      000056 4B 4A            [ 1]   94 	push	#0x4a
+      000058 5F               [ 1]   95 	clrw	x
+      000059 89               [ 2]   96 	pushw	x
+      00005A 4B 00            [ 1]   97 	push	#0x00
+      00005C 90 89            [ 2]   98 	pushw	y
+      00005E CDr00r00         [ 4]   99 	call	_assert_failed
+      000061 5B 06            [ 2]  100 	addw	sp, #6
+      000063                        101 00120$:
+                                    102 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 75: assert_param(IS_UART1_PARITY_OK(Parity));
+      000063 0D 2A            [ 1]  103 	tnz	(0x2a, sp)
+      000065 27 1D            [ 1]  104 	jreq	00131$
+      000067 7B 2A            [ 1]  105 	ld	a, (0x2a, sp)
+      000069 A1 04            [ 1]  106 	cp	a, #0x04
+      00006B 27 17            [ 1]  107 	jreq	00131$
+      00006D 7B 2A            [ 1]  108 	ld	a, (0x2a, sp)
+      00006F A1 06            [ 1]  109 	cp	a, #0x06
+      000071 27 11            [ 1]  110 	jreq	00131$
+      000073 90 AEr02r88      [ 2]  111 	ldw	y, #___str_0+0
+      000077 4B 4B            [ 1]  112 	push	#0x4b
+      000079 5F               [ 1]  113 	clrw	x
+      00007A 89               [ 2]  114 	pushw	x
+      00007B 4B 00            [ 1]  115 	push	#0x00
+      00007D 90 89            [ 2]  116 	pushw	y
+      00007F CDr00r00         [ 4]  117 	call	_assert_failed
+      000082 5B 06            [ 2]  118 	addw	sp, #6
+      000084                        119 00131$:
+                                    120 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 76: assert_param(IS_UART1_MODE_OK((uint8_t)Mode));
+      000084 7B 2C            [ 1]  121 	ld	a, (0x2c, sp)
+      000086 A1 08            [ 1]  122 	cp	a, #0x08
+      000088 27 45            [ 1]  123 	jreq	00139$
+      00008A 7B 2C            [ 1]  124 	ld	a, (0x2c, sp)
+      00008C A1 40            [ 1]  125 	cp	a, #0x40
+      00008E 27 3F            [ 1]  126 	jreq	00139$
+      000090 7B 2C            [ 1]  127 	ld	a, (0x2c, sp)
+      000092 A1 04            [ 1]  128 	cp	a, #0x04
+      000094 27 39            [ 1]  129 	jreq	00139$
+      000096 7B 2C            [ 1]  130 	ld	a, (0x2c, sp)
+      000098 A1 80            [ 1]  131 	cp	a, #0x80
+      00009A 27 33            [ 1]  132 	jreq	00139$
+      00009C 7B 2C            [ 1]  133 	ld	a, (0x2c, sp)
+      00009E A1 0C            [ 1]  134 	cp	a, #0x0c
+      0000A0 26 03            [ 1]  135 	jrne	00314$
+      0000A2 A6 01            [ 1]  136 	ld	a, #0x01
+      0000A4 21                     137 	.byte 0x21
+      0000A5                        138 00314$:
+      0000A5 4F               [ 1]  139 	clr	a
+      0000A6                        140 00315$:
+      0000A6 4D               [ 1]  141 	tnz	a
+      0000A7 26 26            [ 1]  142 	jrne	00139$
+      0000A9 4D               [ 1]  143 	tnz	a
+      0000AA 26 23            [ 1]  144 	jrne	00139$
+      0000AC 7B 2C            [ 1]  145 	ld	a, (0x2c, sp)
+      0000AE A1 44            [ 1]  146 	cp	a, #0x44
+      0000B0 27 1D            [ 1]  147 	jreq	00139$
+      0000B2 7B 2C            [ 1]  148 	ld	a, (0x2c, sp)
+      0000B4 A1 C0            [ 1]  149 	cp	a, #0xc0
+      0000B6 27 17            [ 1]  150 	jreq	00139$
+      0000B8 7B 2C            [ 1]  151 	ld	a, (0x2c, sp)
+      0000BA A1 88            [ 1]  152 	cp	a, #0x88
+      0000BC 27 11            [ 1]  153 	jreq	00139$
+      0000BE 90 AEr02r88      [ 2]  154 	ldw	y, #___str_0+0
+      0000C2 4B 4C            [ 1]  155 	push	#0x4c
+      0000C4 5F               [ 1]  156 	clrw	x
+      0000C5 89               [ 2]  157 	pushw	x
+      0000C6 4B 00            [ 1]  158 	push	#0x00
+      0000C8 90 89            [ 2]  159 	pushw	y
+      0000CA CDr00r00         [ 4]  160 	call	_assert_failed
+      0000CD 5B 06            [ 2]  161 	addw	sp, #6
+      0000CF                        162 00139$:
+                                    163 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 77: assert_param(IS_UART1_SYNCMODE_OK((uint8_t)SyncMode));
+      0000CF 7B 2B            [ 1]  164 	ld	a, (0x2b, sp)
+      0000D1 A4 88            [ 1]  165 	and	a, #0x88
+      0000D3 A1 88            [ 1]  166 	cp	a, #0x88
+      0000D5 27 18            [ 1]  167 	jreq	00167$
+      0000D7 7B 2B            [ 1]  168 	ld	a, (0x2b, sp)
+      0000D9 A4 44            [ 1]  169 	and	a, #0x44
+      0000DB A1 44            [ 1]  170 	cp	a, #0x44
+      0000DD 27 10            [ 1]  171 	jreq	00167$
+      0000DF 7B 2B            [ 1]  172 	ld	a, (0x2b, sp)
+      0000E1 A4 22            [ 1]  173 	and	a, #0x22
+      0000E3 A1 22            [ 1]  174 	cp	a, #0x22
+      0000E5 27 08            [ 1]  175 	jreq	00167$
+      0000E7 7B 2B            [ 1]  176 	ld	a, (0x2b, sp)
+      0000E9 A4 11            [ 1]  177 	and	a, #0x11
+      0000EB A1 11            [ 1]  178 	cp	a, #0x11
+      0000ED 26 11            [ 1]  179 	jrne	00165$
+      0000EF                        180 00167$:
+      0000EF 90 AEr02r88      [ 2]  181 	ldw	y, #___str_0+0
+      0000F3 4B 4D            [ 1]  182 	push	#0x4d
+      0000F5 5F               [ 1]  183 	clrw	x
+      0000F6 89               [ 2]  184 	pushw	x
+      0000F7 4B 00            [ 1]  185 	push	#0x00
+      0000F9 90 89            [ 2]  186 	pushw	y
+      0000FB CDr00r00         [ 4]  187 	call	_assert_failed
+      0000FE 5B 06            [ 2]  188 	addw	sp, #6
+      000100                        189 00165$:
+                                    190 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 80: UART1->CR1 &= (uint8_t)(~UART1_CR1_M);  
+      000100 AE 52 34         [ 2]  191 	ldw	x, #0x5234
+      000103 F6               [ 1]  192 	ld	a, (x)
+      000104 A4 EF            [ 1]  193 	and	a, #0xef
+      000106 F7               [ 1]  194 	ld	(x), a
+                                    195 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 83: UART1->CR1 |= (uint8_t)WordLength;
+      000107 AE 52 34         [ 2]  196 	ldw	x, #0x5234
+      00010A F6               [ 1]  197 	ld	a, (x)
+      00010B 1A 28            [ 1]  198 	or	a, (0x28, sp)
+      00010D AE 52 34         [ 2]  199 	ldw	x, #0x5234
+      000110 F7               [ 1]  200 	ld	(x), a
+                                    201 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 86: UART1->CR3 &= (uint8_t)(~UART1_CR3_STOP);  
+      000111 AE 52 36         [ 2]  202 	ldw	x, #0x5236
+      000114 F6               [ 1]  203 	ld	a, (x)
+      000115 A4 CF            [ 1]  204 	and	a, #0xcf
+      000117 F7               [ 1]  205 	ld	(x), a
+                                    206 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 88: UART1->CR3 |= (uint8_t)StopBits;  
+      000118 AE 52 36         [ 2]  207 	ldw	x, #0x5236
+      00011B F6               [ 1]  208 	ld	a, (x)
+      00011C 1A 29            [ 1]  209 	or	a, (0x29, sp)
+      00011E AE 52 36         [ 2]  210 	ldw	x, #0x5236
+      000121 F7               [ 1]  211 	ld	(x), a
+                                    212 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 91: UART1->CR1 &= (uint8_t)(~(UART1_CR1_PCEN | UART1_CR1_PS  ));  
+      000122 AE 52 34         [ 2]  213 	ldw	x, #0x5234
+      000125 F6               [ 1]  214 	ld	a, (x)
+      000126 A4 F9            [ 1]  215 	and	a, #0xf9
+      000128 F7               [ 1]  216 	ld	(x), a
+                                    217 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 93: UART1->CR1 |= (uint8_t)Parity;  
+      000129 AE 52 34         [ 2]  218 	ldw	x, #0x5234
+      00012C F6               [ 1]  219 	ld	a, (x)
+      00012D 1A 2A            [ 1]  220 	or	a, (0x2a, sp)
+      00012F AE 52 34         [ 2]  221 	ldw	x, #0x5234
+      000132 F7               [ 1]  222 	ld	(x), a
+                                    223 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 96: UART1->BRR1 &= (uint8_t)(~UART1_BRR1_DIVM);  
+      000133 AE 52 32         [ 2]  224 	ldw	x, #0x5232
+      000136 F6               [ 1]  225 	ld	a, (x)
+      000137 35 00 52 32      [ 1]  226 	mov	0x5232+0, #0x00
+                                    227 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 98: UART1->BRR2 &= (uint8_t)(~UART1_BRR2_DIVM);  
+      00013B AE 52 33         [ 2]  228 	ldw	x, #0x5233
+      00013E F6               [ 1]  229 	ld	a, (x)
+      00013F A4 0F            [ 1]  230 	and	a, #0x0f
+      000141 F7               [ 1]  231 	ld	(x), a
+                                    232 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 100: UART1->BRR2 &= (uint8_t)(~UART1_BRR2_DIVF);  
+      000142 AE 52 33         [ 2]  233 	ldw	x, #0x5233
+      000145 F6               [ 1]  234 	ld	a, (x)
+      000146 A4 F0            [ 1]  235 	and	a, #0xf0
+      000148 F7               [ 1]  236 	ld	(x), a
+                                    237 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 103: BaudRate_Mantissa    = ((uint32_t)CLK_GetClockFreq() / (BaudRate << 4));
+      000149 CDr00r00         [ 4]  238 	call	_CLK_GetClockFreq
+      00014C 1F 1A            [ 2]  239 	ldw	(0x1a, sp), x
+      00014E 1E 24            [ 2]  240 	ldw	x, (0x24, sp)
+      000150 1F 14            [ 2]  241 	ldw	(0x14, sp), x
+      000152 1E 26            [ 2]  242 	ldw	x, (0x26, sp)
+      000154 A6 04            [ 1]  243 	ld	a, #0x04
+      000156                        244 00339$:
+      000156 58               [ 2]  245 	sllw	x
+      000157 09 15            [ 1]  246 	rlc	(0x15, sp)
+      000159 09 14            [ 1]  247 	rlc	(0x14, sp)
+      00015B 4A               [ 1]  248 	dec	a
+      00015C 26 F8            [ 1]  249 	jrne	00339$
+      00015E 1F 16            [ 2]  250 	ldw	(0x16, sp), x
+      000160 1E 16            [ 2]  251 	ldw	x, (0x16, sp)
+      000162 89               [ 2]  252 	pushw	x
+      000163 1E 16            [ 2]  253 	ldw	x, (0x16, sp)
+      000165 89               [ 2]  254 	pushw	x
+      000166 1E 1E            [ 2]  255 	ldw	x, (0x1e, sp)
+      000168 89               [ 2]  256 	pushw	x
+      000169 90 89            [ 2]  257 	pushw	y
+      00016B CDr00r00         [ 4]  258 	call	__divulong
+      00016E 5B 08            [ 2]  259 	addw	sp, #8
+      000170 1F 07            [ 2]  260 	ldw	(0x07, sp), x
+      000172 17 05            [ 2]  261 	ldw	(0x05, sp), y
+                                    262 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 104: BaudRate_Mantissa100 = (((uint32_t)CLK_GetClockFreq() * 100) / (BaudRate << 4));
+      000174 CDr00r00         [ 4]  263 	call	_CLK_GetClockFreq
+      000177 89               [ 2]  264 	pushw	x
+      000178 90 89            [ 2]  265 	pushw	y
+      00017A 4B 64            [ 1]  266 	push	#0x64
+      00017C 5F               [ 1]  267 	clrw	x
+      00017D 89               [ 2]  268 	pushw	x
+      00017E 4B 00            [ 1]  269 	push	#0x00
+      000180 CDr00r00         [ 4]  270 	call	__mullong
+      000183 5B 08            [ 2]  271 	addw	sp, #8
+      000185 1F 12            [ 2]  272 	ldw	(0x12, sp), x
+      000187 1E 16            [ 2]  273 	ldw	x, (0x16, sp)
+      000189 89               [ 2]  274 	pushw	x
+      00018A 1E 16            [ 2]  275 	ldw	x, (0x16, sp)
+      00018C 89               [ 2]  276 	pushw	x
+      00018D 1E 16            [ 2]  277 	ldw	x, (0x16, sp)
+      00018F 89               [ 2]  278 	pushw	x
+      000190 90 89            [ 2]  279 	pushw	y
+      000192 CDr00r00         [ 4]  280 	call	__divulong
+      000195 5B 08            [ 2]  281 	addw	sp, #8
+      000197 51               [ 1]  282 	exgw	x, y
+      000198 17 03            [ 2]  283 	ldw	(0x03, sp), y
+      00019A 02               [ 1]  284 	rlwa	x
+      00019B 6B 01            [ 1]  285 	ld	(0x01, sp), a
+      00019D 01               [ 1]  286 	rrwa	x
+      00019E 9F               [ 1]  287 	ld	a, xl
+                                    288 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 106: UART1->BRR2 |= (uint8_t)((uint8_t)(((BaudRate_Mantissa100 - (BaudRate_Mantissa * 100)) << 4) / 100) & (uint8_t)0x0F); 
+      00019F AE 52 33         [ 2]  289 	ldw	x, #0x5233
+      0001A2 88               [ 1]  290 	push	a
+      0001A3 F6               [ 1]  291 	ld	a, (x)
+      0001A4 6B 1E            [ 1]  292 	ld	(0x1e, sp), a
+      0001A6 84               [ 1]  293 	pop	a
+      0001A7 88               [ 1]  294 	push	a
+      0001A8 1E 08            [ 2]  295 	ldw	x, (0x08, sp)
+      0001AA 89               [ 2]  296 	pushw	x
+      0001AB 1E 08            [ 2]  297 	ldw	x, (0x08, sp)
+      0001AD 89               [ 2]  298 	pushw	x
+      0001AE 4B 64            [ 1]  299 	push	#0x64
+      0001B0 5F               [ 1]  300 	clrw	x
+      0001B1 89               [ 2]  301 	pushw	x
+      0001B2 4B 00            [ 1]  302 	push	#0x00
+      0001B4 CDr00r00         [ 4]  303 	call	__mullong
+      0001B7 5B 08            [ 2]  304 	addw	sp, #8
+      0001B9 1F 0E            [ 2]  305 	ldw	(0x0e, sp), x
+      0001BB 17 0C            [ 2]  306 	ldw	(0x0c, sp), y
+      0001BD 84               [ 1]  307 	pop	a
+      0001BE 16 03            [ 2]  308 	ldw	y, (0x03, sp)
+      0001C0 72 F2 0D         [ 2]  309 	subw	y, (0x0d, sp)
+      0001C3 12 0C            [ 1]  310 	sbc	a, (0x0c, sp)
+      0001C5 97               [ 1]  311 	ld	xl, a
+      0001C6 7B 01            [ 1]  312 	ld	a, (0x01, sp)
+      0001C8 12 0B            [ 1]  313 	sbc	a, (0x0b, sp)
+      0001CA 95               [ 1]  314 	ld	xh, a
+      0001CB A6 04            [ 1]  315 	ld	a, #0x04
+      0001CD                        316 00341$:
+      0001CD 90 58            [ 2]  317 	sllw	y
+      0001CF 59               [ 2]  318 	rlcw	x
+      0001D0 4A               [ 1]  319 	dec	a
+      0001D1 26 FA            [ 1]  320 	jrne	00341$
+      0001D3 4B 64            [ 1]  321 	push	#0x64
+      0001D5 4B 00            [ 1]  322 	push	#0x00
+      0001D7 4B 00            [ 1]  323 	push	#0x00
+      0001D9 4B 00            [ 1]  324 	push	#0x00
+      0001DB 90 89            [ 2]  325 	pushw	y
+      0001DD 89               [ 2]  326 	pushw	x
+      0001DE CDr00r00         [ 4]  327 	call	__divulong
+      0001E1 5B 08            [ 2]  328 	addw	sp, #8
+      0001E3 9F               [ 1]  329 	ld	a, xl
+      0001E4 A4 0F            [ 1]  330 	and	a, #0x0f
+      0001E6 1A 1D            [ 1]  331 	or	a, (0x1d, sp)
+      0001E8 AE 52 33         [ 2]  332 	ldw	x, #0x5233
+      0001EB F7               [ 1]  333 	ld	(x), a
+                                    334 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 108: UART1->BRR2 |= (uint8_t)((BaudRate_Mantissa >> 4) & (uint8_t)0xF0); 
+      0001EC AE 52 33         [ 2]  335 	ldw	x, #0x5233
+      0001EF F6               [ 1]  336 	ld	a, (x)
+      0001F0 6B 0A            [ 1]  337 	ld	(0x0a, sp), a
+      0001F2 1E 07            [ 2]  338 	ldw	x, (0x07, sp)
+      0001F4 16 05            [ 2]  339 	ldw	y, (0x05, sp)
+      0001F6 90 54            [ 2]  340 	srlw	y
+      0001F8 56               [ 2]  341 	rrcw	x
+      0001F9 90 54            [ 2]  342 	srlw	y
+      0001FB 56               [ 2]  343 	rrcw	x
+      0001FC 90 54            [ 2]  344 	srlw	y
+      0001FE 56               [ 2]  345 	rrcw	x
+      0001FF 90 54            [ 2]  346 	srlw	y
+      000201 56               [ 2]  347 	rrcw	x
+      000202 9F               [ 1]  348 	ld	a, xl
+      000203 A4 F0            [ 1]  349 	and	a, #0xf0
+      000205 88               [ 1]  350 	push	a
+      000206 0F 21            [ 1]  351 	clr	(0x21, sp)
+      000208 5F               [ 1]  352 	clrw	x
+      000209 84               [ 1]  353 	pop	a
+      00020A 1A 0A            [ 1]  354 	or	a, (0x0a, sp)
+      00020C AE 52 33         [ 2]  355 	ldw	x, #0x5233
+      00020F F7               [ 1]  356 	ld	(x), a
+                                    357 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 110: UART1->BRR1 |= (uint8_t)BaudRate_Mantissa;           
+      000210 AE 52 32         [ 2]  358 	ldw	x, #0x5232
+      000213 F6               [ 1]  359 	ld	a, (x)
+      000214 6B 1C            [ 1]  360 	ld	(0x1c, sp), a
+      000216 7B 08            [ 1]  361 	ld	a, (0x08, sp)
+      000218 1A 1C            [ 1]  362 	or	a, (0x1c, sp)
+      00021A AE 52 32         [ 2]  363 	ldw	x, #0x5232
+      00021D F7               [ 1]  364 	ld	(x), a
+                                    365 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 113: UART1->CR2 &= (uint8_t)~(UART1_CR2_TEN | UART1_CR2_REN); 
+      00021E AE 52 35         [ 2]  366 	ldw	x, #0x5235
+      000221 F6               [ 1]  367 	ld	a, (x)
+      000222 A4 F3            [ 1]  368 	and	a, #0xf3
+      000224 F7               [ 1]  369 	ld	(x), a
+                                    370 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 115: UART1->CR3 &= (uint8_t)~(UART1_CR3_CPOL | UART1_CR3_CPHA | UART1_CR3_LBCL); 
+      000225 AE 52 36         [ 2]  371 	ldw	x, #0x5236
+      000228 F6               [ 1]  372 	ld	a, (x)
+      000229 A4 F8            [ 1]  373 	and	a, #0xf8
+      00022B F7               [ 1]  374 	ld	(x), a
+                                    375 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 117: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & (uint8_t)(UART1_CR3_CPOL | 
+      00022C AE 52 36         [ 2]  376 	ldw	x, #0x5236
+      00022F F6               [ 1]  377 	ld	a, (x)
+      000230 6B 09            [ 1]  378 	ld	(0x09, sp), a
+      000232 7B 2B            [ 1]  379 	ld	a, (0x2b, sp)
+      000234 A4 07            [ 1]  380 	and	a, #0x07
+      000236 1A 09            [ 1]  381 	or	a, (0x09, sp)
+      000238 AE 52 36         [ 2]  382 	ldw	x, #0x5236
+      00023B F7               [ 1]  383 	ld	(x), a
+                                    384 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 120: if ((uint8_t)(Mode & UART1_MODE_TX_ENABLE))
+      00023C 7B 2C            [ 1]  385 	ld	a, (0x2c, sp)
+      00023E A5 04            [ 1]  386 	bcp	a, #0x04
+      000240 27 09            [ 1]  387 	jreq	00102$
+                                    388 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 123: UART1->CR2 |= (uint8_t)UART1_CR2_TEN;  
+      000242 AE 52 35         [ 2]  389 	ldw	x, #0x5235
+      000245 F6               [ 1]  390 	ld	a, (x)
+      000246 AA 08            [ 1]  391 	or	a, #0x08
+      000248 F7               [ 1]  392 	ld	(x), a
+      000249 20 07            [ 2]  393 	jra	00103$
+      00024B                        394 00102$:
+                                    395 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 128: UART1->CR2 &= (uint8_t)(~UART1_CR2_TEN);  
+      00024B AE 52 35         [ 2]  396 	ldw	x, #0x5235
+      00024E F6               [ 1]  397 	ld	a, (x)
+      00024F A4 F7            [ 1]  398 	and	a, #0xf7
+      000251 F7               [ 1]  399 	ld	(x), a
+      000252                        400 00103$:
+                                    401 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 130: if ((uint8_t)(Mode & UART1_MODE_RX_ENABLE))
+      000252 7B 2C            [ 1]  402 	ld	a, (0x2c, sp)
+      000254 A5 08            [ 1]  403 	bcp	a, #0x08
+      000256 27 09            [ 1]  404 	jreq	00105$
+                                    405 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 133: UART1->CR2 |= (uint8_t)UART1_CR2_REN;  
+      000258 AE 52 35         [ 2]  406 	ldw	x, #0x5235
+      00025B F6               [ 1]  407 	ld	a, (x)
+      00025C AA 04            [ 1]  408 	or	a, #0x04
+      00025E F7               [ 1]  409 	ld	(x), a
+      00025F 20 07            [ 2]  410 	jra	00106$
+      000261                        411 00105$:
+                                    412 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 138: UART1->CR2 &= (uint8_t)(~UART1_CR2_REN);  
+      000261 AE 52 35         [ 2]  413 	ldw	x, #0x5235
+      000264 F6               [ 1]  414 	ld	a, (x)
+      000265 A4 FB            [ 1]  415 	and	a, #0xfb
+      000267 F7               [ 1]  416 	ld	(x), a
+      000268                        417 00106$:
+                                    418 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 142: if ((uint8_t)(SyncMode & UART1_SYNCMODE_CLOCK_DISABLE))
+      000268 0D 2B            [ 1]  419 	tnz	(0x2b, sp)
+      00026A 2A 09            [ 1]  420 	jrpl	00108$
+                                    421 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 145: UART1->CR3 &= (uint8_t)(~UART1_CR3_CKEN); 
+      00026C AE 52 36         [ 2]  422 	ldw	x, #0x5236
+      00026F F6               [ 1]  423 	ld	a, (x)
+      000270 A4 F7            [ 1]  424 	and	a, #0xf7
+      000272 F7               [ 1]  425 	ld	(x), a
+      000273 20 10            [ 2]  426 	jra	00110$
+      000275                        427 00108$:
+                                    428 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_uart1.uart1_init.c: 149: UART1->CR3 |= (uint8_t)((uint8_t)SyncMode & UART1_CR3_CKEN);
+      000275 AE 52 36         [ 2]  429 	ldw	x, #0x5236
+      000278 F6               [ 1]  430 	ld	a, (x)
+      000279 6B 0F            [ 1]  431 	ld	(0x0f, sp), a
+      00027B 7B 2B            [ 1]  432 	ld	a, (0x2b, sp)
+      00027D A4 08            [ 1]  433 	and	a, #0x08
+      00027F 1A 0F            [ 1]  434 	or	a, (0x0f, sp)
+      000281 AE 52 36         [ 2]  435 	ldw	x, #0x5236
+      000284 F7               [ 1]  436 	ld	(x), a
+      000285                        437 00110$:
+      000285 5B 21            [ 2]  438 	addw	sp, #33
+      000287 81               [ 4]  439 	ret
+                                    440 	.area CODE
+      000288                        441 ___str_0:
+      000288 2F 68 6F 6D 65 2F 67   442 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      0002C4 65 72 2F 73 72 63 2F   443 	.ascii "er/src/stm8s_uart1.uart1_init.c"
+             73 74 6D 38 73 5F 75
+             61 72 74 31 2E 75 61
+             72 74 31 5F 69 6E 69
+             74 2E 63
+      0002E3 00                     444 	.db 0x00
+                                    445 	.area INITIALIZER
+                                    446 	.area CABS (ABS)

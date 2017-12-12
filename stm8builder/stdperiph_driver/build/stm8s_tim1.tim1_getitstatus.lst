@@ -1,0 +1,125 @@
+                                      1 ;--------------------------------------------------------
+                                      2 ; File Created by SDCC : free open source ANSI-C Compiler
+                                      3 ; Version 3.5.0 #9253 (Mar 24 2016) (Linux)
+                                      4 ; This file was generated Tue Dec 12 21:28:06 2017
+                                      5 ;--------------------------------------------------------
+                                      6 	.module stm8s_tim1_tim1_getitstatus
+                                      7 	.optsdcc -mstm8
+                                      8 	
+                                      9 ;--------------------------------------------------------
+                                     10 ; Public variables in this module
+                                     11 ;--------------------------------------------------------
+                                     12 	.globl _assert_failed
+                                     13 	.globl _TIM1_GetITStatus
+                                     14 ;--------------------------------------------------------
+                                     15 ; ram data
+                                     16 ;--------------------------------------------------------
+                                     17 	.area DATA
+                                     18 ;--------------------------------------------------------
+                                     19 ; ram data
+                                     20 ;--------------------------------------------------------
+                                     21 	.area INITIALIZED
+                                     22 ;--------------------------------------------------------
+                                     23 ; absolute external ram data
+                                     24 ;--------------------------------------------------------
+                                     25 	.area DABS (ABS)
+                                     26 ;--------------------------------------------------------
+                                     27 ; global & static initialisations
+                                     28 ;--------------------------------------------------------
+                                     29 	.area HOME
+                                     30 	.area GSINIT
+                                     31 	.area GSFINAL
+                                     32 	.area GSINIT
+                                     33 ;--------------------------------------------------------
+                                     34 ; Home
+                                     35 ;--------------------------------------------------------
+                                     36 	.area HOME
+                                     37 	.area HOME
+                                     38 ;--------------------------------------------------------
+                                     39 ; code
+                                     40 ;--------------------------------------------------------
+                                     41 	.area CODE
+                                     42 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 59: ITStatus TIM1_GetITStatus(TIM1_IT_TypeDef TIM1_IT)
+                                     43 ;	-----------------------------------------
+                                     44 ;	 function TIM1_GetITStatus
+                                     45 ;	-----------------------------------------
+      000000                         46 _TIM1_GetITStatus:
+      000000 88               [ 1]   47 	push	a
+                                     48 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 65: assert_param(IS_TIM1_GET_IT_OK(TIM1_IT));
+      000001 7B 04            [ 1]   49 	ld	a, (0x04, sp)
+      000003 A1 01            [ 1]   50 	cp	a, #0x01
+      000005 27 3B            [ 1]   51 	jreq	00108$
+      000007 7B 04            [ 1]   52 	ld	a, (0x04, sp)
+      000009 A1 02            [ 1]   53 	cp	a, #0x02
+      00000B 27 35            [ 1]   54 	jreq	00108$
+      00000D 7B 04            [ 1]   55 	ld	a, (0x04, sp)
+      00000F A1 04            [ 1]   56 	cp	a, #0x04
+      000011 27 2F            [ 1]   57 	jreq	00108$
+      000013 7B 04            [ 1]   58 	ld	a, (0x04, sp)
+      000015 A1 08            [ 1]   59 	cp	a, #0x08
+      000017 27 29            [ 1]   60 	jreq	00108$
+      000019 7B 04            [ 1]   61 	ld	a, (0x04, sp)
+      00001B A1 10            [ 1]   62 	cp	a, #0x10
+      00001D 27 23            [ 1]   63 	jreq	00108$
+      00001F 7B 04            [ 1]   64 	ld	a, (0x04, sp)
+      000021 A1 20            [ 1]   65 	cp	a, #0x20
+      000023 27 1D            [ 1]   66 	jreq	00108$
+      000025 7B 04            [ 1]   67 	ld	a, (0x04, sp)
+      000027 A1 40            [ 1]   68 	cp	a, #0x40
+      000029 27 17            [ 1]   69 	jreq	00108$
+      00002B 7B 04            [ 1]   70 	ld	a, (0x04, sp)
+      00002D A1 80            [ 1]   71 	cp	a, #0x80
+      00002F 27 11            [ 1]   72 	jreq	00108$
+      000031 90 AEr00r5E      [ 2]   73 	ldw	y, #___str_0+0
+      000035 4B 41            [ 1]   74 	push	#0x41
+      000037 5F               [ 1]   75 	clrw	x
+      000038 89               [ 2]   76 	pushw	x
+      000039 4B 00            [ 1]   77 	push	#0x00
+      00003B 90 89            [ 2]   78 	pushw	y
+      00003D CDr00r00         [ 4]   79 	call	_assert_failed
+      000040 5B 06            [ 2]   80 	addw	sp, #6
+      000042                         81 00108$:
+                                     82 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 67: TIM1_itStatus = (uint8_t)(TIM1->SR1 & (uint8_t)TIM1_IT);
+      000042 AE 52 55         [ 2]   83 	ldw	x, #0x5255
+      000045 F6               [ 1]   84 	ld	a, (x)
+      000046 14 04            [ 1]   85 	and	a, (0x04, sp)
+      000048 6B 01            [ 1]   86 	ld	(0x01, sp), a
+                                     87 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 69: TIM1_itEnable = (uint8_t)(TIM1->IER & (uint8_t)TIM1_IT);
+      00004A AE 52 54         [ 2]   88 	ldw	x, #0x5254
+      00004D F6               [ 1]   89 	ld	a, (x)
+      00004E 14 04            [ 1]   90 	and	a, (0x04, sp)
+                                     91 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 71: if ((TIM1_itStatus != (uint8_t)RESET ) && (TIM1_itEnable != (uint8_t)RESET ))
+      000050 0D 01            [ 1]   92 	tnz	(0x01, sp)
+      000052 27 06            [ 1]   93 	jreq	00102$
+      000054 4D               [ 1]   94 	tnz	a
+      000055 27 03            [ 1]   95 	jreq	00102$
+                                     96 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 73: bitstatus = SET;
+      000057 A6 01            [ 1]   97 	ld	a, #0x01
+                                     98 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 77: bitstatus = RESET;
+      000059 21                      99 	.byte 0x21
+      00005A                        100 00102$:
+      00005A 4F               [ 1]  101 	clr	a
+      00005B                        102 00103$:
+                                    103 ;	/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driver/src/stm8s_tim1.tim1_getitstatus.c: 79: return (ITStatus)(bitstatus);
+      00005B 5B 01            [ 2]  104 	addw	sp, #1
+      00005D 81               [ 4]  105 	ret
+                                    106 	.area CODE
+      00005E                        107 ___str_0:
+      00005E 2F 68 6F 6D 65 2F 67   108 	.ascii "/home/grytole/dev/git/stm8builder/stm8builder/stdperiph_driv"
+             72 79 74 6F 6C 65 2F
+             64 65 76 2F 67 69 74
+             2F 73 74 6D 38 62 75
+             69 6C 64 65 72 2F 73
+             74 6D 38 62 75 69 6C
+             64 65 72 2F 73 74 64
+             70 65 72 69 70 68 5F
+             64 72 69 76
+      00009A 65 72 2F 73 72 63 2F   109 	.ascii "er/src/stm8s_tim1.tim1_getitstatus.c"
+             73 74 6D 38 73 5F 74
+             69 6D 31 2E 74 69 6D
+             31 5F 67 65 74 69 74
+             73 74 61 74 75 73 2E
+             63
+      0000BE 00                     110 	.db 0x00
+                                    111 	.area INITIALIZER
+                                    112 	.area CABS (ABS)
