@@ -1,6 +1,7 @@
 PROJECT ?= default
 SOURCES ?= $(wildcard *.c)
 CHIP    ?= STM8S003
+CHIPMOD ?= F3
 FLASHER ?= stlinkv2
 
 ifeq ($(strip $(VERBOSE)),)
@@ -15,13 +16,14 @@ RM    = rm -rf
 OUTPUT_HEXFILE       = $(PROJECT).ihx
 STDPERIPH_DRIVER_LIB = stdperiph_driver.a
 STM8FLASH            = stm8flash
+STM8FLASH_CHIP       = $(shell echo $(CHIP)$(CHIPMOD) | tr '[:upper:]' '[:lower:]')
 
 BUILD_DIR            = $(CURDIR)/build
 STM8BUILDER_DIR      = $(CURDIR)/stm8builder
 STDPERIPH_DRIVER_DIR = $(STM8BUILDER_DIR)/stdperiph_driver
 STM8FLASH_DIR        = $(STM8BUILDER_DIR)/flasher
 
-CFLAGS = --opt-code-size -mstm8 -I$(CURDIR) -I$(STDPERIPH_DRIVER_DIR)/inc -D$(CHIP) -DUSE_STDPERIPH_DRIVER
+CFLAGS = --opt-code-size -mstm8 -I$(CURDIR) -I$(STDPERIPH_DRIVER_DIR)/inc -D$(CHIP) -DUSE_STDPERIPH_DRIVER $(DEFINES:%=-D%)
 LFLAGS = --out-fmt-ihx -L$(STDPERIPH_DRIVER_DIR) -l$(STDPERIPH_DRIVER_LIB)
 
 all: clean build

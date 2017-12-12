@@ -1,5 +1,8 @@
 PROJECT = example
 SOURCES = blink.c
+DEFINES = BLINKSLOW
 CHIP    = STM8S103
+CHIPMOD = F3
+FLASHER = stlinkv2
 
 include stm8builder/stm8builder.mk

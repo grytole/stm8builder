@@ -1,8 +1,14 @@
 #include "stm8s.h"
 
-void Delay(uint16_t nCount) {
-  while (nCount != 0) {
-    nCount--;
+#if defined (BLINKSLOW)
+uint16_t period = 0xffff;
+#else
+uint16_t period = 0x7fff;
+#endif
+
+void delay(uint16_t ticks) {
+  while (ticks != 0) {
+    ticks--;
   }
 }
 
@@ -12,15 +18,7 @@ void main(void) {
 
   while (1) {
     GPIO_WriteReverse(GPIOB, GPIO_PIN_5);
-    Delay(0xFFFF);
+    delay(period);
   }
 
 }
-
-#ifdef USE_FULL_ASSERT
-void assert_failed(uint8_t* file, uint32_t line) { 
-  (void)file;
-  (void)line;
-  while (1) { }
-}
-#endif
