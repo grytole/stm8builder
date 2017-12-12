@@ -9,7 +9,7 @@ The goal of this project is to make building/flashing of ROMs for stm8s chips as
 All what it needs is a Linux console, cheap STLink clone, stm8s device and your code.
 
 - It builds code with SDCC toolchain. You need to install it manually.
-- It integrates a well known Stm8StdPerifLib from ST. Builder will download and compile this lib automatically.
+- It integrates a well known Stm8_StdPeriph_Driver from ST. Builder will download and compile this lib automatically.
 - It flashes your precious devices with [stm8flash](https://github.com/vdudouyt/stm8flash). Builder will download and compile it too.
 
 ### List of needed packages
@@ -57,13 +57,13 @@ you@linux:~/ledblinker$ vi Makefile
 Makefile has 7 options and include line to link it with a builder:
 - `PROJECT`, `CHIP`, `CHIPMOD` and `SOURCES` options are required;
 - `FLAGS` can be ommitted if you have noshing to add here;
-- `MODULES` must have all used StdPerifLib modules - common: `awu`, `beep`, `clk`, `exti`, `flash`, `gpio`, `i2c`, `itc`, `iwdg`, `rst`, `spi`, `tim1`, `wwdg` and chip-related: `adc1`, `adc2`, `can`, `tim2`, `tim3`, `tim4`, `tim5`, `tim6`, `uart1`, `uart2`, `uart3`;
+- `MODULES` must have all used Stm8_StdPeriph_Driver modules - common: `awu`, `beep`, `clk`, `exti`, `flash`, `gpio`, `i2c`, `itc`, `iwdg`, `rst`, `spi`, `tim1`, `wwdg` and chip-related: `adc1`, `adc2`, `can`, `tim2`, `tim3`, `tim4`, `tim5`, `tim6`, `uart1`, `uart2`, `uart3`;
 - `FLASHER` can be ommitted and defaults to `stlinkv2`.
 
 Name your project in `PROJECT` option - at the end you'll receive a hex file with that name, for example `PROJECT = ledblinker` will result in `ledblinker.ihx`.
 Write list of your files to `SOURCES` option. For this case it is a single file `ledblinker.c`.
 Set `CHIP` and `CHIPMOD` options: if you have a dev board with `stm8s103f3p6` chip, then you need to set `CHIP` to `STM8S103` and `CHIPMOD` to `F3`.
-If you use a StdPerifLib GPIO functions, you need to add `gpio` to `MODULES` option.
+If you use a Stm8_StdPeriph_Driver GPIO functions, you need to add `gpio` to `MODULES` option.
 
 Result is:
 ```
@@ -112,7 +112,7 @@ It flashes you hex file to stm8s device:
 ```
 you@linux:~/ledblinker$ make flash
 ```
-Cleans your project build (StdPerifLib and stm8flash are not cleaned):
+Cleans your project build (Stm8_StdPeriph_Driver and stm8flash are not cleaned):
 ```
 you@linux:~/ledblinker$ make clean
 ```
@@ -124,7 +124,7 @@ Do this if you want to check that your makefile is OK for build system:
 ```
 you@linux:~/ledblinker$ make env
 ```
-If you want to build StdPerifLib, then do this (it is useful if you want to look in lib files):
+If you want to build Stm8_StdPeriph_Driver, then do this (it is useful if you want to look in lib files):
 ```
 you@linux:~/ledblinker$ make lib
 ```
