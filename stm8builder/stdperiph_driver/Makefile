@@ -34,7 +34,7 @@ SRC_FILES += $(wildcard $(SRC_DIR)/stm8s_spi.*.c)
 SRC_FILES += $(wildcard $(SRC_DIR)/stm8s_tim1.*.c)
 SRC_FILES += $(wildcard $(SRC_DIR)/stm8s_wwdg.*.c)
 
-ifeq ($(CHIP), $(filter $(CHIP), STM8S105 STM8S005 STM8S103 STM8S003 STM8S903 STM8AF626x))
+ifeq ($(CHIP), $(filter $(CHIP), STM8S105 STM8S005 STM8S103 STM8S003 STM8S903 STM8AF626x STM8AF622x))
   SRC_FILES += $(wildcard $(SRC_DIR)/stm8s_adc1.*.c)
 endif
 ifeq ($(CHIP), $(filter $(CHIP), STM8S208 STM8S207 STM8S007 STM8AF52Ax STM8AF62Ax))
@@ -43,16 +43,16 @@ endif
 ifeq ($(CHIP), $(filter $(CHIP), STM8S208 STM8AF52Ax))
   SRC_FILES += $(SRC_DIR)/stm8s_can.c
 endif
-ifneq ($(CHIP), STM8S903)
+ifneq ($(CHIP), $(filter $(CHIP), STM8S903 STM8AF622x))
   SRC_FILES += $(SRC_DIR)/stm8s_tim2.c
 endif
 ifeq ($(CHIP), $(filter $(CHIP), STM8S208 STM8S207 STM8S007 STM8S105 STM8S005 STM8AF52Ax STM8AF62Ax STM8AF626x))
   SRC_FILES += $(SRC_DIR)/stm8s_tim3.c
 endif
-ifneq ($(CHIP), STM8S903)
+ifneq ($(CHIP), $(filter $(CHIP), STM8S903 STM8AF622x))
   SRC_FILES += $(wildcard $(SRC_DIR)/stm8s_tim4.*.c)
 endif
-ifeq ($(CHIP), STM8S903)
+ifeq ($(CHIP), $(filter $(CHIP), STM8S903 STM8AF622x))
   SRC_FILES += $(SRC_DIR)/stm8s_tim5.c $(SRC_DIR)/stm8s_tim6.c
 endif
 ifeq ($(CHIP), $(filter $(CHIP), STM8S208 STM8S207 STM8S007 STM8S103 STM8S003 STM8S903 STM8AF52Ax STM8AF62Ax))
@@ -63,6 +63,9 @@ ifeq ($(CHIP), $(filter $(CHIP), STM8S105 STM8S005 STM8AF626x))
 endif
 ifeq ($(CHIP), $(filter $(CHIP), STM8S208 STM8S207 STM8S007 STM8AF52Ax STM8AF62Ax))
   SRC_FILES += $(SRC_DIR)/stm8s_uart3.c
+endif
+ifeq ($(CHIP), STM8AF622x)
+  SRC_FILES += $(SRC_DIR)/stm8s_uart4.c
 endif
 
 OBJ_FILES = $(SRC_FILES:%.c=%.rel)
